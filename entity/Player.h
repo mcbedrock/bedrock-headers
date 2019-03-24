@@ -7,4 +7,6 @@ struct Player : Mob {
 	ItemInstance *getSelectedItem() const;
 
 	bool canUseAbility(std::string const &);
+
+	void setSpeed(float);
 };

@@ -3,6 +3,7 @@
 #include "../network/PacketSender.h"
 #include "../world/level/Level.h"
 #include "gui/GuiData.h"
+#include "gui/Font.h"
 #include "ClientInputHandler.h"
 #include "ClientInstanceEventCoordinator.h"
 
@@ -14,4 +15,6 @@ struct ClientInstance {
 	ClientInputHandler &getInput() const;
 
 	ClientInstanceEventCoordinator *getEventCoordinator();
+
+	Font &getFont() const;
 };

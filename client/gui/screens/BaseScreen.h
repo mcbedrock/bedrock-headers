@@ -1,10 +1,9 @@
 #pragma once
 
+#include "../ScreenContext.h"
 #include <string>
 
 struct FocusImpact;
-
-struct ScreenContext;
 
 struct BaseScreen {
 public:

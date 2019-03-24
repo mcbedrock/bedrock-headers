@@ -3,6 +3,7 @@
 #include "ClientInstance.h"
 #include "../network/NetworkHandler.h"
 #include "../entity/LocalPlayer.h"
+#include "gui/Font.h"
 #include "options/Options.h"
 #include "Minecraft.h"
 #include <string>
@@ -63,4 +64,6 @@ public:
 	Minecraft *getPrimaryMinecraft();
 
 	bool isLocalPlayer(ActorUniqueID const &) const;
+
+	Font &getFont() const;
 };

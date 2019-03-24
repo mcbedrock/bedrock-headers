@@ -136,7 +136,7 @@ struct Actor {
 	// Hitboxes
 	void setSize(float width, float height);
 
-	void attack(Actor &);
+	virtual void attack(Actor &);
 
 	int getHealth() const;
 

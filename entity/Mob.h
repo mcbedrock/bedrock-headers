@@ -11,7 +11,7 @@ struct Mob : Actor {
 
 	void setSpeedModifier(float);
 
-	void setSpeed(float);
+	//void setSpeed(float);
 
 	void setSprinting(bool);
 
