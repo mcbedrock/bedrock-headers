@@ -6,6 +6,4 @@ Obviously it's far from this at the moment but yes, you too can help contribute!
 
 ## Using
 
-Simply add ```Makefile
-include(../path/to/headers/CMakeLists.txt
-``` to your CMake project and go ham!
+Simply add `include(../path/to/headers/CMakeLists.txt` to your CMake project and go ham!
