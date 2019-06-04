@@ -21,7 +21,6 @@ struct Social {
 }
 
 struct PlayScreenModel {
-public:
 	static int mRetryTimeout;
 
 	PlayScreenModel(MinecraftGame &, ClientInstance &, SceneStack &, SceneFactory &);

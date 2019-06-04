@@ -4,8 +4,8 @@
 #include "../world/level/Level.h"
 #include "gui/GuiData.h"
 #include "gui/Font.h"
-#include "ClientInputHandler.h"
-#include "ClientInstanceEventCoordinator.h"
+#include "client/input/ClientInputHandler.h"
+#include "client/events/ClientInstanceEventCoordinator.h"
 
 struct ClientInstance {
 	bool isInGame() const;
@@ -17,4 +17,6 @@ struct ClientInstance {
 	ClientInstanceEventCoordinator *getEventCoordinator();
 
 	Font &getFont() const;
+
+	int getControllerId() const;
 };

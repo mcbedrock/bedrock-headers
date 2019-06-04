@@ -2,8 +2,8 @@
 
 #include "Player.h"
 #include "../client/ClientInstance.h"
-#include "../client/PlayerEventCoordinator.h"
-#include "../client/ClientPlayerEventCoordinator.h"
+#include "entity/events/PlayerEventCoordinator.h"
+#include "entity/events/ClientPlayerEventCoordinator.h"
 
 struct LocalPlayer : Player {
 	PlayerEventCoordinator *getPlayerEventCoordinator();

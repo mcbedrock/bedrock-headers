@@ -6,4 +6,8 @@ struct ClientInputHandler : MoveInputHandler {
 	bool isSneaking() const;
 
 	bool isMovingForward() const;
+
+	// string?
+	void *getCurrentInputMapping() const;
+
 };

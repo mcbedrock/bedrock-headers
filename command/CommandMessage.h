@@ -7,7 +7,6 @@ struct CommandRegistry;
 struct CommandOrigin;
 
 struct CommandMessage {
-
 private:
 	char filler[0xC];
 
@@ -25,5 +24,4 @@ public:
 	~CommandMessage();
 
 	std::string getMessage(CommandOrigin const &origin) const;
-
 };

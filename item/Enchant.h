@@ -2,6 +2,6 @@
 
 static struct Enchant {
 	static struct Type {
-
+		// TODO
 	};
 };

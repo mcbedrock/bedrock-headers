@@ -1,6 +1,6 @@
 #pragma once
 
-#pragma "ItemStack.h"
+#include "ItemStack.h"
 
 struct EnchantUtils {
 	static void randomlyEnchant(ItemStack &);

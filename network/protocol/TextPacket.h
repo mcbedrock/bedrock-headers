@@ -12,23 +12,16 @@ struct TextPacket : Packet {
 	TextPacketType type;
 	std::string sender;
 	std::string message;
+
+private:
 	char filler[65];
 
+public:
 	static TextPacket createSystemMessage(std::string const &);
 
 	static TextPacket createChat(std::string const &, std::string const &, std::string const &, std::string const &);
 
 	TextPacket(unsigned char playerSubIndex) : Packet(playerSubIndex) {}
 
-	virtual void *getId() const;
-
-	virtual void *getName() const;
-
-	virtual void *write(BinaryStream &) const;
-
-	virtual void *read(BinaryStream &);
-
-	virtual void *handle(NetworkIdentifier const &, NetEventCallback &) const;
-
-	virtual bool disallowBatching() const;
+#include "PacketTemplate.h"
 };

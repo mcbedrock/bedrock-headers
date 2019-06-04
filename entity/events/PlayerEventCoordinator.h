@@ -1,9 +1,9 @@
 #pragma once
 
-#include "EventCoordinator.h"
-#include "../entity/Player.h"
-#include "../entity/Actor.h"
-#include "../item/ItemInstance.h"
+#include "client/EventCoordinator.h"
+#include "entity/Player.h"
+#include "entity/Actor.h"
+#include "item/ItemInstance.h"
 
 struct PlayerEventCoordinator : EventCoordinator {
 	void sendPlayerAttackedActor(Player &, Actor &);

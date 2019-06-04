@@ -1,15 +1,12 @@
 #pragma once
 
 #include <string>
-
-struct Color;
-
-struct Font;
+#include "../Color.h"
+#include "../Font.h"
 
 struct UIControl;
 
 struct TextComponent {
-public:
 	// TODO: find types
 	static TextComponent *CARET_BLINK_TIME;
 

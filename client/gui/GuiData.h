@@ -5,7 +5,6 @@
 struct ClientInstance;
 
 struct GuiData {
-public:
 	// TODO: find types
 	static GuiData *BUTTONS_TRANSPARENCY;
 	static GuiData *GUI_SCALE_VALUES;

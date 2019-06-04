@@ -1,5 +1,3 @@
 #pragma once
 
-struct UIControlFactory {
-
-};
+struct UIControlFactory {};

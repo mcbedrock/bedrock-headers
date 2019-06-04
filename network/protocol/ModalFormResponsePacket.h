@@ -6,22 +6,11 @@
 /*
  * Client -> Server
  */
-class ModalFormResponsePacket : public Packet {
-public:
+struct ModalFormResponsePacket : Packet {
 	int formId;
 	std::string formData;
 
 	ModalFormResponsePacket(unsigned char playerSubIndex) : Packet(playerSubIndex) {}
 
-	virtual void *getId() const;
-
-	virtual void *getName() const;
-
-	virtual void *write(BinaryStream &) const;
-
-	virtual void *read(BinaryStream &);
-
-	virtual void *handle(NetworkIdentifier const &, NetEventCallback &) const;
-
-	virtual bool disallowBatching() const;
+#include "PacketTemplate.h"
 };

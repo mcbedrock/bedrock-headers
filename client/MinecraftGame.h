@@ -17,7 +17,6 @@ struct Realms;
 struct Player;
 
 struct MinecraftGame {
-public:
 	static std::string WORLD_PATH;
 	// TODO: find type
 	static MinecraftGame *INTERACTION_FREQ_MS;

@@ -1,6 +1,3 @@
 #pragma once
 
-struct LevelData {
-public:
-
-};
+struct LevelData {};

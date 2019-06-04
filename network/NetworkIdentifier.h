@@ -5,10 +5,11 @@
 #include <netdb.h>
 #include <string>
 
-class NetworkIdentifier {
+struct NetworkIdentifier {
+private:
+	char filler[0x10];
 
 public:
-	char filler[0x10];
 	sockaddr_storage sa; // 90
 	int family;
 
@@ -19,7 +20,6 @@ public:
 	std::string toString() const;
 
 	bool operator==(NetworkIdentifier const &addr) const { return equalsTypeData(addr); }
-
 };
 
 namespace std {

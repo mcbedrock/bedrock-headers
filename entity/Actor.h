@@ -1,8 +1,10 @@
 #pragma once
 
 #include "../world/level/Level.h"
+#include "../world/BlockSource.h"
 #include "../math/Vec3.h"
 #include "../math/BlockPos.h"
+#include "../math/Vec2.h"
 #include "ActorRuntimeID.h"
 #include <string>
 
@@ -128,8 +130,7 @@ struct Actor {
 
 	bool isInClouds() const;
 
-	// TODO: Fix return type
-	//ActorRuntimeID const &getRuntimeID() const;
+	ActorRuntimeID getRuntimeID() const;
 
 	ActorUniqueID const &getUniqueID() const;
 
@@ -163,4 +164,12 @@ struct Actor {
 	void removeEffect(int);
 
 	BlockPos getBlockTarget() const;
+
+	void setRot(Vec2 const&);
+
+	Vec2 getRotation() const;
+
+	BlockSource &getRegion() const;
+
+	void buildForward() const;
 };

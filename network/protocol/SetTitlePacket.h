@@ -3,8 +3,7 @@
 #include "Packet.h"
 #include <string>
 
-class SetTitlePacket : public Packet {
-public:
+struct SetTitlePacket : Packet {
 	enum class TitleType {
 		CLEAR_TITLE = 0,
 		RESET_TITLE,
@@ -26,15 +25,5 @@ public:
 
 	SetTitlePacket(unsigned char playerSubIndex, TitleType type) : Packet(playerSubIndex), type(type) {}
 
-	virtual void *getId() const;
-
-	virtual void *getName() const;
-
-	virtual void *write(BinaryStream &) const;
-
-	virtual void *read(BinaryStream &);
-
-	virtual void *handle(NetworkIdentifier const &, NetEventCallback &) const;
-
-	virtual bool disallowBatching() const;
+#include "PacketTemplate.h"
 };

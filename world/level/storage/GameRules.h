@@ -1,6 +1,3 @@
 #pragma once
 
-struct GameRules {
-public:
-
-};
+struct GameRules {};

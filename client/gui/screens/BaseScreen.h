@@ -6,7 +6,6 @@
 struct FocusImpact;
 
 struct BaseScreen {
-public:
 	BaseScreen();
 
 	~BaseScreen();

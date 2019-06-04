@@ -1,6 +1,3 @@
 #pragma once
 
-struct World {
-public:
-
-};
+struct World {};

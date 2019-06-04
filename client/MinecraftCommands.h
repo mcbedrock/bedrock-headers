@@ -1,6 +1,3 @@
 #pragma once
 
-struct MinecraftCommands {
-public:
-
-};
+struct MinecraftCommands {};

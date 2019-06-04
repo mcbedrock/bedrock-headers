@@ -2,8 +2,7 @@
 
 struct BlockPos;
 
-class Vec3 {
-public:
+struct Vec3 {
 	float x, y, z;
 
 	Vec3(BlockPos const &);

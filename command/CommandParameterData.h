@@ -8,7 +8,6 @@
 enum struct CommandParameterDataType;
 
 struct CommandParameterData {
-
 private:
 	char filler[0x28];
 
@@ -19,5 +18,4 @@ public:
 						 CommandParameterDataType, char const *, int, bool, int);
 
 	CommandParameterData(CommandParameterData const &);
-
 };

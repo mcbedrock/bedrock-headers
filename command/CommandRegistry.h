@@ -23,14 +23,20 @@ struct CommandRegistry {
 		std::unique_ptr<Command> (*allocator)();
 
 		std::vector<CommandParameterData> params;
+
+	private:
 		int filler; // I don't think this is an actual member, looks like padding to me
 
+	public:
 		Overload(CommandVersion version, std::unique_ptr<Command> (*allocator)()) : version(version),
 																					allocator(allocator) {}
 	};
 
 	struct Signature {
+	private:
 		char filler[0x8];
+
+	public:
 		std::vector<CommandRegistry::Overload> overloads;
 	};
 
@@ -60,5 +66,4 @@ struct CommandRegistry {
 		overload.params = {args...};
 		registerOverloadInternal(*signature, overload);
 	}
-
 };

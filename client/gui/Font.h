@@ -1,9 +1,9 @@
 #pragma once
 
 #include "ScreenContext.h"
+#include "Color.h"
 #include <string>
 
-struct Color;
 // Not sure what this is atm
 namespace mce {
 	using MaterialPtr = void;

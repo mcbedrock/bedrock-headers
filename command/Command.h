@@ -6,7 +6,6 @@
 struct CommandOutput;
 
 struct Command {
-
 private:
 	char filler[0x10];
 
@@ -16,5 +15,4 @@ public:
 	virtual ~Command() = 0;
 
 	virtual void execute(CommandOrigin const &, CommandOutput &) = 0;
-
 };

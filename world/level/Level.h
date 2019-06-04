@@ -9,6 +9,8 @@ struct Actor;
 
 class Player;
 
+class ClientPlayerEventCoordinator;
+
 struct Level {
 	//Actor *getRuntimeEntity(ActorRuntimeID, bool) const;
 
@@ -24,4 +26,6 @@ struct Level {
 
 	// TODO: Fix type
 	//ColorFormat &getPlayerColor(Player const&) const;
+
+	ClientPlayerEventCoordinator *getClientPlayerEventCoordinator();
 };
