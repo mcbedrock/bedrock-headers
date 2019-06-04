@@ -56,7 +56,7 @@ public:
 	static std::string FLYING;
 	static std::string MAYFLY;
 	static std::string NOCLIP;
-	static std::string FLYSPEED
+	static std::string FLYSPEED;
 	static std::string TELEPORT;
 	static std::string INVISIBLE;
 	static std::string LIGHTNING;

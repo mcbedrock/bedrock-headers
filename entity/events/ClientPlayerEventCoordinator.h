@@ -1,12 +1,11 @@
 #pragma once
 
 #include "PlayerEventCoordinator.h"
+#include "../LocalPlayer.h"
 
 class IClientInstance {};
 
 class PlayerEventListener {};
-
-class LocalPlayer {};
 
 class BlockLegacy {};
 

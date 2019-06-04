@@ -1,5 +1,5 @@
-#pragma onceclass CaretMeasureData {
-	CaretMeasureData(int, bool) {}
-};
+#pragma once
+
+#include "CaretMeasureData.h"
 
 struct ScreenContext {};
