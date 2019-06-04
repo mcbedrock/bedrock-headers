@@ -13,7 +13,14 @@ struct MoveInputHandler : InputHandler {
 	 */
 	bool isPlayerMoving() const; // This always returns true?
 
+	/**
+	 * Checks if player is moving forward (or strafing forward)
+	 * @return bool
+	 */
 	bool isMovingForward() const;
 
+	/**
+	 * Virtually set sneak key state
+	 */
 	void setSneakDown(bool);
 };

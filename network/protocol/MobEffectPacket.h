@@ -13,6 +13,9 @@
   _ZN12BinaryStream11writeVarIntEi(uParm2,*(undefined4 *)(iParm1 + 0x1c));
  */
 
+/**
+ * Packet for adding/removing/updating potion effects
+ */
 struct MobEffectPacket : Packet {
 private:
 	char filler[0x14];

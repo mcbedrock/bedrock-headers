@@ -14,6 +14,9 @@
 
  */
 
+/**
+ * Packet for updating player (eg. sneaking, sprinting, etc)
+ */
 struct PlayerActionPacket : Packet {
 private:
 	char filler[6];

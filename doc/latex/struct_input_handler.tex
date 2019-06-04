@@ -1,0 +1,54 @@
+\hypertarget{struct_input_handler}{}\section{Input\+Handler Struct Reference}
+\label{struct_input_handler}\index{InputHandler@{InputHandler}}
+Inheritance diagram for Input\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{struct_input_handler}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \mbox{\hyperlink{struct_input_handler_ac6ce21361da184ee3d3a5b47768d1243}{get\+State\+Or\+Null}} (int key) const
+\item 
+bool \mbox{\hyperlink{struct_input_handler_aa43d955e2c0627c3158816fb5d8cc410}{are\+Buttons\+Down}} (int controller)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_input_handler_aa43d955e2c0627c3158816fb5d8cc410}\label{struct_input_handler_aa43d955e2c0627c3158816fb5d8cc410}} 
+\index{InputHandler@{InputHandler}!areButtonsDown@{areButtonsDown}}
+\index{areButtonsDown@{areButtonsDown}!InputHandler@{InputHandler}}
+\subsubsection{\texorpdfstring{areButtonsDown()}{areButtonsDown()}}
+{\footnotesize\ttfamily bool Input\+Handler\+::are\+Buttons\+Down (\begin{DoxyParamCaption}\item[{int}]{controller }\end{DoxyParamCaption})}
+
+Check if buttons are pressed on a specific controller 
+\begin{DoxyParams}{Parameters}
+{\em controller} & Controller ID to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_client_instance_a80878816c82f930b5845ab48a0a3b7a8}{Client\+Instance\+::get\+Controller\+Id()}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_input_handler_ac6ce21361da184ee3d3a5b47768d1243}\label{struct_input_handler_ac6ce21361da184ee3d3a5b47768d1243}} 
+\index{InputHandler@{InputHandler}!getStateOrNull@{getStateOrNull}}
+\index{getStateOrNull@{getStateOrNull}!InputHandler@{InputHandler}}
+\subsubsection{\texorpdfstring{getStateOrNull()}{getStateOrNull()}}
+{\footnotesize\ttfamily int$\ast$ Input\+Handler\+::get\+State\+Or\+Null (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption}) const}
+
+Check state of binding 
+\begin{DoxyParams}{Parameters}
+{\em key} & Binding key code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int$\ast$ 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/void/\+C\+Lion\+Projects/bedrock-\/headers/client/input/Input\+Handler.\+h\end{DoxyCompactItemize}

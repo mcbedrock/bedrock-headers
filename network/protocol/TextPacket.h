@@ -4,10 +4,15 @@
 #include <string>
 #include <vector>
 
+/**
+ * Packet for most main UI text elements
+ */
 struct TextPacket : Packet {
 	enum class TextPacketType : unsigned char {
 		RAW, CHAT, TRANSLATION, POPUP, JUKEBOX_POPUP, TIP, SYSTEM, WHISPER, ANNOUNCEMENT
 	};
+
+	// TODO: Fix offset since update!
 
 	TextPacketType type;
 	std::string sender;

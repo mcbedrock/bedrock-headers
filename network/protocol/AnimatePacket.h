@@ -2,6 +2,9 @@
 
 #include "Packet.h"
 
+/**
+ * Packet for hand swings
+ */
 struct AnimatePacket : Packet {
 private:
 	char filler[6];

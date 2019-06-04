@@ -1,0 +1,83 @@
+\hypertarget{struct_text_packet}{}\section{Text\+Packet Struct Reference}
+\label{struct_text_packet}\index{TextPacket@{TextPacket}}
+
+
+{\ttfamily \#include $<$Text\+Packet.\+h$>$}
+
+Inheritance diagram for Text\+Packet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_text_packet}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_text_packet_ab7fd3a07866f68f65f0dcde5ac175210}\label{struct_text_packet_ab7fd3a07866f68f65f0dcde5ac175210}} 
+enum {\bfseries Text\+Packet\+Type} \+: unsigned char \{ \newline
+{\bfseries R\+AW}, 
+{\bfseries C\+H\+AT}, 
+{\bfseries T\+R\+A\+N\+S\+L\+A\+T\+I\+ON}, 
+{\bfseries P\+O\+P\+UP}, 
+\newline
+{\bfseries J\+U\+K\+E\+B\+O\+X\+\_\+\+P\+O\+P\+UP}, 
+{\bfseries T\+IP}, 
+{\bfseries S\+Y\+S\+T\+EM}, 
+{\bfseries W\+H\+I\+S\+P\+ER}, 
+\newline
+{\bfseries A\+N\+N\+O\+U\+N\+C\+E\+M\+E\+NT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_text_packet_af8266837c559201af138a27a34f62f5f}\label{struct_text_packet_af8266837c559201af138a27a34f62f5f}} 
+{\bfseries Text\+Packet} (unsigned char player\+Sub\+Index)
+\item 
+\mbox{\Hypertarget{struct_text_packet_a3be09c982627b28c795f4e1ec296b7f3}\label{struct_text_packet_a3be09c982627b28c795f4e1ec296b7f3}} 
+virtual int {\bfseries get\+Id} () const
+\item 
+\mbox{\Hypertarget{struct_text_packet_a11e797b55efb9391d896c79163713795}\label{struct_text_packet_a11e797b55efb9391d896c79163713795}} 
+virtual std\+::string {\bfseries get\+Name} () const
+\item 
+\mbox{\Hypertarget{struct_text_packet_a0d1e8773945bae3d0841d702368efcdf}\label{struct_text_packet_a0d1e8773945bae3d0841d702368efcdf}} 
+virtual void $\ast$ {\bfseries write} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&) const
+\item 
+\mbox{\Hypertarget{struct_text_packet_a9f0599b1d59bda8ba5f2a29cd901d804}\label{struct_text_packet_a9f0599b1d59bda8ba5f2a29cd901d804}} 
+virtual void $\ast$ {\bfseries read} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&)
+\item 
+\mbox{\Hypertarget{struct_text_packet_a0a08c3a8a31e0a2283d73e9d43d522c0}\label{struct_text_packet_a0a08c3a8a31e0a2283d73e9d43d522c0}} 
+virtual void $\ast$ {\bfseries handle} (\mbox{\hyperlink{struct_network_identifier}{Network\+Identifier}} const \&, Net\+Event\+Callback \&) const
+\item 
+\mbox{\Hypertarget{struct_text_packet_a812848db08c7097de0f7a1b07bd94fbd}\label{struct_text_packet_a812848db08c7097de0f7a1b07bd94fbd}} 
+virtual bool {\bfseries disallow\+Batching} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_text_packet_a0f49f6b306b5a92b359da06c887c087c}\label{struct_text_packet_a0f49f6b306b5a92b359da06c887c087c}} 
+static \mbox{\hyperlink{struct_text_packet}{Text\+Packet}} {\bfseries create\+System\+Message} (std\+::string const \&)
+\item 
+\mbox{\Hypertarget{struct_text_packet_a22e70978f9d68eee1f39e802cf4b4670}\label{struct_text_packet_a22e70978f9d68eee1f39e802cf4b4670}} 
+static \mbox{\hyperlink{struct_text_packet}{Text\+Packet}} {\bfseries create\+Chat} (std\+::string const \&, std\+::string const \&, std\+::string const \&, std\+::string const \&)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_text_packet_ac500229e8c387e54f10971c102a6c7de}\label{struct_text_packet_ac500229e8c387e54f10971c102a6c7de}} 
+Text\+Packet\+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{struct_text_packet_aec77098e4fbab468885e8a00ffd7821c}\label{struct_text_packet_aec77098e4fbab468885e8a00ffd7821c}} 
+std\+::string {\bfseries sender}
+\item 
+\mbox{\Hypertarget{struct_text_packet_aaab878bbad582fc4fb688cac3e2acae7}\label{struct_text_packet_aaab878bbad582fc4fb688cac3e2acae7}} 
+std\+::string {\bfseries message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{struct_packet}{Packet}} for most main UI text elements 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/void/\+C\+Lion\+Projects/bedrock-\/headers/network/protocol/Text\+Packet.\+h\end{DoxyCompactItemize}

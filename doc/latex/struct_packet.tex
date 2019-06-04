@@ -1,0 +1,52 @@
+\hypertarget{struct_packet}{}\section{Packet Struct Reference}
+\label{struct_packet}\index{Packet@{Packet}}
+Inheritance diagram for Packet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{struct_packet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_packet_a8c995e4de5a50de3b31dcd7b7ee3fbfc}\label{struct_packet_a8c995e4de5a50de3b31dcd7b7ee3fbfc}} 
+{\bfseries Packet} (unsigned char player\+Sub\+Index)
+\item 
+\mbox{\Hypertarget{struct_packet_a32b07be5461047eb99f5a22e309ea199}\label{struct_packet_a32b07be5461047eb99f5a22e309ea199}} 
+{\bfseries Packet} (\mbox{\hyperlink{struct_packet}{Packet}} const \&packet)
+\item 
+\mbox{\Hypertarget{struct_packet_a969163ec3c2e51ba7ac29443c231cffe}\label{struct_packet_a969163ec3c2e51ba7ac29443c231cffe}} 
+virtual int {\bfseries get\+Id} () const =0
+\item 
+\mbox{\Hypertarget{struct_packet_a3fea34a7be3439c92ad4e9c6903e698d}\label{struct_packet_a3fea34a7be3439c92ad4e9c6903e698d}} 
+virtual std\+::string {\bfseries get\+Name} () const =0
+\item 
+\mbox{\Hypertarget{struct_packet_a225a02ece7602fe0e6d29986562b7f16}\label{struct_packet_a225a02ece7602fe0e6d29986562b7f16}} 
+virtual void $\ast$ {\bfseries write} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&) const =0
+\item 
+\mbox{\Hypertarget{struct_packet_a9828ac69f5405f539e8984c757249a5f}\label{struct_packet_a9828ac69f5405f539e8984c757249a5f}} 
+virtual void $\ast$ {\bfseries read} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&)=0
+\item 
+\mbox{\Hypertarget{struct_packet_a23967beb8499270dc7e872b03d352e70}\label{struct_packet_a23967beb8499270dc7e872b03d352e70}} 
+virtual void $\ast$ {\bfseries handle} (\mbox{\hyperlink{struct_network_identifier}{Network\+Identifier}} const \&, Net\+Event\+Callback \&) const =0
+\item 
+\mbox{\Hypertarget{struct_packet_a71ddc6e8c7f847f97de270165a19357f}\label{struct_packet_a71ddc6e8c7f847f97de270165a19357f}} 
+virtual bool {\bfseries disallow\+Batching} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_packet_aeef1f1b66c04fa44914e136a22917296}\label{struct_packet_aeef1f1b66c04fa44914e136a22917296}} 
+int {\bfseries unk\+\_\+4} = 2
+\item 
+\mbox{\Hypertarget{struct_packet_adb5fb0657e750fe89dab337c3a253b0c}\label{struct_packet_adb5fb0657e750fe89dab337c3a253b0c}} 
+int {\bfseries unk\+\_\+8} = 1
+\item 
+\mbox{\Hypertarget{struct_packet_a2a7ab3c3fa701f0240f395a0ba6cae96}\label{struct_packet_a2a7ab3c3fa701f0240f395a0ba6cae96}} 
+unsigned char {\bfseries player\+Sub\+Index} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/void/\+C\+Lion\+Projects/bedrock-\/headers/network/protocol/Packet.\+h\end{DoxyCompactItemize}

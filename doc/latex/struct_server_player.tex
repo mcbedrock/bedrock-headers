@@ -1,0 +1,56 @@
+\hypertarget{struct_server_player}{}\section{Server\+Player Struct Reference}
+\label{struct_server_player}\index{ServerPlayer@{ServerPlayer}}
+Inheritance diagram for Server\+Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{struct_server_player}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_server_player_a52f056561e1957e717cd43992cf973ee}\label{struct_server_player_a52f056561e1957e717cd43992cf973ee}} 
+void {\bfseries send\+Network\+Packet} (\mbox{\hyperlink{struct_packet}{Packet}} \&packet) const
+\item 
+\mbox{\Hypertarget{struct_server_player_a1d3c0c52b1e12655dd227516316f6e3d}\label{struct_server_player_a1d3c0c52b1e12655dd227516316f6e3d}} 
+void {\bfseries set\+Player\+Game\+Type} (Game\+Type) override
+\item 
+\mbox{\Hypertarget{struct_server_player_a9e949a29f3bd590a6a2cddd4fb6e9172}\label{struct_server_player_a9e949a29f3bd590a6a2cddd4fb6e9172}} 
+void {\bfseries disconnect} ()
+\item 
+\mbox{\Hypertarget{struct_server_player_a21c8b35cb3b9bc55b5e11555a32c9d11}\label{struct_server_player_a21c8b35cb3b9bc55b5e11555a32c9d11}} 
+void {\bfseries disconnect} (const std\+::string \&message)
+\item 
+\mbox{\Hypertarget{struct_server_player_a217037a7cb334f0ab072ea7ab7d8a052}\label{struct_server_player_a217037a7cb334f0ab072ea7ab7d8a052}} 
+void {\bfseries send\+Message} (const std\+::string \&message, Text\+Packet\+::\+Text\+Packet\+Type type=Text\+Packet\+::\+Text\+Packet\+Type\+::\+R\+AW)
+\item 
+\mbox{\Hypertarget{struct_server_player_a7ebd5d5e6fe1a05cc319a4fe477e83ef}\label{struct_server_player_a7ebd5d5e6fe1a05cc319a4fe477e83ef}} 
+void {\bfseries send\+Tip} (const std\+::string \&message)
+\item 
+\mbox{\Hypertarget{struct_server_player_a4cd727214ecd0e21e0f32cf8e3346c22}\label{struct_server_player_a4cd727214ecd0e21e0f32cf8e3346c22}} 
+void {\bfseries add\+Title} (const std\+::string \&title, const std\+::string \&subtitle=\char`\"{}\char`\"{}, int fade\+In=-\/1, int stay=-\/1, int fade\+Out=-\/1)
+\item 
+\mbox{\Hypertarget{struct_server_player_a1f5c3607ff790a068632fb816f7ed0e8}\label{struct_server_player_a1f5c3607ff790a068632fb816f7ed0e8}} 
+void {\bfseries add\+Sub\+Title} (const std\+::string \&message)
+\item 
+\mbox{\Hypertarget{struct_server_player_acf4943f5cfc6d03e1a0bddf266aee0cc}\label{struct_server_player_acf4943f5cfc6d03e1a0bddf266aee0cc}} 
+void {\bfseries add\+Action\+Bar\+Message} (const std\+::string \&message)
+\item 
+\mbox{\Hypertarget{struct_server_player_aeaa1e503f1d328fc4e50b3f7dada1ef4}\label{struct_server_player_aeaa1e503f1d328fc4e50b3f7dada1ef4}} 
+void {\bfseries remove\+Titles} ()
+\item 
+\mbox{\Hypertarget{struct_server_player_abffbd59589ca59c1f866feed35097dc5}\label{struct_server_player_abffbd59589ca59c1f866feed35097dc5}} 
+void {\bfseries reset\+Titles} ()
+\item 
+\mbox{\Hypertarget{struct_server_player_a63f8f496ff7a6820fbb904551ae973a2}\label{struct_server_player_a63f8f496ff7a6820fbb904551ae973a2}} 
+void {\bfseries set\+Title\+Duration} (int fade\+In, int stay, int fade\+Out)
+\item 
+\mbox{\Hypertarget{struct_server_player_a28130e13fdaa7cc5606578fff0f9aa17}\label{struct_server_player_a28130e13fdaa7cc5606578fff0f9aa17}} 
+void {\bfseries send\+Title\+Text} (const std\+::string \&message, Set\+Title\+Packet\+::\+Title\+Type type)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/void/\+C\+Lion\+Projects/bedrock-\/headers/network/Server\+Player.\+h\end{DoxyCompactItemize}

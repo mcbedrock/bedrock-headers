@@ -1,7 +1,18 @@
 #pragma once
 
 struct InputHandler {
-	int *getStateOrNull(int) const;
+	/**
+	 * Check state of binding
+	 * @param key Binding key code
+	 * @return int*
+	 */
+	int *getStateOrNull(int key) const;
 
-	bool areButtonsDown(int);
+	/**
+	 * Check if buttons are pressed on a specific controller
+	 * @param controller Controller ID to check
+	 * @see ClientInstance::getControllerId()
+	 * @return bool
+	 */
+	bool areButtonsDown(int controller);
 };

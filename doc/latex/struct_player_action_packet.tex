@@ -1,0 +1,62 @@
+\hypertarget{struct_player_action_packet}{}\section{Player\+Action\+Packet Struct Reference}
+\label{struct_player_action_packet}\index{PlayerActionPacket@{PlayerActionPacket}}
+
+
+{\ttfamily \#include $<$Player\+Action\+Packet.\+h$>$}
+
+Inheritance diagram for Player\+Action\+Packet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_player_action_packet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_ae6a83ecd08d4303e641e06de937f04b4}\label{struct_player_action_packet_ae6a83ecd08d4303e641e06de937f04b4}} 
+virtual int {\bfseries get\+Id} () const
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_a76a8d3c20d3105373590087a7d5aff59}\label{struct_player_action_packet_a76a8d3c20d3105373590087a7d5aff59}} 
+virtual std\+::string {\bfseries get\+Name} () const
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_a6db0a4e92fc1c76ebf6623ee67ee3d7d}\label{struct_player_action_packet_a6db0a4e92fc1c76ebf6623ee67ee3d7d}} 
+virtual void $\ast$ {\bfseries write} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&) const
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_acacf14db1948e035cc2352872e74f7b6}\label{struct_player_action_packet_acacf14db1948e035cc2352872e74f7b6}} 
+virtual void $\ast$ {\bfseries read} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&)
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_ab4c7a3f34902ff44873ec90f6a732dd3}\label{struct_player_action_packet_ab4c7a3f34902ff44873ec90f6a732dd3}} 
+virtual void $\ast$ {\bfseries handle} (\mbox{\hyperlink{struct_network_identifier}{Network\+Identifier}} const \&, Net\+Event\+Callback \&) const
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_a81e62e5bff6ac256f1e293274f89c351}\label{struct_player_action_packet_a81e62e5bff6ac256f1e293274f89c351}} 
+virtual bool {\bfseries disallow\+Batching} () const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_af5c61d08dede81b400fc500dc21e8c73}\label{struct_player_action_packet_af5c61d08dede81b400fc500dc21e8c73}} 
+int32\+\_\+t {\bfseries i0}
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_a80c32256c7d175c90337d01ec2e0edb5}\label{struct_player_action_packet_a80c32256c7d175c90337d01ec2e0edb5}} 
+int32\+\_\+t {\bfseries i1}
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_abb80e4a63a8b6ef50932c57e298015ec}\label{struct_player_action_packet_abb80e4a63a8b6ef50932c57e298015ec}} 
+int32\+\_\+t {\bfseries i2}
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_afa96047a21a4e0d41c340e04029a970e}\label{struct_player_action_packet_afa96047a21a4e0d41c340e04029a970e}} 
+int32\+\_\+t {\bfseries i3}
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_a257e2a2d275da1b386c95ba63276c6d7}\label{struct_player_action_packet_a257e2a2d275da1b386c95ba63276c6d7}} 
+int32\+\_\+t {\bfseries i4}
+\item 
+\mbox{\Hypertarget{struct_player_action_packet_aabe30f72e45e7f3577a16db2b704bc4e}\label{struct_player_action_packet_aabe30f72e45e7f3577a16db2b704bc4e}} 
+int64\+\_\+t {\bfseries i5}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{struct_packet}{Packet}} for updating player (eg. sneaking, sprinting, etc) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/void/\+C\+Lion\+Projects/bedrock-\/headers/network/protocol/Player\+Action\+Packet.\+h\end{DoxyCompactItemize}

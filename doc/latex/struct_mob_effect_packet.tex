@@ -1,0 +1,68 @@
+\hypertarget{struct_mob_effect_packet}{}\section{Mob\+Effect\+Packet Struct Reference}
+\label{struct_mob_effect_packet}\index{MobEffectPacket@{MobEffectPacket}}
+
+
+{\ttfamily \#include $<$Mob\+Effect\+Packet.\+h$>$}
+
+Inheritance diagram for Mob\+Effect\+Packet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_mob_effect_packet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_aadbe2d1346eb128bdfffb5d4e62f774f}\label{struct_mob_effect_packet_aadbe2d1346eb128bdfffb5d4e62f774f}} 
+{\bfseries Mob\+Effect\+Packet} (unsigned char player\+Sub\+Index)
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_aa0527038fd4ae94faac1fb1e1682eba5}\label{struct_mob_effect_packet_aa0527038fd4ae94faac1fb1e1682eba5}} 
+virtual int {\bfseries get\+Id} () const
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_a3736b9135fa1bc5ab0ad8caa843cd732}\label{struct_mob_effect_packet_a3736b9135fa1bc5ab0ad8caa843cd732}} 
+virtual std\+::string {\bfseries get\+Name} () const
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_a38f4bd1a60102d36a01655232251c44e}\label{struct_mob_effect_packet_a38f4bd1a60102d36a01655232251c44e}} 
+virtual void $\ast$ {\bfseries write} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&) const
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_a998e209ee9db49dd44a68043871466f9}\label{struct_mob_effect_packet_a998e209ee9db49dd44a68043871466f9}} 
+virtual void $\ast$ {\bfseries read} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&)
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_ab99f0f5ac20760c60425676c3abf5c17}\label{struct_mob_effect_packet_ab99f0f5ac20760c60425676c3abf5c17}} 
+virtual void $\ast$ {\bfseries handle} (\mbox{\hyperlink{struct_network_identifier}{Network\+Identifier}} const \&, Net\+Event\+Callback \&) const
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_a4b3ae328d918c391b5d1a63afd6b874f}\label{struct_mob_effect_packet_a4b3ae328d918c391b5d1a63afd6b874f}} 
+virtual bool {\bfseries disallow\+Batching} () const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_a3223d8f9b8a61ce4e23ad5a5d52814b6}\label{struct_mob_effect_packet_a3223d8f9b8a61ce4e23ad5a5d52814b6}} 
+uint32\+\_\+t {\bfseries effect\+ID}
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_a8ca9f34e668ef528e21a07b22548a2f8}\label{struct_mob_effect_packet_a8ca9f34e668ef528e21a07b22548a2f8}} 
+uint32\+\_\+t {\bfseries amplifier}
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_a8b4dc524d5c9211d8aaac8744f84aaae}\label{struct_mob_effect_packet_a8b4dc524d5c9211d8aaac8744f84aaae}} 
+uint32\+\_\+t {\bfseries particles}
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_ad071cbfddd00c63a34e76d92cd0d17da}\label{struct_mob_effect_packet_ad071cbfddd00c63a34e76d92cd0d17da}} 
+uint8\+\_\+t {\bfseries c0}
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_a09991ceb8bf6a297b48580d17795cc48}\label{struct_mob_effect_packet_a09991ceb8bf6a297b48580d17795cc48}} 
+uint32\+\_\+t {\bfseries i3}
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_a3592abdd831dc432594a6879a2053f0c}\label{struct_mob_effect_packet_a3592abdd831dc432594a6879a2053f0c}} 
+uint32\+\_\+t {\bfseries i4}
+\item 
+\mbox{\Hypertarget{struct_mob_effect_packet_a018fe02df46217e8f877c5402558af88}\label{struct_mob_effect_packet_a018fe02df46217e8f877c5402558af88}} 
+uint8\+\_\+t {\bfseries type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{struct_packet}{Packet}} for adding/removing/updating potion effects 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/void/\+C\+Lion\+Projects/bedrock-\/headers/network/protocol/Mob\+Effect\+Packet.\+h\end{DoxyCompactItemize}

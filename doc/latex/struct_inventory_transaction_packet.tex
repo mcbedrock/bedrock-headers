@@ -1,0 +1,56 @@
+\hypertarget{struct_inventory_transaction_packet}{}\section{Inventory\+Transaction\+Packet Struct Reference}
+\label{struct_inventory_transaction_packet}\index{InventoryTransactionPacket@{InventoryTransactionPacket}}
+
+
+{\ttfamily \#include $<$Inventory\+Transaction\+Packet.\+h$>$}
+
+Inheritance diagram for Inventory\+Transaction\+Packet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_inventory_transaction_packet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a56921ecce5af2b1b0fd9f03539e30b2a}\label{struct_inventory_transaction_packet_a56921ecce5af2b1b0fd9f03539e30b2a}} 
+virtual int {\bfseries get\+Id} () const
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a2f49802da6795756f56a6f21b07eda10}\label{struct_inventory_transaction_packet_a2f49802da6795756f56a6f21b07eda10}} 
+virtual std\+::string {\bfseries get\+Name} () const
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a3f417e6e69bc08db3f6e94c9355fe7ca}\label{struct_inventory_transaction_packet_a3f417e6e69bc08db3f6e94c9355fe7ca}} 
+virtual void $\ast$ {\bfseries write} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&) const
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a8ce7ffe0b9506b84bce2410331bbad3c}\label{struct_inventory_transaction_packet_a8ce7ffe0b9506b84bce2410331bbad3c}} 
+virtual void $\ast$ {\bfseries read} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&)
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a17055794f6b238e1f7c7efc86b3312b5}\label{struct_inventory_transaction_packet_a17055794f6b238e1f7c7efc86b3312b5}} 
+virtual void $\ast$ {\bfseries handle} (\mbox{\hyperlink{struct_network_identifier}{Network\+Identifier}} const \&, Net\+Event\+Callback \&) const
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a0b6814c77b738615c437ef9a543ae7ed}\label{struct_inventory_transaction_packet_a0b6814c77b738615c437ef9a543ae7ed}} 
+virtual bool {\bfseries disallow\+Batching} () const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_addcbb55dd0151232e84a02228582ce65}\label{struct_inventory_transaction_packet_addcbb55dd0151232e84a02228582ce65}} 
+unsigned int {\bfseries i0}
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a68ef79b2f9e8f2bf9b73809b37b93267}\label{struct_inventory_transaction_packet_a68ef79b2f9e8f2bf9b73809b37b93267}} 
+unsigned int {\bfseries entity\+ID}
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a1b783b75eca844f54b5e9bcf8462d162}\label{struct_inventory_transaction_packet_a1b783b75eca844f54b5e9bcf8462d162}} 
+unsigned int {\bfseries i2}
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a780552a9e7ca05da776a964f26ce679b}\label{struct_inventory_transaction_packet_a780552a9e7ca05da776a964f26ce679b}} 
+unsigned int {\bfseries i3}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{struct_packet}{Packet}} for Inventory moves and strangely for attacks 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/void/\+C\+Lion\+Projects/bedrock-\/headers/network/protocol/Inventory\+Transaction\+Packet.\+h\end{DoxyCompactItemize}

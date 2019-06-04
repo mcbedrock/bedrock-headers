@@ -1,0 +1,41 @@
+\hypertarget{struct_command_registry}{}\section{Command\+Registry Struct Reference}
+\label{struct_command_registry}\index{CommandRegistry@{CommandRegistry}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_command_registry_1_1_overload}{Overload}}
+\item 
+struct \mbox{\hyperlink{struct_command_registry_1_1_signature}{Signature}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_command_registry_ab86cdc6dc88a71431ff15af68cb9dd01}\label{struct_command_registry_ab86cdc6dc88a71431ff15af68cb9dd01}} 
+\mbox{\hyperlink{struct_command_registry_1_1_signature}{Signature}} $\ast$ {\bfseries find\+Command} (std\+::string const \&)
+\item 
+\mbox{\Hypertarget{struct_command_registry_a4f3ca3d86de0806978e859d723d3024e}\label{struct_command_registry_a4f3ca3d86de0806978e859d723d3024e}} 
+void {\bfseries build\+Overload} (\mbox{\hyperlink{struct_command_registry_1_1_overload}{Overload}} \&)
+\item 
+\mbox{\Hypertarget{struct_command_registry_a85db2ae629dc9a56171632ab34c67afd}\label{struct_command_registry_a85db2ae629dc9a56171632ab34c67afd}} 
+void {\bfseries register\+Overload\+Internal} (\mbox{\hyperlink{struct_command_registry_1_1_signature}{Signature}} \&, \mbox{\hyperlink{struct_command_registry_1_1_overload}{Overload}} \&)
+\item 
+\mbox{\Hypertarget{struct_command_registry_a4c499da70965b322387794b293da75e5}\label{struct_command_registry_a4c499da70965b322387794b293da75e5}} 
+void {\bfseries register\+Command} (std\+::string const \&, char const $\ast$, Command\+Permission\+Level, Command\+Flag, Command\+Flag)
+\item 
+\mbox{\Hypertarget{struct_command_registry_a850ffbccc000ab9930fd5e0a4448912a}\label{struct_command_registry_a850ffbccc000ab9930fd5e0a4448912a}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries parse} (void $\ast$, Parse\+Token const \&, Command\+Origin const \&, int, std\+::string \&, std\+::vector$<$ std\+::string $>$ \&) const
+\item 
+\mbox{\Hypertarget{struct_command_registry_affc27ae2a19f3ac28cb94efd8ef71cc4}\label{struct_command_registry_affc27ae2a19f3ac28cb94efd8ef71cc4}} 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\void {\bfseries register\+Overload} (const char $\ast$name, \mbox{\hyperlink{struct_command_version}{Command\+Version}} version, Args \&\&... args)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_command_registry_acd8c4d268c83897b3dfd130228233fcd}\label{struct_command_registry_acd8c4d268c83897b3dfd130228233fcd}} 
+{\footnotesize template$<$typename T $>$ }\\static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_command}{Command}} $>$ {\bfseries allocate\+Command} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/void/\+C\+Lion\+Projects/bedrock-\/headers/command/Command\+Registry.\+h\end{DoxyCompactItemize}

@@ -3,6 +3,9 @@
 #include "Packet.h"
 #include <string>
 
+/**
+ * Packet for setting main UI title bar (originally for bosses, etc.)
+ */
 struct SetTitlePacket : Packet {
 	enum class TitleType {
 		CLEAR_TITLE = 0,

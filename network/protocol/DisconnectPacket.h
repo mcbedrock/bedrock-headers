@@ -1,5 +1,8 @@
 #include "Packet.h"
 
+/**
+ * Packet for gracefully disconnecting
+ */
 struct DisconnectPacket : Packet {
 	bool hideDisconnectionScreen = false;
 	std::string message;
