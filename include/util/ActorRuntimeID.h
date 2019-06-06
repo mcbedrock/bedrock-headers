@@ -1,7 +1,6 @@
 #pragma once
 
-#include "stdlib.h"
-#include "../mce/UUID.h"
+#include "mce/UUID.h"
 
 struct ActorUniqueID {
 	int64_t data;

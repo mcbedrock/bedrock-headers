@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../math/BlockPos.h"
-#include "../world/Block.h"
+#include "Block.h"
 
 struct BlockSource {
 	Block &getBlock(BlockPos const &) const;

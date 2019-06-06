@@ -4,8 +4,8 @@
 #include "../world/level/Level.h"
 #include "gui/GuiData.h"
 #include "gui/Font.h"
-#include "client/input/ClientInputHandler.h"
-#include "client/events/ClientInstanceEventCoordinator.h"
+#include "input/ClientInputHandler.h"
+#include "events/ClientInstanceEventCoordinator.h"
 
 struct ClientInstance {
 	/**

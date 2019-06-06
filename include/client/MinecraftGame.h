@@ -4,8 +4,8 @@
 #include "../network/NetworkHandler.h"
 #include "../entity/LocalPlayer.h"
 #include "../network/ExternalServer.h"
-#include "gui/Font.h"
-#include "options/Options.h"
+#include "../client/gui/Font.h"
+#include "../client/options/Options.h"
 #include "Minecraft.h"
 #include <string>
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Player.h"
+#include "../entity/Player.h"
 #include "../gamemode/GameMode.h"
 #include "../item/ItemInstance.h"
 #include "../item/ItemUseCallback.h"

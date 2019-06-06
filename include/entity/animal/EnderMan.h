@@ -1,7 +1,7 @@
 #pragma once
 
+#include "world/Block.h"
 #include "../Mob.h"
-#include "../../world/Block.h"
 
 struct EnderMan : Mob {
 	// TODO: find types

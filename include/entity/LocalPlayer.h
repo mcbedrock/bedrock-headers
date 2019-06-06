@@ -1,10 +1,8 @@
 #pragma once
 
 #include "Player.h"
+#include "events/PlayerEventCoordinator.h"
 #include "../client/ClientInstance.h"
-#include "entity/events/PlayerEventCoordinator.h"
-
-struct ClientPlayerEventCoordinator {};
 
 struct LocalPlayer : Player {
 	PlayerEventCoordinator *getPlayerEventCoordinator();

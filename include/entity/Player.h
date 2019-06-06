@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Mob.h"
-#include "../item/ItemInstance.h"
-#include "../item/ItemStack.h"
+#include "item/ItemInstance.h"
+#include "item/ItemStack.h"
 
 struct Player : Mob {
 	ItemInstance const &getSelectedItem() const;

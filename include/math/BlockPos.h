@@ -4,8 +4,7 @@
 #include "stdlib.h"
 #include "stdio.h"
 
-struct ChunkPos {
-};
+struct ChunkPos {};
 
 struct BlockPos {
 	int x, y, z;

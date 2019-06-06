@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../world/level/Level.h"
-#include "../world/BlockSource.h"
-#include "../math/Vec3.h"
-#include "../math/BlockPos.h"
-#include "../math/Vec2.h"
-#include "ActorRuntimeID.h"
+#include "world/level/Level.h"
+#include "world/BlockSource.h"
+#include "math/Vec3.h"
+#include "math/BlockPos.h"
+#include "math/Vec2.h"
+#include "util/ActorRuntimeID.h"
 #include <string>
 
 struct ActorDamageSource;

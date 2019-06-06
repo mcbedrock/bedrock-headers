@@ -2,9 +2,9 @@
 
 struct Actor;
 
-#include "../../entity/ActorRuntimeID.h"
-#include "../../util/ColorFormat.h"
-#include "../../entity/Abilities.h"
+#include "util/ActorRuntimeID.h"
+#include "util/ColorFormat.h"
+#include "entity/ability/Abilities.h"
 #include <functional>
 
 class Player;

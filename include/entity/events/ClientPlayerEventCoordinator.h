@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PlayerEventCoordinator.h"
-#include "../LocalPlayer.h"
+#include "../entity/LocalPlayer.h"
 
 class IClientInstance {};
 
