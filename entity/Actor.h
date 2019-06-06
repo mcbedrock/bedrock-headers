@@ -165,11 +165,17 @@ struct Actor {
 
 	BlockPos getBlockTarget() const;
 
-	void setRot(Vec2 const&);
+	void setRot(Vec2 const &);
 
 	Vec2 getRotation() const;
 
 	BlockSource &getRegion() const;
 
 	void buildForward() const;
+
+	void setPos(Vec3 const &);
+
+	bool isInvisible() const;
+
+	void setInvisible(bool);
 };

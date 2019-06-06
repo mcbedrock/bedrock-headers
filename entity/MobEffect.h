@@ -1,5 +1,5 @@
 #pragma once
 
 struct MobEffect {
-	//static int getbyName(std::string const&);
+	//static int getbyName(std::string const &);
 };

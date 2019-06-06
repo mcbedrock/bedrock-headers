@@ -9,11 +9,26 @@
 \mbox{\Hypertarget{struct_abilities_a0c2af3d2deb7db5f23f54069629202eb}\label{struct_abilities_a0c2af3d2deb7db5f23f54069629202eb}} 
 \mbox{\hyperlink{struct_abilities}{Abilities}} \& {\bfseries operator=} (\mbox{\hyperlink{struct_abilities}{Abilities}} const \&)
 \item 
-\mbox{\Hypertarget{struct_abilities_a7f3b3d3a7288edb274a5342eefcf24c8}\label{struct_abilities_a7f3b3d3a7288edb274a5342eefcf24c8}} 
-\mbox{\hyperlink{struct_ability}{Ability}} $\ast$ {\bfseries get\+Ability} (std\+::string const \&)
+\mbox{\Hypertarget{struct_abilities_a52dbc2c4cfa4e2fb1a7d58b270048a69}\label{struct_abilities_a52dbc2c4cfa4e2fb1a7d58b270048a69}} 
+void {\bfseries \+\_\+add\+Temp\+Custom\+Ability} (std\+::string const \&)
 \item 
-\mbox{\Hypertarget{struct_abilities_a47e9a6f8659801dfbe2e57806db7f4fe}\label{struct_abilities_a47e9a6f8659801dfbe2e57806db7f4fe}} 
-\mbox{\hyperlink{struct_ability}{Ability}} $\ast$ {\bfseries get\+Ability} (std\+::string const \&) const
+\mbox{\Hypertarget{struct_abilities_a72c7d4644a92afabcda005673c6c5f82}\label{struct_abilities_a72c7d4644a92afabcda005673c6c5f82}} 
+void {\bfseries \+\_\+register\+Abilities} ()
+\item 
+\mbox{\Hypertarget{struct_abilities_ab1a5c5e052fa6b75a968175583d602bd}\label{struct_abilities_ab1a5c5e052fa6b75a968175583d602bd}} 
+void {\bfseries \+\_\+register\+Ability} (std\+::string const \&, \mbox{\hyperlink{struct_ability}{Ability}} const \&)
+\item 
+\mbox{\Hypertarget{struct_abilities_a65ca4637cf9a0b9ee4c0c1d98bfb06d8}\label{struct_abilities_a65ca4637cf9a0b9ee4c0c1d98bfb06d8}} 
+\mbox{\hyperlink{struct_ability}{Ability}} \& {\bfseries get\+Ability} (std\+::string const \&)
+\item 
+\mbox{\Hypertarget{struct_abilities_a5caca3c604dd481ef2bd6907e0c6c3b0}\label{struct_abilities_a5caca3c604dd481ef2bd6907e0c6c3b0}} 
+\mbox{\hyperlink{struct_ability}{Ability}} \& {\bfseries get\+Ability} (std\+::string const \&) const
+\item 
+\mbox{\Hypertarget{struct_abilities_ab0acdd71e139371c0fa411aaef12e8ee}\label{struct_abilities_ab0acdd71e139371c0fa411aaef12e8ee}} 
+bool {\bfseries get\+Bool} (std\+::string const \&) const
+\item 
+\mbox{\Hypertarget{struct_abilities_a7fe1bea6a4b43a99ae01f5141c7402b3}\label{struct_abilities_a7fe1bea6a4b43a99ae01f5141c7402b3}} 
+bool {\bfseries get\+Float} (std\+::string const \&) const
 \item 
 \mbox{\Hypertarget{struct_abilities_a68b9039ef5396e0a26d2475693b4d4c5}\label{struct_abilities_a68b9039ef5396e0a26d2475693b4d4c5}} 
 void {\bfseries set\+Ability} (std\+::string const \&, bool)
@@ -33,6 +48,24 @@ std\+::vector$<$ std\+::string $>$ const  \& {\bfseries get\+Permissions\+Abilit
 \mbox{\Hypertarget{struct_abilities_aa22d4b6a25396fe3b972759a0eb324e0}\label{struct_abilities_aa22d4b6a25396fe3b972759a0eb324e0}} 
 std\+::unordered\+\_\+map$<$ std\+::string, bool $>$ const  \& {\bfseries get\+Stored\+Custom\+Abilities} () const
 \item 
+\mbox{\Hypertarget{struct_abilities_afaa6414b40b7f4cf6893680bb7893f27}\label{struct_abilities_afaa6414b40b7f4cf6893680bb7893f27}} 
+Command\+Permission\+Level {\bfseries get\+Command\+Permissions} () const
+\item 
+\mbox{\Hypertarget{struct_abilities_ae1f1d42207c4aa6a751443a86ac0244a}\label{struct_abilities_ae1f1d42207c4aa6a751443a86ac0244a}} 
+void {\bfseries set\+Command\+Permissions} (Command\+Permission\+Level)
+\item 
+\mbox{\Hypertarget{struct_abilities_a0ba414150f9fdb6c5bccf136392203b2}\label{struct_abilities_a0ba414150f9fdb6c5bccf136392203b2}} 
+Player\+Permissions {\bfseries get\+Player\+Permissions} () const
+\item 
+\mbox{\Hypertarget{struct_abilities_a836858f3ce76726d85d0d707b5962dfc}\label{struct_abilities_a836858f3ce76726d85d0d707b5962dfc}} 
+void {\bfseries set\+Player\+Permissions} (Player\+Permissions)
+\item 
+\mbox{\Hypertarget{struct_abilities_ae6ced8d6af2b187eb2b7ae7c8990e05f}\label{struct_abilities_ae6ced8d6af2b187eb2b7ae7c8990e05f}} 
+void {\bfseries add\+Save\+Data} (Compound\+Tag \&) const
+\item 
+\mbox{\Hypertarget{struct_abilities_ae635e620cdf32b19eaab36e713c3a615}\label{struct_abilities_ae635e620cdf32b19eaab36e713c3a615}} 
+void {\bfseries load\+Save\+Data} (Compound\+Tag const \&)
+\item 
 \mbox{\Hypertarget{struct_abilities_a67f5249607b8b896ae42159ed93561f0}\label{struct_abilities_a67f5249607b8b896ae42159ed93561f0}} 
 bool {\bfseries is\+Flying} () const
 \end{DoxyCompactItemize}
@@ -51,41 +84,8 @@ std\+::unordered\+\_\+map$<$ std\+::string, bool $>$ {\bfseries custom\+Abilitie
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct_abilities_ab1508e2182f01035c543e93ac1cd9f68}\label{struct_abilities_ab1508e2182f01035c543e93ac1cd9f68}} 
-static std\+::string {\bfseries I\+N\+S\+T\+A\+B\+U\+I\+LD}
-\item 
-\mbox{\Hypertarget{struct_abilities_ab92a23a2b792332bfa229fc09f4dea54}\label{struct_abilities_ab92a23a2b792332bfa229fc09f4dea54}} 
-static std\+::string {\bfseries A\+T\+T\+A\+C\+K\+\_\+\+M\+O\+BS}
-\item 
 \mbox{\Hypertarget{struct_abilities_a82fd586d1eb534d48ebfc772d1269225}\label{struct_abilities_a82fd586d1eb534d48ebfc772d1269225}} 
 static std\+::string {\bfseries I\+N\+V\+U\+L\+N\+E\+R\+A\+B\+LE}
-\item 
-\mbox{\Hypertarget{struct_abilities_ac396af60dc4f93e5eb8d304af00f4edb}\label{struct_abilities_ac396af60dc4f93e5eb8d304af00f4edb}} 
-static std\+::string {\bfseries W\+O\+R\+L\+D\+B\+U\+I\+L\+D\+ER}
-\item 
-\mbox{\Hypertarget{struct_abilities_a280502d5a4885ce64dd736f1a7ee7c7a}\label{struct_abilities_a280502d5a4885ce64dd736f1a7ee7c7a}} 
-static std\+::string {\bfseries A\+T\+T\+A\+C\+K\+\_\+\+P\+L\+A\+Y\+E\+RS}
-\item 
-\mbox{\Hypertarget{struct_abilities_ad16b9ee497a3316ef5b2136839e40620}\label{struct_abilities_ad16b9ee497a3316ef5b2136839e40620}} 
-static std\+::string {\bfseries O\+P\+E\+N\+\_\+\+C\+O\+N\+T\+A\+I\+N\+E\+RS}
-\item 
-\mbox{\Hypertarget{struct_abilities_ac3fa502d7f69159adbc74149d2f589c0}\label{struct_abilities_ac3fa502d7f69159adbc74149d2f589c0}} 
-static std\+::string {\bfseries O\+P\+E\+R\+A\+T\+O\+R\+\_\+\+C\+O\+M\+M\+A\+N\+DS}
-\item 
-\mbox{\Hypertarget{struct_abilities_a38b2df2eb1c5a2816c57f622a2e8e2a1}\label{struct_abilities_a38b2df2eb1c5a2816c57f622a2e8e2a1}} 
-static std\+::string {\bfseries D\+O\+O\+R\+S\+\_\+\+A\+N\+D\+\_\+\+S\+W\+I\+T\+C\+H\+ES}
-\item 
-\mbox{\Hypertarget{struct_abilities_aafbabe85a6be249a26c0effa0bb6c0bb}\label{struct_abilities_aafbabe85a6be249a26c0effa0bb6c0bb}} 
-static std\+::string {\bfseries T\+AG}
-\item 
-\mbox{\Hypertarget{struct_abilities_a6d6f311661d1e56f8211f0b00429fcb2}\label{struct_abilities_a6d6f311661d1e56f8211f0b00429fcb2}} 
-static std\+::string {\bfseries M\+I\+NE}
-\item 
-\mbox{\Hypertarget{struct_abilities_ad7af720059b5d6d7cf29de714819d2af}\label{struct_abilities_ad7af720059b5d6d7cf29de714819d2af}} 
-static std\+::string {\bfseries B\+U\+I\+LD}
-\item 
-\mbox{\Hypertarget{struct_abilities_a0e3a075b532204e7fc0cb368da8e1d6c}\label{struct_abilities_a0e3a075b532204e7fc0cb368da8e1d6c}} 
-static std\+::string {\bfseries M\+U\+T\+ED}
 \item 
 \mbox{\Hypertarget{struct_abilities_a44a63ad3c5bc5f9091da2dc11a92810d}\label{struct_abilities_a44a63ad3c5bc5f9091da2dc11a92810d}} 
 static std\+::string {\bfseries F\+L\+Y\+I\+NG}
@@ -93,20 +93,47 @@ static std\+::string {\bfseries F\+L\+Y\+I\+NG}
 \mbox{\Hypertarget{struct_abilities_a2b0f7b1eb593a5d2d9db0d8a04d3ce40}\label{struct_abilities_a2b0f7b1eb593a5d2d9db0d8a04d3ce40}} 
 static std\+::string {\bfseries M\+A\+Y\+F\+LY}
 \item 
-\mbox{\Hypertarget{struct_abilities_a16368bca2391d9a29d7247ab0014bb44}\label{struct_abilities_a16368bca2391d9a29d7247ab0014bb44}} 
-static std\+::string {\bfseries N\+O\+C\+L\+IP}
-\item 
-\mbox{\Hypertarget{struct_abilities_ab9e5295e4a5127470b40b59cd20d86af}\label{struct_abilities_ab9e5295e4a5127470b40b59cd20d86af}} 
-static std\+::string static F\+L\+Y\+S\+P\+E\+ED std\+::string {\bfseries T\+E\+L\+E\+P\+O\+RT}
-\item 
-\mbox{\Hypertarget{struct_abilities_ab8f0d959f3e4ad680b4e257067cb36e9}\label{struct_abilities_ab8f0d959f3e4ad680b4e257067cb36e9}} 
-static std\+::string {\bfseries I\+N\+V\+I\+S\+I\+B\+LE}
+\mbox{\Hypertarget{struct_abilities_ab1508e2182f01035c543e93ac1cd9f68}\label{struct_abilities_ab1508e2182f01035c543e93ac1cd9f68}} 
+static std\+::string {\bfseries I\+N\+S\+T\+A\+B\+U\+I\+LD}
 \item 
 \mbox{\Hypertarget{struct_abilities_a8b21d36a39e56b77ebe640fb7d80da0b}\label{struct_abilities_a8b21d36a39e56b77ebe640fb7d80da0b}} 
 static std\+::string {\bfseries L\+I\+G\+H\+T\+N\+I\+NG}
 \item 
+\mbox{\Hypertarget{struct_abilities_a0242770a772fa3d2fcb796d0852d21b7}\label{struct_abilities_a0242770a772fa3d2fcb796d0852d21b7}} 
+static std\+::string {\bfseries F\+L\+Y\+S\+P\+E\+ED}
+\item 
 \mbox{\Hypertarget{struct_abilities_af580dde153b2871743958e458936c8c1}\label{struct_abilities_af580dde153b2871743958e458936c8c1}} 
 static std\+::string {\bfseries W\+A\+L\+K\+S\+P\+E\+ED}
+\item 
+\mbox{\Hypertarget{struct_abilities_a0e3a075b532204e7fc0cb368da8e1d6c}\label{struct_abilities_a0e3a075b532204e7fc0cb368da8e1d6c}} 
+static std\+::string {\bfseries M\+U\+T\+ED}
+\item 
+\mbox{\Hypertarget{struct_abilities_ac396af60dc4f93e5eb8d304af00f4edb}\label{struct_abilities_ac396af60dc4f93e5eb8d304af00f4edb}} 
+static std\+::string {\bfseries W\+O\+R\+L\+D\+B\+U\+I\+L\+D\+ER}
+\item 
+\mbox{\Hypertarget{struct_abilities_a16368bca2391d9a29d7247ab0014bb44}\label{struct_abilities_a16368bca2391d9a29d7247ab0014bb44}} 
+static std\+::string {\bfseries N\+O\+C\+L\+IP}
+\item 
+\mbox{\Hypertarget{struct_abilities_ab4e4758ccf75cccdbfb585599658bc27}\label{struct_abilities_ab4e4758ccf75cccdbfb585599658bc27}} 
+static std\+::string {\bfseries B\+U\+I\+L\+D\+\_\+\+A\+N\+D\+\_\+\+M\+I\+NE}
+\item 
+\mbox{\Hypertarget{struct_abilities_a38b2df2eb1c5a2816c57f622a2e8e2a1}\label{struct_abilities_a38b2df2eb1c5a2816c57f622a2e8e2a1}} 
+static std\+::string {\bfseries D\+O\+O\+R\+S\+\_\+\+A\+N\+D\+\_\+\+S\+W\+I\+T\+C\+H\+ES}
+\item 
+\mbox{\Hypertarget{struct_abilities_ad16b9ee497a3316ef5b2136839e40620}\label{struct_abilities_ad16b9ee497a3316ef5b2136839e40620}} 
+static std\+::string {\bfseries O\+P\+E\+N\+\_\+\+C\+O\+N\+T\+A\+I\+N\+E\+RS}
+\item 
+\mbox{\Hypertarget{struct_abilities_a280502d5a4885ce64dd736f1a7ee7c7a}\label{struct_abilities_a280502d5a4885ce64dd736f1a7ee7c7a}} 
+static std\+::string {\bfseries A\+T\+T\+A\+C\+K\+\_\+\+P\+L\+A\+Y\+E\+RS}
+\item 
+\mbox{\Hypertarget{struct_abilities_ab92a23a2b792332bfa229fc09f4dea54}\label{struct_abilities_ab92a23a2b792332bfa229fc09f4dea54}} 
+static std\+::string {\bfseries A\+T\+T\+A\+C\+K\+\_\+\+M\+O\+BS}
+\item 
+\mbox{\Hypertarget{struct_abilities_a2e6beeb743b4b7bcb452ea1ae2ca894a}\label{struct_abilities_a2e6beeb743b4b7bcb452ea1ae2ca894a}} 
+static std\+::string {\bfseries O\+P\+E\+R\+A\+T\+OR}
+\item 
+\mbox{\Hypertarget{struct_abilities_ac38643f2a39430be68b6151db1f33a18}\label{struct_abilities_ac38643f2a39430be68b6151db1f33a18}} 
+static std\+::string {\bfseries T\+E\+L\+E\+P\+O\+RT}
 \end{DoxyCompactItemize}
 
 

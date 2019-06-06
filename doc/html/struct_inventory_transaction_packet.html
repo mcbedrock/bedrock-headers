@@ -84,24 +84,27 @@ Inheritance diagram for InventoryTransactionPacket:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a56921ecce5af2b1b0fd9f03539e30b2a"><td class="memItemLeft" align="right" valign="top"><a id="a56921ecce5af2b1b0fd9f03539e30b2a"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () const</td></tr>
-<tr class="separator:a56921ecce5af2b1b0fd9f03539e30b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f49802da6795756f56a6f21b07eda10"><td class="memItemLeft" align="right" valign="top"><a id="a2f49802da6795756f56a6f21b07eda10"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> () const</td></tr>
-<tr class="separator:a2f49802da6795756f56a6f21b07eda10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f417e6e69bc08db3f6e94c9355fe7ca"><td class="memItemLeft" align="right" valign="top"><a id="a3f417e6e69bc08db3f6e94c9355fe7ca"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;) const</td></tr>
-<tr class="separator:a3f417e6e69bc08db3f6e94c9355fe7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ce7ffe0b9506b84bce2410331bbad3c"><td class="memItemLeft" align="right" valign="top"><a id="a8ce7ffe0b9506b84bce2410331bbad3c"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;)</td></tr>
-<tr class="separator:a8ce7ffe0b9506b84bce2410331bbad3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17055794f6b238e1f7c7efc86b3312b5"><td class="memItemLeft" align="right" valign="top"><a id="a17055794f6b238e1f7c7efc86b3312b5"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b> (<a class="el" href="struct_network_identifier.html">NetworkIdentifier</a> const &amp;, NetEventCallback &amp;) const</td></tr>
-<tr class="separator:a17055794f6b238e1f7c7efc86b3312b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b6814c77b738615c437ef9a543ae7ed"><td class="memItemLeft" align="right" valign="top"><a id="a0b6814c77b738615c437ef9a543ae7ed"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>disallowBatching</b> () const</td></tr>
-<tr class="separator:a0b6814c77b738615c437ef9a543ae7ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9def53172d966dac53422213e43edb9"><td class="memItemLeft" align="right" valign="top"><a id="ac9def53172d966dac53422213e43edb9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>InventoryTransactionPacket</b> (uint32_t transactionType, uint32_t actionCount, uint64_t entityID, uint32_t actionType, int hotbarSlot, <a class="el" href="struct_item_stack.html">ItemStack</a> const &amp;itemInHand, <a class="el" href="struct_vec3.html">Vec3</a> playerPos, <a class="el" href="struct_vec3.html">Vec3</a> clickPos)</td></tr>
+<tr class="separator:ac9def53172d966dac53422213e43edb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c1c2278ce86dd24e5b7c7846267b93b"><td class="memItemLeft" align="right" valign="top"><a id="a2c1c2278ce86dd24e5b7c7846267b93b"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () const override</td></tr>
+<tr class="separator:a2c1c2278ce86dd24e5b7c7846267b93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0403d57e8e014ca79f5f50be31e7516"><td class="memItemLeft" align="right" valign="top"><a id="ac0403d57e8e014ca79f5f50be31e7516"></a>
+virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> () const override</td></tr>
+<tr class="separator:ac0403d57e8e014ca79f5f50be31e7516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a899dd06f6a6f476f2d14bea7e833f57f"><td class="memItemLeft" align="right" valign="top"><a id="a899dd06f6a6f476f2d14bea7e833f57f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;stream) const override</td></tr>
+<tr class="separator:a899dd06f6a6f476f2d14bea7e833f57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a5b009e9ffae96fa6f8c64970014ff1"><td class="memItemLeft" align="right" valign="top"><a id="a9a5b009e9ffae96fa6f8c64970014ff1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;stream) override</td></tr>
+<tr class="separator:a9a5b009e9ffae96fa6f8c64970014ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6edbc7bc4586854ee945224b6001458"><td class="memItemLeft" align="right" valign="top"><a id="af6edbc7bc4586854ee945224b6001458"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b> (<a class="el" href="struct_network_identifier.html">NetworkIdentifier</a> const &amp;, NetEventCallback &amp;) const override</td></tr>
+<tr class="separator:af6edbc7bc4586854ee945224b6001458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38111ed69a8c2568247f86960a2d3252"><td class="memItemLeft" align="right" valign="top"><a id="a38111ed69a8c2568247f86960a2d3252"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>disallowBatching</b> () const override</td></tr>
+<tr class="separator:a38111ed69a8c2568247f86960a2d3252"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_struct_packet"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_struct_packet')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="struct_packet.html">Packet</a></td></tr>
 <tr class="memitem:a8c995e4de5a50de3b31dcd7b7ee3fbfc inherit pub_methods_struct_packet"><td class="memItemLeft" align="right" valign="top"><a id="a8c995e4de5a50de3b31dcd7b7ee3fbfc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Packet</b> (unsigned char playerSubIndex)</td></tr>
@@ -112,18 +115,30 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>disallowBatch
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:addcbb55dd0151232e84a02228582ce65"><td class="memItemLeft" align="right" valign="top"><a id="addcbb55dd0151232e84a02228582ce65"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>i0</b></td></tr>
-<tr class="separator:addcbb55dd0151232e84a02228582ce65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68ef79b2f9e8f2bf9b73809b37b93267"><td class="memItemLeft" align="right" valign="top"><a id="a68ef79b2f9e8f2bf9b73809b37b93267"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>entityID</b></td></tr>
-<tr class="separator:a68ef79b2f9e8f2bf9b73809b37b93267"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b783b75eca844f54b5e9bcf8462d162"><td class="memItemLeft" align="right" valign="top"><a id="a1b783b75eca844f54b5e9bcf8462d162"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>i2</b></td></tr>
-<tr class="separator:a1b783b75eca844f54b5e9bcf8462d162"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a780552a9e7ca05da776a964f26ce679b"><td class="memItemLeft" align="right" valign="top"><a id="a780552a9e7ca05da776a964f26ce679b"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>i3</b></td></tr>
-<tr class="separator:a780552a9e7ca05da776a964f26ce679b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a257bcf6ae0f18218bd98edb90a24728f"><td class="memItemLeft" align="right" valign="top"><a id="a257bcf6ae0f18218bd98edb90a24728f"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>transactionType</b></td></tr>
+<tr class="separator:a257bcf6ae0f18218bd98edb90a24728f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9599b72e1ee2ead41fc2a14c0c28f6b7"><td class="memItemLeft" align="right" valign="top"><a id="a9599b72e1ee2ead41fc2a14c0c28f6b7"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>actionCount</b></td></tr>
+<tr class="separator:a9599b72e1ee2ead41fc2a14c0c28f6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0362fd16604d48210d614276af9a7429"><td class="memItemLeft" align="right" valign="top"><a id="a0362fd16604d48210d614276af9a7429"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>entityID</b></td></tr>
+<tr class="separator:a0362fd16604d48210d614276af9a7429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d4d8e59e414ecbbb0789fc84b55abe"><td class="memItemLeft" align="right" valign="top"><a id="ac4d4d8e59e414ecbbb0789fc84b55abe"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>actionType</b></td></tr>
+<tr class="separator:ac4d4d8e59e414ecbbb0789fc84b55abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16e1d11434856a07b20a0bf9ad9b6e97"><td class="memItemLeft" align="right" valign="top"><a id="a16e1d11434856a07b20a0bf9ad9b6e97"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>hotbarSlot</b></td></tr>
+<tr class="separator:a16e1d11434856a07b20a0bf9ad9b6e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e73075233484766d36adbaaab2edb24"><td class="memItemLeft" align="right" valign="top"><a id="a9e73075233484766d36adbaaab2edb24"></a>
+<a class="el" href="struct_item_stack.html">ItemStack</a> const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>itemInHand</b></td></tr>
+<tr class="separator:a9e73075233484766d36adbaaab2edb24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb7230ca00a9824ebf5eb3c7232c422"><td class="memItemLeft" align="right" valign="top"><a id="a8cb7230ca00a9824ebf5eb3c7232c422"></a>
+<a class="el" href="struct_vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>playerPos</b></td></tr>
+<tr class="separator:a8cb7230ca00a9824ebf5eb3c7232c422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76357a1aebf8cfb59f3250c2fb06684b"><td class="memItemLeft" align="right" valign="top"><a id="a76357a1aebf8cfb59f3250c2fb06684b"></a>
+<a class="el" href="struct_vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>clickPos</b></td></tr>
+<tr class="separator:a76357a1aebf8cfb59f3250c2fb06684b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_struct_packet"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_struct_packet')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="struct_packet.html">Packet</a></td></tr>
 <tr class="memitem:aeef1f1b66c04fa44914e136a22917296 inherit pub_attribs_struct_packet"><td class="memItemLeft" align="right" valign="top"><a id="aeef1f1b66c04fa44914e136a22917296"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>unk_4</b> = 2</td></tr>

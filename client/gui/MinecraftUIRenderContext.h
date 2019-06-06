@@ -6,5 +6,5 @@
 #include "CaretMeasureData.h"
 
 struct MinecraftUIRenderContext : ScreenContext {
-	void drawText(Font&, RectangleArea const&, std::string const&, Color const&, float, /*ui::TextAlignment*/ char, TextMeasureData const&, CaretMeasureData const&);
+	void drawText(Font&, RectangleArea const &, std::string const &, Color const &, float, /*ui::TextAlignment*/ char, TextMeasureData const &, CaretMeasureData const &);
 };

@@ -20,9 +20,9 @@ struct ClientPlayerEventCoordinator : PlayerEventCoordinator {
 
 	void sendPlayerStopRiding(Player &, bool, bool, bool);
 
-	void sendPlayerStartRiding(Player &, BlockPos const&, BlockLegacy const&);
+	void sendPlayerStartRiding(Player &, BlockPos const &, BlockLegacy const &);
 
 	void sendStartDestroyBlock(Player &player, BlockPos const &block, unsigned char &face);
 
-	void sendPlayerDestroyedBlock(Player &, BlockLegacy const&);
+	void sendPlayerDestroyedBlock(Player &, BlockLegacy const &);
 };

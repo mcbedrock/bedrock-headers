@@ -9,8 +9,8 @@ Inheritance diagram for Player\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct_player_a3e9b3733573b7380db3e209aa42efdbd}\label{struct_player_a3e9b3733573b7380db3e209aa42efdbd}} 
-\mbox{\hyperlink{struct_item_instance}{Item\+Instance}} $\ast$ {\bfseries get\+Selected\+Item} () const
+\mbox{\Hypertarget{struct_player_a3f9fbb4126870b62cd70f0d798dcdfc3}\label{struct_player_a3f9fbb4126870b62cd70f0d798dcdfc3}} 
+\mbox{\hyperlink{struct_item_instance}{Item\+Instance}} const  \& {\bfseries get\+Selected\+Item} () const
 \item 
 \mbox{\Hypertarget{struct_player_ab9bba0f78f00ddb4fdbd1ff40fbce892}\label{struct_player_ab9bba0f78f00ddb4fdbd1ff40fbce892}} 
 bool {\bfseries can\+Use\+Ability} (std\+::string const \&)
@@ -20,6 +20,18 @@ void {\bfseries set\+Speed} (float)
 \item 
 \mbox{\Hypertarget{struct_player_aeca4c5987d900ad709275d7075e3eed9}\label{struct_player_aeca4c5987d900ad709275d7075e3eed9}} 
 void {\bfseries send\+Network\+Packet} (\mbox{\hyperlink{struct_packet}{Packet}} \&) const
+\item 
+\mbox{\Hypertarget{struct_player_abc08b04e996573c81dabf2479640a7b6}\label{struct_player_abc08b04e996573c81dabf2479640a7b6}} 
+bool {\bfseries is\+Using\+Item} () const
+\item 
+\mbox{\Hypertarget{struct_player_aeb0f7414abbfd4f0db80bb5dd77cc952}\label{struct_player_aeb0f7414abbfd4f0db80bb5dd77cc952}} 
+\mbox{\hyperlink{struct_item_stack}{Item\+Stack}} const  \& {\bfseries get\+Carried\+Item} () const
+\item 
+\mbox{\Hypertarget{struct_player_aa85495bfeaa881d150f1e95d231ffe7e}\label{struct_player_aa85495bfeaa881d150f1e95d231ffe7e}} 
+int {\bfseries get\+Selected\+Item\+Slot} () const
+\item 
+\mbox{\Hypertarget{struct_player_a13c75f00fabd2a70d3410922da9a4d30}\label{struct_player_a13c75f00fabd2a70d3410922da9a4d30}} 
+\mbox{\hyperlink{struct_network_identifier}{Network\+Identifier}} const  \& {\bfseries get\+Client\+Id} () const
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 

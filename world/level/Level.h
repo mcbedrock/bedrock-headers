@@ -25,7 +25,7 @@ struct Level {
 	void setPlayerAbilities(ActorUniqueID const &, Abilities);
 
 	// TODO: Fix type
-	//ColorFormat &getPlayerColor(Player const&) const;
+	//ColorFormat &getPlayerColor(Player const &) const;
 
 	ClientPlayerEventCoordinator *getClientPlayerEventCoordinator();
 };

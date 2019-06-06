@@ -4,28 +4,48 @@
 #include <string>
 
 struct ReadOnlyBinaryStream {
-	long int getVarInt64();
+	long long getVarInt64();
 	int getSignedInt();
 	float getFixedFloat(double);
-	signed long int getSignedInt64();
-	signed short getSignedShort();
-	unsigned int intgetUnsignedInt();
+	long long getSignedInt64();
+	short getSignedShort();
+	unsigned int getUnsignedInt();
 	unsigned char getUnsignedChar();
-	unsigned long int getUnsignedInt64();
+	unsigned long long getUnsignedInt64();
 	unsigned short getUnsignedShort();
 	unsigned int getUnsignedVarInt();
 	float getNormalizedFloat();
-	unsigned long int getUnsignedVarInt64();
-	//getSignedBigEndianInt()
+	unsigned long long getUnsignedVarInt64();
+	int getSignedBigEndianInt();
 	bool getBool();
-	char getByte();
+	unsigned char getByte();
 	float getFloat();
 	double getDouble();
-	//getString()
+	std::string const& getString();
 	int getVarInt();
 };
 struct BinaryStream : ReadOnlyBinaryStream {
-	// TODO Write
+	void writeFloat(float);
+	void writeDouble(double);
+	void writeStream(BinaryStream&);
+	void writeString(std::string const&);
+	void writeVarInt(int);
+	void writeVarInt64(long long);
+	void writeSignedInt(int);
+	void writeFixedFloat(float, double);
+	void writeSignedInt64(long long);
+	void writeSignedShort(short);
+	void writeUnsignedInt(unsigned int);
+	void writeUnsignedChar(unsigned char);
+	void writeUnsignedInt64(unsigned long long);
+	void writeUnsignedShort(unsigned short);
+	void writeUnsignedVarInt(unsigned int);
+	void writeNormalizedFloat(float);
+	void writeUnsignedVarInt64(unsigned long long);
+	void writeSignedBigEndianInt(int);
+	void write(void const*, unsigned int);
+	void writeBool(bool);
+	void writeByte(unsigned char);
 };
 struct NetEventCallback;
 
@@ -50,11 +70,11 @@ struct Packet {
 
 	virtual std::string getName() const = 0;
 
-	virtual void *write(BinaryStream &) const = 0;
+	virtual void write(BinaryStream &) const = 0;
 
-	virtual void *read(BinaryStream &) = 0;
+	virtual void read(BinaryStream &) = 0;
 
-	virtual void *handle(NetworkIdentifier const &, NetEventCallback &) const = 0;
+	virtual void handle(NetworkIdentifier const &, NetEventCallback &) const = 0;
 
 	virtual bool disallowBatching() const = 0;
 

@@ -4,6 +4,29 @@
 #include <unordered_map>
 #include "Ability.h"
 
+
+struct CompoundTag;
+
+enum struct PlayerPermissions : unsigned char;
+
+enum struct CommandPermissionLevel : unsigned char {};
+
+struct PermissionsHandler {
+	CommandPermissionLevel permissionsLevel;  // 0
+	PlayerPermissions playerPermissionsLevel; // 1
+	PermissionsHandler();
+	PermissionsHandler(PermissionsHandler const &);
+
+	void addSaveData(CompoundTag &) const;
+	bool loadSaveData(CompoundTag const &);
+
+	CommandPermissionLevel getCommandPermissions() const;
+	void setCommandPermissions(CommandPermissionLevel);
+	PlayerPermissions getPlayerPermissions() const;
+	void setPlayerPermissions(PlayerPermissions);
+};
+
+
 struct Abilities {
 private:
 	char filler[8]; // TODO: Permission Handler
@@ -21,9 +44,19 @@ public:
 
 	Abilities &operator=(Abilities const &);
 
-	Ability *getAbility(std::string const &);
+	void _addTempCustomAbility(std::string const &);
 
-	Ability *getAbility(std::string const &) const;
+	void _registerAbilities();
+
+	void _registerAbility(std::string const &, Ability const &);
+
+	Ability &getAbility(std::string const &);
+
+	Ability &getAbility(std::string const &) const;
+
+	bool getBool(std::string const &) const;
+
+	bool getFloat(std::string const &) const;
 
 	void setAbility(std::string const &, bool);
 
@@ -37,28 +70,37 @@ public:
 
 	std::unordered_map<std::string, bool> const &getStoredCustomAbilities() const;
 
+	CommandPermissionLevel getCommandPermissions() const;
+
+	void setCommandPermissions(CommandPermissionLevel);
+
+	PlayerPermissions getPlayerPermissions() const;
+
+	void setPlayerPermissions(PlayerPermissions);
+
+	void addSaveData(CompoundTag &) const;
+
+	void loadSaveData(CompoundTag const &);
+
 	bool isFlying() const;
 
-	~Abilities();
+	//~Abilities();
 
-	static std::string INSTABUILD;
-	static std::string ATTACK_MOBS;
 	static std::string INVULNERABLE;
-	static std::string WORLDBUILDER;
-	static std::string ATTACK_PLAYERS;
-	static std::string OPEN_CONTAINERS;
-	static std::string OPERATOR_COMMANDS;
-	static std::string DOORS_AND_SWITCHES;
-	static std::string TAG;
-	static std::string MINE;
-	static std::string BUILD;
-	static std::string MUTED;
 	static std::string FLYING;
 	static std::string MAYFLY;
-	static std::string NOCLIP;
-	static std::string FLYSPEED;
-	static std::string TELEPORT;
-	static std::string INVISIBLE;
+	static std::string INSTABUILD;
 	static std::string LIGHTNING;
+	static std::string FLYSPEED;
 	static std::string WALKSPEED;
+	static std::string MUTED;
+	static std::string WORLDBUILDER;
+	static std::string NOCLIP;
+	static std::string BUILD_AND_MINE;
+	static std::string DOORS_AND_SWITCHES;
+	static std::string OPEN_CONTAINERS;
+	static std::string ATTACK_PLAYERS;
+	static std::string ATTACK_MOBS;
+	static std::string OPERATOR;
+	static std::string TELEPORT;
 };

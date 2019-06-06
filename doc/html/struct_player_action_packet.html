@@ -63,6 +63,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="struct_player_action_packet-members.html">List of all members</a>  </div>
@@ -70,8 +71,6 @@ $(function() {
 <div class="title">PlayerActionPacket Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_player_action_packet_8h_source.html">PlayerActionPacket.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for PlayerActionPacket:</div>
 <div class="dyncontent">
@@ -82,6 +81,44 @@ Inheritance diagram for PlayerActionPacket:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ad6ead6bab7158511db0e7cdd201aa183"><td class="memItemLeft" align="right" valign="top"><a id="ad6ead6bab7158511db0e7cdd201aa183"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Action</b> : int32_t { <br />
+&#160;&#160;<b>StartBreak</b> = 0, 
+<b>AbortBreak</b> = 1, 
+<b>StopBreak</b> = 2, 
+<b>GetUpdatedBlock</b> = 3, 
+<br />
+&#160;&#160;<b>DropItem</b> = 4, 
+<b>StartSleeping</b> = 5, 
+<b>StopSleeping</b> = 6, 
+<b>Respawn</b> = 7, 
+<br />
+&#160;&#160;<b>Jump</b> = 8, 
+<b>StartSprinting</b> = 9, 
+<b>StopSprinting</b> = 10, 
+<b>StartSneaking</b> = 11, 
+<br />
+&#160;&#160;<b>StopSneaking</b> = 12, 
+<b>RequestDimensionChange</b> = 13, 
+<b>DimensionChangeAck</b> = 14, 
+<b>StartGlide</b> = 15, 
+<br />
+&#160;&#160;<b>StopGlide</b> = 16, 
+<b>BuildDenied</b> = 17, 
+<b>ContinueBreak</b> = 18, 
+<b>ChangeSkin</b> = 19, 
+<br />
+&#160;&#160;<b>SetEnchantmentSeed</b> = 20, 
+<b>StartSwimming</b> = 21, 
+<b>StopSwimming</b> = 22, 
+<b>StartSpinAttack</b> = 23, 
+<br />
+&#160;&#160;<b>StopSpinAttack</b> = 24
+<br />
+ }</td></tr>
+<tr class="separator:ad6ead6bab7158511db0e7cdd201aa183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae6a83ecd08d4303e641e06de937f04b4"><td class="memItemLeft" align="right" valign="top"><a id="ae6a83ecd08d4303e641e06de937f04b4"></a>
@@ -90,15 +127,15 @@ virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () c
 <tr class="memitem:a76a8d3c20d3105373590087a7d5aff59"><td class="memItemLeft" align="right" valign="top"><a id="a76a8d3c20d3105373590087a7d5aff59"></a>
 virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> () const</td></tr>
 <tr class="separator:a76a8d3c20d3105373590087a7d5aff59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6db0a4e92fc1c76ebf6623ee67ee3d7d"><td class="memItemLeft" align="right" valign="top"><a id="a6db0a4e92fc1c76ebf6623ee67ee3d7d"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;) const</td></tr>
-<tr class="separator:a6db0a4e92fc1c76ebf6623ee67ee3d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acacf14db1948e035cc2352872e74f7b6"><td class="memItemLeft" align="right" valign="top"><a id="acacf14db1948e035cc2352872e74f7b6"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;)</td></tr>
-<tr class="separator:acacf14db1948e035cc2352872e74f7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4c7a3f34902ff44873ec90f6a732dd3"><td class="memItemLeft" align="right" valign="top"><a id="ab4c7a3f34902ff44873ec90f6a732dd3"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b> (<a class="el" href="struct_network_identifier.html">NetworkIdentifier</a> const &amp;, NetEventCallback &amp;) const</td></tr>
-<tr class="separator:ab4c7a3f34902ff44873ec90f6a732dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad69c57a1c5143d2671b32706b8f860ac"><td class="memItemLeft" align="right" valign="top"><a id="ad69c57a1c5143d2671b32706b8f860ac"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;) const</td></tr>
+<tr class="separator:ad69c57a1c5143d2671b32706b8f860ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5182d9c5f2dfcfaa8e2ac46bfe3b30e0"><td class="memItemLeft" align="right" valign="top"><a id="a5182d9c5f2dfcfaa8e2ac46bfe3b30e0"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;)</td></tr>
+<tr class="separator:a5182d9c5f2dfcfaa8e2ac46bfe3b30e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bc17d3cc2b8f41958c5d4c0e8fdc293"><td class="memItemLeft" align="right" valign="top"><a id="a1bc17d3cc2b8f41958c5d4c0e8fdc293"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b> (<a class="el" href="struct_network_identifier.html">NetworkIdentifier</a> const &amp;, NetEventCallback &amp;) const</td></tr>
+<tr class="separator:a1bc17d3cc2b8f41958c5d4c0e8fdc293"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81e62e5bff6ac256f1e293274f89c351"><td class="memItemLeft" align="right" valign="top"><a id="a81e62e5bff6ac256f1e293274f89c351"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>disallowBatching</b> () const</td></tr>
 <tr class="separator:a81e62e5bff6ac256f1e293274f89c351"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,24 +149,24 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>disallowBatch
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af5c61d08dede81b400fc500dc21e8c73"><td class="memItemLeft" align="right" valign="top"><a id="af5c61d08dede81b400fc500dc21e8c73"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>i0</b></td></tr>
-<tr class="separator:af5c61d08dede81b400fc500dc21e8c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80c32256c7d175c90337d01ec2e0edb5"><td class="memItemLeft" align="right" valign="top"><a id="a80c32256c7d175c90337d01ec2e0edb5"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>i1</b></td></tr>
-<tr class="separator:a80c32256c7d175c90337d01ec2e0edb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb80e4a63a8b6ef50932c57e298015ec"><td class="memItemLeft" align="right" valign="top"><a id="abb80e4a63a8b6ef50932c57e298015ec"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>i2</b></td></tr>
-<tr class="separator:abb80e4a63a8b6ef50932c57e298015ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa96047a21a4e0d41c340e04029a970e"><td class="memItemLeft" align="right" valign="top"><a id="afa96047a21a4e0d41c340e04029a970e"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>i3</b></td></tr>
-<tr class="separator:afa96047a21a4e0d41c340e04029a970e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a257e2a2d275da1b386c95ba63276c6d7"><td class="memItemLeft" align="right" valign="top"><a id="a257e2a2d275da1b386c95ba63276c6d7"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>i4</b></td></tr>
-<tr class="separator:a257e2a2d275da1b386c95ba63276c6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabe30f72e45e7f3577a16db2b704bc4e"><td class="memItemLeft" align="right" valign="top"><a id="aabe30f72e45e7f3577a16db2b704bc4e"></a>
-int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>i5</b></td></tr>
-<tr class="separator:aabe30f72e45e7f3577a16db2b704bc4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37a1af5aa6d9882ea91078f0c0892ce5"><td class="memItemLeft" align="right" valign="top"><a id="a37a1af5aa6d9882ea91078f0c0892ce5"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
+<tr class="separator:a37a1af5aa6d9882ea91078f0c0892ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc5eb260d9b4f13e5ade4d5cd2b79b73"><td class="memItemLeft" align="right" valign="top"><a id="abc5eb260d9b4f13e5ade4d5cd2b79b73"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
+<tr class="separator:abc5eb260d9b4f13e5ade4d5cd2b79b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac875598e2dc3f0393ec7d137e49175d1"><td class="memItemLeft" align="right" valign="top"><a id="ac875598e2dc3f0393ec7d137e49175d1"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>z</b></td></tr>
+<tr class="separator:ac875598e2dc3f0393ec7d137e49175d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d96f9c8ccb8f69eab9f54515d35ca34"><td class="memItemLeft" align="right" valign="top"><a id="a4d96f9c8ccb8f69eab9f54515d35ca34"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>face</b></td></tr>
+<tr class="separator:a4d96f9c8ccb8f69eab9f54515d35ca34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa154071910179f869ec2537be3a8629"><td class="memItemLeft" align="right" valign="top"><a id="afa154071910179f869ec2537be3a8629"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>action</b></td></tr>
+<tr class="separator:afa154071910179f869ec2537be3a8629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d9888bbd07702fb801512dd4bbe087"><td class="memItemLeft" align="right" valign="top"><a id="a99d9888bbd07702fb801512dd4bbe087"></a>
+int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>entityID</b></td></tr>
+<tr class="separator:a99d9888bbd07702fb801512dd4bbe087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_struct_packet"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_struct_packet')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="struct_packet.html">Packet</a></td></tr>
 <tr class="memitem:aeef1f1b66c04fa44914e136a22917296 inherit pub_attribs_struct_packet"><td class="memItemLeft" align="right" valign="top"><a id="aeef1f1b66c04fa44914e136a22917296"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>unk_4</b> = 2</td></tr>
@@ -141,9 +178,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>unk_8</b> = 1</td></tr
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>playerSubIndex</b> = 0</td></tr>
 <tr class="separator:a2a7ab3c3fa701f0240f395a0ba6cae96 inherit pub_attribs_struct_packet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="struct_packet.html">Packet</a> for updating player (eg. sneaking, sprinting, etc) </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/void/CLionProjects/bedrock-headers/network/protocol/<a class="el" href="_player_action_packet_8h_source.html">PlayerActionPacket.h</a></li>
 </ul>
 </div><!-- contents -->

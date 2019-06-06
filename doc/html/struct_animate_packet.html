@@ -63,8 +63,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="struct_animate_packet-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AnimatePacket Struct Reference</div>  </div>
@@ -82,6 +82,14 @@ Inheritance diagram for AnimatePacket:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a032d46bf8c28705852864092167646b0"><td class="memItemLeft" align="right" valign="top"><a id="a032d46bf8c28705852864092167646b0"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Action</b> : int32_t { <b>SwingArm</b> = 1, 
+<b>StopSleep</b> = 3, 
+<b>Criticial</b> = 4
+ }</td></tr>
+<tr class="separator:a032d46bf8c28705852864092167646b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3b763dfe9281d3b9071a4da6bf4519be"><td class="memItemLeft" align="right" valign="top"><a id="a3b763dfe9281d3b9071a4da6bf4519be"></a>
@@ -90,15 +98,15 @@ virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () c
 <tr class="memitem:a077c6d7cdfcc9778ba1aa3a720318b46"><td class="memItemLeft" align="right" valign="top"><a id="a077c6d7cdfcc9778ba1aa3a720318b46"></a>
 virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> () const</td></tr>
 <tr class="separator:a077c6d7cdfcc9778ba1aa3a720318b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd3dd7840139c81c8e3fb49f946bedd9"><td class="memItemLeft" align="right" valign="top"><a id="afd3dd7840139c81c8e3fb49f946bedd9"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;) const</td></tr>
-<tr class="separator:afd3dd7840139c81c8e3fb49f946bedd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4cb2391fcfe1185a8d08aa9e4b35b26"><td class="memItemLeft" align="right" valign="top"><a id="ae4cb2391fcfe1185a8d08aa9e4b35b26"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;)</td></tr>
-<tr class="separator:ae4cb2391fcfe1185a8d08aa9e4b35b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a373b0d3087a3efe47e8f46ce7d7f7d89"><td class="memItemLeft" align="right" valign="top"><a id="a373b0d3087a3efe47e8f46ce7d7f7d89"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b> (<a class="el" href="struct_network_identifier.html">NetworkIdentifier</a> const &amp;, NetEventCallback &amp;) const</td></tr>
-<tr class="separator:a373b0d3087a3efe47e8f46ce7d7f7d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a122d83dc4d867ed88b6f222b8aea5"><td class="memItemLeft" align="right" valign="top"><a id="a00a122d83dc4d867ed88b6f222b8aea5"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;) const</td></tr>
+<tr class="separator:a00a122d83dc4d867ed88b6f222b8aea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac227b720402df725009d6643bfa8899d"><td class="memItemLeft" align="right" valign="top"><a id="ac227b720402df725009d6643bfa8899d"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;)</td></tr>
+<tr class="separator:ac227b720402df725009d6643bfa8899d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bdc1a3d501a83b641cf19400f66d24c"><td class="memItemLeft" align="right" valign="top"><a id="a9bdc1a3d501a83b641cf19400f66d24c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b> (<a class="el" href="struct_network_identifier.html">NetworkIdentifier</a> const &amp;, NetEventCallback &amp;) const</td></tr>
+<tr class="separator:a9bdc1a3d501a83b641cf19400f66d24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a575a5559423083d41d3fef010413b7dd"><td class="memItemLeft" align="right" valign="top"><a id="a575a5559423083d41d3fef010413b7dd"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>disallowBatching</b> () const</td></tr>
 <tr class="separator:a575a5559423083d41d3fef010413b7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,17 +118,8 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>disallowBatch
 &#160;</td><td class="memItemRight" valign="bottom"><b>Packet</b> (<a class="el" href="struct_packet.html">Packet</a> const &amp;packet)</td></tr>
 <tr class="separator:a32b07be5461047eb99f5a22e309ea199 inherit pub_methods_struct_packet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a1899695aa7a98f61f71af36e0441cd93"><td class="memItemLeft" align="right" valign="top"><a id="a1899695aa7a98f61f71af36e0441cd93"></a>
-int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>entityID</b></td></tr>
-<tr class="separator:a1899695aa7a98f61f71af36e0441cd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d66f754c61feda1df1ea2467e0f883b"><td class="memItemLeft" align="right" valign="top"><a id="a3d66f754c61feda1df1ea2467e0f883b"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
-<tr class="separator:a3d66f754c61feda1df1ea2467e0f883b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad66f67a769cdc5b74d34d18b7ece037f"><td class="memItemLeft" align="right" valign="top"><a id="ad66f67a769cdc5b74d34d18b7ece037f"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
-<tr class="separator:ad66f67a769cdc5b74d34d18b7ece037f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_struct_packet"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_struct_packet')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="struct_packet.html">Packet</a></td></tr>
 <tr class="memitem:aeef1f1b66c04fa44914e136a22917296 inherit pub_attribs_struct_packet"><td class="memItemLeft" align="right" valign="top"><a id="aeef1f1b66c04fa44914e136a22917296"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>unk_4</b> = 2</td></tr>

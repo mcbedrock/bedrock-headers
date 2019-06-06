@@ -13,38 +13,53 @@ Inheritance diagram for Inventory\+Transaction\+Packet\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct_inventory_transaction_packet_a56921ecce5af2b1b0fd9f03539e30b2a}\label{struct_inventory_transaction_packet_a56921ecce5af2b1b0fd9f03539e30b2a}} 
-virtual int {\bfseries get\+Id} () const
+\mbox{\Hypertarget{struct_inventory_transaction_packet_ac9def53172d966dac53422213e43edb9}\label{struct_inventory_transaction_packet_ac9def53172d966dac53422213e43edb9}} 
+{\bfseries Inventory\+Transaction\+Packet} (uint32\+\_\+t transaction\+Type, uint32\+\_\+t action\+Count, uint64\+\_\+t entity\+ID, uint32\+\_\+t action\+Type, int hotbar\+Slot, \mbox{\hyperlink{struct_item_stack}{Item\+Stack}} const \&item\+In\+Hand, \mbox{\hyperlink{struct_vec3}{Vec3}} player\+Pos, \mbox{\hyperlink{struct_vec3}{Vec3}} click\+Pos)
 \item 
-\mbox{\Hypertarget{struct_inventory_transaction_packet_a2f49802da6795756f56a6f21b07eda10}\label{struct_inventory_transaction_packet_a2f49802da6795756f56a6f21b07eda10}} 
-virtual std\+::string {\bfseries get\+Name} () const
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a2c1c2278ce86dd24e5b7c7846267b93b}\label{struct_inventory_transaction_packet_a2c1c2278ce86dd24e5b7c7846267b93b}} 
+virtual int {\bfseries get\+Id} () const override
 \item 
-\mbox{\Hypertarget{struct_inventory_transaction_packet_a3f417e6e69bc08db3f6e94c9355fe7ca}\label{struct_inventory_transaction_packet_a3f417e6e69bc08db3f6e94c9355fe7ca}} 
-virtual void $\ast$ {\bfseries write} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&) const
+\mbox{\Hypertarget{struct_inventory_transaction_packet_ac0403d57e8e014ca79f5f50be31e7516}\label{struct_inventory_transaction_packet_ac0403d57e8e014ca79f5f50be31e7516}} 
+virtual std\+::string {\bfseries get\+Name} () const override
 \item 
-\mbox{\Hypertarget{struct_inventory_transaction_packet_a8ce7ffe0b9506b84bce2410331bbad3c}\label{struct_inventory_transaction_packet_a8ce7ffe0b9506b84bce2410331bbad3c}} 
-virtual void $\ast$ {\bfseries read} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&)
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a899dd06f6a6f476f2d14bea7e833f57f}\label{struct_inventory_transaction_packet_a899dd06f6a6f476f2d14bea7e833f57f}} 
+void {\bfseries write} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&stream) const override
 \item 
-\mbox{\Hypertarget{struct_inventory_transaction_packet_a17055794f6b238e1f7c7efc86b3312b5}\label{struct_inventory_transaction_packet_a17055794f6b238e1f7c7efc86b3312b5}} 
-virtual void $\ast$ {\bfseries handle} (\mbox{\hyperlink{struct_network_identifier}{Network\+Identifier}} const \&, Net\+Event\+Callback \&) const
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a9a5b009e9ffae96fa6f8c64970014ff1}\label{struct_inventory_transaction_packet_a9a5b009e9ffae96fa6f8c64970014ff1}} 
+void {\bfseries read} (\mbox{\hyperlink{struct_binary_stream}{Binary\+Stream}} \&stream) override
 \item 
-\mbox{\Hypertarget{struct_inventory_transaction_packet_a0b6814c77b738615c437ef9a543ae7ed}\label{struct_inventory_transaction_packet_a0b6814c77b738615c437ef9a543ae7ed}} 
-virtual bool {\bfseries disallow\+Batching} () const
+\mbox{\Hypertarget{struct_inventory_transaction_packet_af6edbc7bc4586854ee945224b6001458}\label{struct_inventory_transaction_packet_af6edbc7bc4586854ee945224b6001458}} 
+virtual void {\bfseries handle} (\mbox{\hyperlink{struct_network_identifier}{Network\+Identifier}} const \&, Net\+Event\+Callback \&) const override
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a38111ed69a8c2568247f86960a2d3252}\label{struct_inventory_transaction_packet_a38111ed69a8c2568247f86960a2d3252}} 
+virtual bool {\bfseries disallow\+Batching} () const override
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct_inventory_transaction_packet_addcbb55dd0151232e84a02228582ce65}\label{struct_inventory_transaction_packet_addcbb55dd0151232e84a02228582ce65}} 
-unsigned int {\bfseries i0}
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a257bcf6ae0f18218bd98edb90a24728f}\label{struct_inventory_transaction_packet_a257bcf6ae0f18218bd98edb90a24728f}} 
+uint32\+\_\+t {\bfseries transaction\+Type}
 \item 
-\mbox{\Hypertarget{struct_inventory_transaction_packet_a68ef79b2f9e8f2bf9b73809b37b93267}\label{struct_inventory_transaction_packet_a68ef79b2f9e8f2bf9b73809b37b93267}} 
-unsigned int {\bfseries entity\+ID}
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a9599b72e1ee2ead41fc2a14c0c28f6b7}\label{struct_inventory_transaction_packet_a9599b72e1ee2ead41fc2a14c0c28f6b7}} 
+uint32\+\_\+t {\bfseries action\+Count}
 \item 
-\mbox{\Hypertarget{struct_inventory_transaction_packet_a1b783b75eca844f54b5e9bcf8462d162}\label{struct_inventory_transaction_packet_a1b783b75eca844f54b5e9bcf8462d162}} 
-unsigned int {\bfseries i2}
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a0362fd16604d48210d614276af9a7429}\label{struct_inventory_transaction_packet_a0362fd16604d48210d614276af9a7429}} 
+uint64\+\_\+t {\bfseries entity\+ID}
 \item 
-\mbox{\Hypertarget{struct_inventory_transaction_packet_a780552a9e7ca05da776a964f26ce679b}\label{struct_inventory_transaction_packet_a780552a9e7ca05da776a964f26ce679b}} 
-unsigned int {\bfseries i3}
+\mbox{\Hypertarget{struct_inventory_transaction_packet_ac4d4d8e59e414ecbbb0789fc84b55abe}\label{struct_inventory_transaction_packet_ac4d4d8e59e414ecbbb0789fc84b55abe}} 
+uint32\+\_\+t {\bfseries action\+Type}
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a16e1d11434856a07b20a0bf9ad9b6e97}\label{struct_inventory_transaction_packet_a16e1d11434856a07b20a0bf9ad9b6e97}} 
+int {\bfseries hotbar\+Slot}
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a9e73075233484766d36adbaaab2edb24}\label{struct_inventory_transaction_packet_a9e73075233484766d36adbaaab2edb24}} 
+\mbox{\hyperlink{struct_item_stack}{Item\+Stack}} const  \& {\bfseries item\+In\+Hand}
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a8cb7230ca00a9824ebf5eb3c7232c422}\label{struct_inventory_transaction_packet_a8cb7230ca00a9824ebf5eb3c7232c422}} 
+\mbox{\hyperlink{struct_vec3}{Vec3}} {\bfseries player\+Pos}
+\item 
+\mbox{\Hypertarget{struct_inventory_transaction_packet_a76357a1aebf8cfb59f3250c2fb06684b}\label{struct_inventory_transaction_packet_a76357a1aebf8cfb59f3250c2fb06684b}} 
+\mbox{\hyperlink{struct_vec3}{Vec3}} {\bfseries click\+Pos}
 \end{DoxyCompactItemize}
 
 

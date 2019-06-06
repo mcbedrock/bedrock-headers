@@ -9,10 +9,8 @@
  */
 struct TextPacket : Packet {
 	enum class TextPacketType : unsigned char {
-		RAW, CHAT, TRANSLATION, POPUP, JUKEBOX_POPUP, TIP, SYSTEM, WHISPER, ANNOUNCEMENT
+		RAW, CHAT, TRANSLATION, POPUP, JUKEBOX_POPUP, TIP, SYSTEM, WHISPER, ANNOUNCEMENT, JSON
 	};
-
-	// TODO: Fix offset since update!
 
 	TextPacketType type;
 	std::string sender;

@@ -3,6 +3,7 @@
 #include "ClientInstance.h"
 #include "../network/NetworkHandler.h"
 #include "../entity/LocalPlayer.h"
+#include "../network/ExternalServer.h"
 #include "gui/Font.h"
 #include "options/Options.h"
 #include "Minecraft.h"
@@ -59,10 +60,13 @@ struct MinecraftGame {
 
 	LocalPlayer *getPrimaryLocalPlayer();
 
-	// Crashes the game
+	// TODO: Fix
 	Minecraft *getPrimaryMinecraft();
 
 	bool isLocalPlayer(ActorUniqueID const &) const;
 
 	Font &getFont() const;
+
+	// TODO: Fix
+	ExternalServer &getExternalServer() const;
 };

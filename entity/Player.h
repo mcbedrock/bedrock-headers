@@ -2,15 +2,22 @@
 
 #include "Mob.h"
 #include "../item/ItemInstance.h"
+#include "../item/ItemStack.h"
 
 struct Player : Mob {
-	ItemInstance *getSelectedItem() const;
+	ItemInstance const &getSelectedItem() const;
 
 	bool canUseAbility(std::string const &);
 
 	void setSpeed(float);
 
-	// Player::handleMovePlayerPacket(Player::PositionMode, Vec3 const&, Vec2 const&, float, int, int)
-
 	void sendNetworkPacket(Packet&) const;
+
+	bool isUsingItem() const;
+
+	ItemStack const &getCarriedItem() const;
+
+	int getSelectedItemSlot() const;
+
+	NetworkIdentifier const &getClientId() const;
 };

@@ -10,5 +10,5 @@ namespace mce {
 }
 
 struct Font {
-	void drawShadow(ScreenContext&, std::string const&, float, float, Color const&, bool, mce::MaterialPtr*, float);
+	void drawShadow(ScreenContext&, std::string const &, float, float, Color const &, bool, mce::MaterialPtr*, float);
 };

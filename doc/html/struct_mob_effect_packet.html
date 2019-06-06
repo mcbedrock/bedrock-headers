@@ -63,15 +63,13 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="struct_mob_effect_packet-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MobEffectPacket Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_mob_effect_packet_8h_source.html">MobEffectPacket.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MobEffectPacket:</div>
 <div class="dyncontent">
@@ -82,26 +80,34 @@ Inheritance diagram for MobEffectPacket:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a15f23cfceed92391c5d108155828df62"><td class="memItemLeft" align="right" valign="top"><a id="a15f23cfceed92391c5d108155828df62"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Event</b> : uint8_t { <b>Add</b> = 1, 
+<b>Modify</b> = 2, 
+<b>Remove</b> = 3
+ }</td></tr>
+<tr class="separator:a15f23cfceed92391c5d108155828df62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aadbe2d1346eb128bdfffb5d4e62f774f"><td class="memItemLeft" align="right" valign="top"><a id="aadbe2d1346eb128bdfffb5d4e62f774f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MobEffectPacket</b> (unsigned char playerSubIndex)</td></tr>
-<tr class="separator:aadbe2d1346eb128bdfffb5d4e62f774f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a563e1deaadad160f4d99cd86fae34"><td class="memItemLeft" align="right" valign="top"><a id="a97a563e1deaadad160f4d99cd86fae34"></a>
+uint32_t amplifier bool particles&#160;</td><td class="memItemRight" valign="bottom"><b>MobEffectPacket</b> (unsigned char playerSubIndex)</td></tr>
+<tr class="separator:a97a563e1deaadad160f4d99cd86fae34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0527038fd4ae94faac1fb1e1682eba5"><td class="memItemLeft" align="right" valign="top"><a id="aa0527038fd4ae94faac1fb1e1682eba5"></a>
 virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () const</td></tr>
 <tr class="separator:aa0527038fd4ae94faac1fb1e1682eba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3736b9135fa1bc5ab0ad8caa843cd732"><td class="memItemLeft" align="right" valign="top"><a id="a3736b9135fa1bc5ab0ad8caa843cd732"></a>
 virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> () const</td></tr>
 <tr class="separator:a3736b9135fa1bc5ab0ad8caa843cd732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38f4bd1a60102d36a01655232251c44e"><td class="memItemLeft" align="right" valign="top"><a id="a38f4bd1a60102d36a01655232251c44e"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;) const</td></tr>
-<tr class="separator:a38f4bd1a60102d36a01655232251c44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a998e209ee9db49dd44a68043871466f9"><td class="memItemLeft" align="right" valign="top"><a id="a998e209ee9db49dd44a68043871466f9"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;)</td></tr>
-<tr class="separator:a998e209ee9db49dd44a68043871466f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab99f0f5ac20760c60425676c3abf5c17"><td class="memItemLeft" align="right" valign="top"><a id="ab99f0f5ac20760c60425676c3abf5c17"></a>
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b> (<a class="el" href="struct_network_identifier.html">NetworkIdentifier</a> const &amp;, NetEventCallback &amp;) const</td></tr>
-<tr class="separator:ab99f0f5ac20760c60425676c3abf5c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7620929951a9da1bca7e2c6bb94516ee"><td class="memItemLeft" align="right" valign="top"><a id="a7620929951a9da1bca7e2c6bb94516ee"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;) const</td></tr>
+<tr class="separator:a7620929951a9da1bca7e2c6bb94516ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ac981f8b23fd28e3c9b6366e2bbf13"><td class="memItemLeft" align="right" valign="top"><a id="a90ac981f8b23fd28e3c9b6366e2bbf13"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="struct_binary_stream.html">BinaryStream</a> &amp;)</td></tr>
+<tr class="separator:a90ac981f8b23fd28e3c9b6366e2bbf13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc9f8c4fc77a30c6291d56beb17ad1cf"><td class="memItemLeft" align="right" valign="top"><a id="adc9f8c4fc77a30c6291d56beb17ad1cf"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b> (<a class="el" href="struct_network_identifier.html">NetworkIdentifier</a> const &amp;, NetEventCallback &amp;) const</td></tr>
+<tr class="separator:adc9f8c4fc77a30c6291d56beb17ad1cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b3ae328d918c391b5d1a63afd6b874f"><td class="memItemLeft" align="right" valign="top"><a id="a4b3ae328d918c391b5d1a63afd6b874f"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>disallowBatching</b> () const</td></tr>
 <tr class="separator:a4b3ae328d918c391b5d1a63afd6b874f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,29 +119,8 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>disallowBatch
 &#160;</td><td class="memItemRight" valign="bottom"><b>Packet</b> (<a class="el" href="struct_packet.html">Packet</a> const &amp;packet)</td></tr>
 <tr class="separator:a32b07be5461047eb99f5a22e309ea199 inherit pub_methods_struct_packet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a3223d8f9b8a61ce4e23ad5a5d52814b6"><td class="memItemLeft" align="right" valign="top"><a id="a3223d8f9b8a61ce4e23ad5a5d52814b6"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>effectID</b></td></tr>
-<tr class="separator:a3223d8f9b8a61ce4e23ad5a5d52814b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ca9f34e668ef528e21a07b22548a2f8"><td class="memItemLeft" align="right" valign="top"><a id="a8ca9f34e668ef528e21a07b22548a2f8"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>amplifier</b></td></tr>
-<tr class="separator:a8ca9f34e668ef528e21a07b22548a2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b4dc524d5c9211d8aaac8744f84aaae"><td class="memItemLeft" align="right" valign="top"><a id="a8b4dc524d5c9211d8aaac8744f84aaae"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>particles</b></td></tr>
-<tr class="separator:a8b4dc524d5c9211d8aaac8744f84aaae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad071cbfddd00c63a34e76d92cd0d17da"><td class="memItemLeft" align="right" valign="top"><a id="ad071cbfddd00c63a34e76d92cd0d17da"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>c0</b></td></tr>
-<tr class="separator:ad071cbfddd00c63a34e76d92cd0d17da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09991ceb8bf6a297b48580d17795cc48"><td class="memItemLeft" align="right" valign="top"><a id="a09991ceb8bf6a297b48580d17795cc48"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>i3</b></td></tr>
-<tr class="separator:a09991ceb8bf6a297b48580d17795cc48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3592abdd831dc432594a6879a2053f0c"><td class="memItemLeft" align="right" valign="top"><a id="a3592abdd831dc432594a6879a2053f0c"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>i4</b></td></tr>
-<tr class="separator:a3592abdd831dc432594a6879a2053f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a018fe02df46217e8f877c5402558af88"><td class="memItemLeft" align="right" valign="top"><a id="a018fe02df46217e8f877c5402558af88"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
-<tr class="separator:a018fe02df46217e8f877c5402558af88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_struct_packet"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_struct_packet')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="struct_packet.html">Packet</a></td></tr>
 <tr class="memitem:aeef1f1b66c04fa44914e136a22917296 inherit pub_attribs_struct_packet"><td class="memItemLeft" align="right" valign="top"><a id="aeef1f1b66c04fa44914e136a22917296"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>unk_4</b> = 2</td></tr>
@@ -147,9 +132,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>unk_8</b> = 1</td></tr
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>playerSubIndex</b> = 0</td></tr>
 <tr class="separator:a2a7ab3c3fa701f0240f395a0ba6cae96 inherit pub_attribs_struct_packet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="struct_packet.html">Packet</a> for adding/removing/updating potion effects </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/void/CLionProjects/bedrock-headers/network/protocol/<a class="el" href="_mob_effect_packet_8h_source.html">MobEffectPacket.h</a></li>
 </ul>
 </div><!-- contents -->
