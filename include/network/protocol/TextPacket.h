@@ -6,6 +6,8 @@
 
 /**
  * Packet for most main UI text elements
+ *
+ * TODO Test and fix
  */
 struct TextPacket : Packet {
 	enum class TextPacketType : unsigned char {
@@ -26,5 +28,5 @@ public:
 
 	TextPacket(unsigned char playerSubIndex) : Packet(playerSubIndex) {}
 
-#include "PacketTemplate.h"
+#include "VirtualTemplate.h"
 };

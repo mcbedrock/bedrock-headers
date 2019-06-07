@@ -8,5 +8,5 @@
 struct ServerSettingsRequestPacket : Packet {
 	ServerSettingsRequestPacket(unsigned char playerSubIndex) : Packet(playerSubIndex) {}
 
-#include "PacketTemplate.h"
+#include "VirtualTemplate.h"
 };

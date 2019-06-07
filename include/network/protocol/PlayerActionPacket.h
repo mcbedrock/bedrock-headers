@@ -3,14 +3,27 @@
 #include "Packet.h"
 
 struct PlayerActionPacket : Packet {
-private:
-	char filler[7];
+	enum Action : uint32_t;
 
-public:
-	int32_t x, y, z, face, action;
-	int64_t entityID; // Runtime ID
+	/**
+	 * Block position for some actions
+	 */
+	int32_t x, y, z;
+	/**
+	 * Block face for some actions
+	 */
+	uint32_t face;
+	/**
+	 * Action
+	 * @see PlayerActionPacket::Action
+	 */
+	Action action;
+	/**
+	 * Player Runtime ID
+	 */
+	uint64_t entityID;
 
-	enum Action : int32_t {
+	enum Action : uint32_t {
 		StartBreak = 0,
 		AbortBreak = 1,
 		StopBreak = 2,
@@ -38,5 +51,5 @@ public:
 		StopSpinAttack = 24
 	};
 
-#include "PacketTemplate.h"
+#include "VirtualTemplate.h"
 };

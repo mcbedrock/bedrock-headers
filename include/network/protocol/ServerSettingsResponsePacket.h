@@ -11,5 +11,5 @@ struct ServerSettingsResponsePacket : Packet {
 
 	ServerSettingsResponsePacket(unsigned char playerSubIndex) : Packet(playerSubIndex) {}
 
-#include "PacketTemplate.h"
+#include "VirtualTemplate.h"
 };

@@ -3,21 +3,37 @@
 #include "Packet.h"
 
 struct MobEffectPacket : Packet {
-private:
-	char filler[7];
-
-public:
 	enum Event : uint8_t;
 
-	uint64_t entityID; // 20 RuntimeID of target
-	uint32_t duration; // 28 Duration in ticks
-	Event eventID; // 32 Event
+	/**
+	 * Runtime ID
+	 */
+	uint64_t entityID; // 20
+	/**
+	 * Duration in ticks
+	 */
+	uint32_t duration; // 28
+	/**
+	 * Event
+	 * @see MobEffectPacket::Event
+	 */
+	Event eventID; // 32
 
 private:
-	char fillerr[3];
+	char fillerr[3]; // eventID is 1 byte not 4
 
 public:
-	uint32_t effectID, amplifier; // 36 40
+	/**
+	 * Effect ID
+	 */
+	uint32_t effectID; // 36
+	/**
+	 * Effect amplifier
+	 */
+	uint32_t amplifier; // 40
+	/**
+	 * Particles showing
+	 */
 	bool particles; // 44
 
 	MobEffectPacket(unsigned char playerSubIndex) : Packet(playerSubIndex) {};
@@ -26,5 +42,5 @@ public:
 		Add = 1, Modify = 2, Remove = 3
 	};
 
-#include "PacketTemplate.h"
+#include "VirtualTemplate.h"
 };

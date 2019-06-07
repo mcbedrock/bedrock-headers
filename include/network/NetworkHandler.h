@@ -5,4 +5,6 @@
 
 struct NetworkHandler {
 	NetworkPeer &getPeerForUser(NetworkIdentifier const &);
+
+	struct Connection {};
 };

@@ -28,5 +28,5 @@ struct SetTitlePacket : Packet {
 
 	SetTitlePacket(unsigned char playerSubIndex, TitleType type) : Packet(playerSubIndex), type(type) {}
 
-#include "PacketTemplate.h"
+#include "VirtualTemplate.h"
 };

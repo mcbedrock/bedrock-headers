@@ -9,5 +9,5 @@ struct DisconnectPacket : Packet {
 
 	DisconnectPacket(std::string message, bool value) : Packet(0), hideDisconnectionScreen(value), message(message) {}
 
-#include "PacketTemplate.h"
+#include "VirtualTemplate.h"
 };

@@ -6,21 +6,27 @@
  * Packet for hand swings
  */
 struct AnimatePacket : Packet {
-private:
-	char filler[6];
+	enum Action : uint32_t;
 
-public:
-	enum Action : int32_t;
-
-	int64_t entityID; // 20
-	int32_t action; // 28
+	/**
+	 * Runtime ID
+	 */
+	uint64_t entityID; // 20
+	/**
+	 * Action
+	 * @see AnimatePacket::Action
+	 */
+	Action action; // 28
+	/**
+	 * TODO Document
+	 */
 	float extra = 0; // 32
 
-	enum Action : int32_t {
+	enum Action : uint32_t {
 		SwingArm = 1,
 		StopSleep = 3,
 		Criticial = 4
 	};
 
-#include "PacketTemplate.h"
+#include "VirtualTemplate.h"
 };

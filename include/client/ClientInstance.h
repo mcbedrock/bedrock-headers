@@ -1,5 +1,6 @@
 #pragma once
 
+#include <network/NetworkHandler.h>
 #include "../network/PacketSender.h"
 #include "../world/level/Level.h"
 #include "gui/GuiData.h"
@@ -43,4 +44,10 @@ struct ClientInstance {
 	 * @return int
 	 */
 	int getControllerId() const;
+
+	/**
+	 * Get ClientNetworkHandler
+	 * @return NetworkHandler
+	 */
+	NetworkHandler *getClientNetworkSystem();
 };

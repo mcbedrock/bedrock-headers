@@ -12,5 +12,5 @@ struct ModalFormResponsePacket : Packet {
 
 	ModalFormResponsePacket(unsigned char playerSubIndex) : Packet(playerSubIndex) {}
 
-#include "PacketTemplate.h"
+#include "VirtualTemplate.h"
 };

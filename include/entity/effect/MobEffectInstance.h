@@ -11,9 +11,9 @@ struct MobEffectInstance {
 
 	MobEffectInstance(unsigned int id, int ticks, int amplifier);
 
-	MobEffectInstance(unsigned int id, int ticks, int amplifier, bool, bool);
+	MobEffectInstance(unsigned int id, int ticks, int amplifier, bool, bool particles, bool);
 
-	MobEffectInstance(unsigned int id, int ticks, int amplifier, int, int, int, bool, bool);
+	MobEffectInstance(unsigned int id, int ticks, int amplifier, int, int, int, bool, bool, bool);
 
 	int getId() const;
 

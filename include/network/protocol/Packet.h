@@ -7,11 +7,17 @@
 struct NetEventCallback;
 
 /*
- * Important: When creating a subclass include PacketTemplate.h inside the class
+ * Important: When creating a subclass include VirtualTemplate.h inside the class
  */
 struct Packet {
-	int unk_4 = 2, unk_8 = 1;
-	unsigned char playerSubIndex = 0;
+	int unk_4 = 2, unk_8 = 1; // 4 8
+	unsigned char playerSubIndex = 0; // 13
+
+private:
+	char filler[7]; // TODO: Find out what this is
+
+public:
+	// Subpackets will start at 20 (0x14)
 
 	Packet() = default;
 
@@ -19,7 +25,7 @@ struct Packet {
 
 	Packet(Packet const &packet) : unk_4(packet.unk_4), unk_8(packet.unk_8) {}
 
-	// Change these in PacketTemplate.h as well
+	// Change these in VirtualTemplate.h as well
 
 	virtual ~Packet() = 0 ;
 
@@ -34,6 +40,4 @@ struct Packet {
 	virtual void handle(NetworkIdentifier const &, NetEventCallback &) const = 0;
 
 	virtual bool disallowBatching() const = 0;
-
-	// The stuff above is 13 bytes
 };
