@@ -19,10 +19,6 @@ struct ActorUniqueID {
 
 	operator int64_t() const;
 
-	bool operator!=(ActorUniqueID const &) const;
-
-	bool operator==(ActorUniqueID const &) const;
-
 	bool operator<(ActorUniqueID const &) const;
 
 	ActorUniqueID &operator++();

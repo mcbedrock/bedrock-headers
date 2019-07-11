@@ -17,4 +17,6 @@ struct ActorFallPacket : Packet {
 	 * Actor below bedrock
 	 */
 	bool inVoid;
+
+#include "VirtualTemplate.h"
 };

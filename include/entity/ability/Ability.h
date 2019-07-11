@@ -1,7 +1,7 @@
 #pragma once
 
 struct Ability {
-	enum struct Type : char { Invalid = 0, Boolean = 1, Float = 2 };
+	/*enum struct Type : char { Invalid = 0, Boolean = 1, Float = 2 };
 	enum struct Options : char { Unset = 0, Saved = 1, Command = 2, Permission = 4 };
 	union Value {
 		bool val_bool;
@@ -17,8 +17,9 @@ struct Ability {
 	Ability();
 	Ability(float, Options);
 	Ability(int, Options);
+	*/
 
-	Type getType() const;
+	char getType() const;
 
 	bool getBool() const;
 
@@ -28,5 +29,5 @@ struct Ability {
 
 	void setFloat(float) const;
 
-	bool hasOption(Options) const;
+	//bool hasOption(Options) const;
 };

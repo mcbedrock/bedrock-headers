@@ -8,6 +8,8 @@
 #include "input/ClientInputHandler.h"
 #include "events/ClientInstanceEventCoordinator.h"
 
+struct MinecraftGame;
+
 struct ClientInstance {
 	/**
 	 * Checks if a world is currently loaded
@@ -50,4 +52,14 @@ struct ClientInstance {
 	 * @return NetworkHandler
 	 */
 	NetworkHandler *getClientNetworkSystem();
+
+	MinecraftGame *getMinecraftGame() const;
+
+	bool isLeavingGame() const;
+
+	bool isPlaying() const;
+
+	bool isExitingLevel() const;
+
+	bool isDestroyingGame() const;
 };

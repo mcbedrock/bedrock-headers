@@ -3,6 +3,7 @@
 #include "../NetworkIdentifier.h"
 #include "../BinaryStream.h"
 #include <string>
+#include <memory>
 
 struct NetEventCallback;
 
@@ -11,7 +12,7 @@ struct NetEventCallback;
  */
 struct Packet {
 	int unk_4 = 2, unk_8 = 1; // 4 8
-	unsigned char playerSubIndex = 0; // 13
+	unsigned char playerSubIndex = 0; // 12
 
 private:
 	char filler[7]; // TODO: Find out what this is
@@ -25,19 +26,21 @@ public:
 
 	Packet(Packet const &packet) : unk_4(packet.unk_4), unk_8(packet.unk_8) {}
 
+	void handle(NetworkIdentifier const &, NetEventCallback &, std::shared_ptr<Packet>&);
+
 	// Change these in VirtualTemplate.h as well
 
-	virtual ~Packet() = 0 ;
+	virtual void read(ReadOnlyBinaryStream &) = 0;
+
+	virtual ~Packet() = 0;
 
 	virtual int getId() const = 0;
 
-	virtual std::string getName() const = 0;
-
 	virtual void write(BinaryStream &) const = 0;
 
-	virtual void read(BinaryStream &) = 0;
+	virtual std::string getName() const = 0;
 
-	virtual void handle(NetworkIdentifier const &, NetEventCallback &) const = 0;
-
-	virtual bool disallowBatching() const = 0;
+	virtual bool disallowBatching() const {
+		return false;
+	}
 };

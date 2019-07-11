@@ -11,7 +11,7 @@ struct AnimatePacket : Packet {
 	/**
 	 * Runtime ID
 	 */
-	uint64_t entityID; // 20
+	int64_t entityID; // 20
 	/**
 	 * Action
 	 * @see AnimatePacket::Action
@@ -20,13 +20,17 @@ struct AnimatePacket : Packet {
 	/**
 	 * TODO Document
 	 */
-	float extra = 0; // 32
+	float extra; // 32
 
 	enum Action : uint32_t {
 		SwingArm = 1,
 		StopSleep = 3,
 		Criticial = 4
 	};
+
+	AnimatePacket(int64_t entityID, Action action, float extra = 0) : entityID(entityID), action(action), extra(extra) {
+		//
+	}
 
 #include "VirtualTemplate.h"
 };

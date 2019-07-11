@@ -16,6 +16,10 @@ struct Level {
 
 	Actor *fetchEntity(ActorUniqueID, bool) const;
 
+	Actor *getRuntimeEntity(ActorRuntimeID, bool) const;
+
+	Player *getRuntimePlayer(ActorRuntimeID) const;
+
 	void forEachPlayer(std::function<bool(Player const &)>) const;
 
 	Abilities &getPlayerAbilities(ActorUniqueID const &);
@@ -28,4 +32,8 @@ struct Level {
 	//ColorFormat &getPlayerColor(Player const &) const;
 
 	ClientPlayerEventCoordinator *getClientPlayerEventCoordinator();
+
+	std::string getLevelId() const;
+
+	bool isLeaveGameDone() const;
 };

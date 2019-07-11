@@ -6,7 +6,7 @@
 
 // Not sure what this is atm
 namespace mce {
-	using MaterialPtr = void;
+	struct MaterialPtr;
 }
 
 struct Font {

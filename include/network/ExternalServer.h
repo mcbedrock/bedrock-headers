@@ -7,23 +7,29 @@ struct ExternalServer {
 	 * Get absolute IP address of server. Useful when trying to play on load-balancing servers with friends.
 	 * @return std::string
 	 */
-	std::string const &getIP() const;
+	std::string getIP() const;
 
 	/**
 	 * Get server port
 	 * @return int
 	 */
-	 int *getPort() const;
+	 int getPort() const;
+
+	 /**
+	  * Get advertised max plsyers
+	  * @return int
+	  */
+	  int getMaxPlayers() const;
 
 	 /**
 	  * Get server version
 	  * @return std::string
 	  */
-	 std::string const &getVersion() const;
+	 std::string getVersion() const;
 
 	 /**
 	  * Get server protocol
 	  * @return std::string
 	  */
-	 std::string const &getProtocol() const;
+	 std::string getProtocol() const;
 };

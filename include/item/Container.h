@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../item/ItemStack.h"
+#include "Item.h"
 #include <vector>
 
 struct Container {
 	bool addItem(ItemStack &);
 	bool addItemToFirstEmptySlot(ItemStack &);
-	std::vector<ItemStack const *> getSlots() const;
+	std::vector<ContainerItemStack const *> getSlots() const;
 };
 
 struct SimpleContainer : Container {

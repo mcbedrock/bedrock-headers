@@ -28,10 +28,6 @@ struct PermissionsHandler {
 
 
 struct Abilities {
-private:
-	char filler[8]; // TODO: Permission Handler
-
-public:
 	std::unordered_map<std::string, Ability> abilityMap;
 
 	std::vector<std::string> permissionNames;

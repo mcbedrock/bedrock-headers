@@ -1,7 +1,21 @@
 #pragma once
 
 #include "ItemEnchants.h"
-#include "ItemInstance.h"
+
+struct ItemInstance {
+	short getId() const;
+
+	// This isn't correct from getSelectedItem()...
+	short getAuxValue() const;
+
+	ItemEnchants &getEnchantmentsFromUserData() const;
+
+	bool hasCompoundTextUserData() const;
+
+	bool isBlock() const;
+
+	bool isNull() const;
+};
 
 struct ItemStack {
 	ItemStack(ItemInstance const&);
@@ -19,7 +33,7 @@ struct ItemStack {
 	bool isBlock() const;
 };
 
-struct ContainerItemStack {
+struct ContainerItemStack : ItemStack {
 	short getId() const;
 
 	void increaseCount(int);
@@ -45,17 +59,3 @@ struct ContainerItemStack {
 	ItemInstance getItemInstance() const;
 };
 
-struct ItemInstance {
-	short getId() const;
-
-	// This isn't correct from getSelectedItem()...
-	short getAuxValue() const;
-
-	ItemEnchants &getEnchantmentsFromUserData() const;
-
-	bool hasCompoundTextUserData() const;
-
-	bool isBlock() const;
-
-	bool isNull() const;
-};

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../network/NetworkHandler.h"
+#include "Timer.h"
 
 struct Minecraft {
 	/**
@@ -20,4 +21,9 @@ struct Minecraft {
 	 * @param showDisconnect Whether or not to display the disconnection screen
 	 */
 	void startLeaveGame(bool showDisconnect);
+
+	/**
+	 * Get game timer
+	 */
+	 Timer *getTimer();
 };

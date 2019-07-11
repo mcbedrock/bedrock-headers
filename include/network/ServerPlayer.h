@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../entity/Player.h"
-#include "../gamemode/GameMode.h"
+#include "util/GameType.h"
 #include "../item/ItemInstance.h"
 #include "../item/ItemUseCallback.h"
 #include "../math/Vec3.h"

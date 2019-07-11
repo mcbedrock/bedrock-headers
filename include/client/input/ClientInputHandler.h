@@ -17,4 +17,10 @@ struct ClientInputHandler : MoveInputHandler {
 
 	// string?
 	void *getCurrentInputMapping() const;
+
+	/**
+	 * Check if in water
+	 * @return bool
+	 */
+	bool isInWater() const;
 };

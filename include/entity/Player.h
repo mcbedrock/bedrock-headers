@@ -1,13 +1,15 @@
 #pragma once
 
 #include "Mob.h"
-#include "item/ItemInstance.h"
-#include "item/ItemStack.h"
+#include "Agent.h"
+#include "item/Item.h"
 
 struct Player : Mob {
+	bool canUseAbility(std::string const &);
+
 	ItemInstance const &getSelectedItem() const;
 
-	bool canUseAbility(std::string const &);
+	void setSelectedItem(ItemStack const &);
 
 	void setSpeed(float);
 
@@ -15,9 +17,23 @@ struct Player : Mob {
 
 	bool isUsingItem() const;
 
-	ItemStack const &getCarriedItem() const;
-
-	int getSelectedItemSlot() const;
+	short getSelectedItemSlot() const;
 
 	NetworkIdentifier const &getClientId() const;
+
+	Facing::LookDirection::LookDirection getDirection() const;
+
+	void setEnchantmentSeed(int);
+
+	int getEnchantmentSeed() const;
+
+	void stopGliding();
+
+	void startGliding();
+
+	void updateGliding();
+
+	Agent *getAgent() const;
+
+	bool isSleeping() const;
 };

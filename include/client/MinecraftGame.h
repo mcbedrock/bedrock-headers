@@ -18,9 +18,13 @@ struct Realms;
 struct Player;
 
 struct MinecraftGame {
-	static std::string WORLD_PATH;
+private:
+	char offset[0xb0];
+public:
+	bool isInputtingText;
+	//static std::string WORLD_PATH;
 	// TODO: find type
-	static MinecraftGame *INTERACTION_FREQ_MS;
+	//static MinecraftGame *INTERACTION_FREQ_MS;
 
 	MinecraftGame(int, char **);
 
@@ -60,13 +64,7 @@ struct MinecraftGame {
 
 	LocalPlayer *getPrimaryLocalPlayer();
 
-	// TODO: Fix
-	Minecraft *getPrimaryMinecraft();
-
-	bool isLocalPlayer(ActorUniqueID const &) const;
-
 	Font &getFont() const;
 
-	// TODO: Fix
-	ExternalServer &getExternalServer() const;
+	//ExternalServer &getExternalServer() const;
 };
