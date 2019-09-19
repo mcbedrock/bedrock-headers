@@ -4,7 +4,7 @@
 #include "../network/NetworkHandler.h"
 #include "../entity/LocalPlayer.h"
 #include "../network/ExternalServer.h"
-#include "../client/gui/Font.h"
+#include "../client/render/Font.h"
 #include "../client/options/Options.h"
 #include "Minecraft.h"
 #include <string>
@@ -18,14 +18,6 @@ struct Realms;
 struct Player;
 
 struct MinecraftGame {
-private:
-	char offset[0xb0];
-public:
-	bool isInputtingText;
-	//static std::string WORLD_PATH;
-	// TODO: find type
-	//static MinecraftGame *INTERACTION_FREQ_MS;
-
 	MinecraftGame(int, char **);
 
 	~MinecraftGame();
@@ -50,8 +42,6 @@ public:
 
 	GuiData *getPrimaryGuiData();
 
-	Options *getPrimaryUserOptions();
-
 	Realms *getRealms();
 
 	bool isInGame() const;
@@ -67,4 +57,8 @@ public:
 	Font &getFont() const;
 
 	//ExternalServer &getExternalServer() const;
+
+	void startLeaveGame();
+
+	bool isLeaveGameDone() const;
 };

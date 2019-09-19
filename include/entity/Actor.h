@@ -10,6 +10,8 @@
 #include <regex>
 #include "effect/MobEffect.h"
 #include "effect/MobEffectInstance.h"
+#include "GameMode.h"
+#include "util/ActorType.h"
 
 struct ActorDamageSource;
 
@@ -21,26 +23,50 @@ struct ActorDefinitionIdentifier;
 
 struct Mob;
 
+enum struct ArmorSlot {};
+
 struct Actor {
-	// TODO: find types
-
-private:
-	char filler[0x834];
-
-public:
-	AABB &hitbox;
-
-	static Actor *RIDING_TAG;
-	static Actor *TOTAL_AIR_SUPPLY;
-	static Actor *DAMAGE_NEARBY_MOBS_DURATION;
+	char pad_0x0000[0x64];
+	int dimensionId; // 0x64
+	char pad_0x0068[0x14];
+	Vec2 unk;
+	Vec2 rotation; // 0x84 0x88
+	Vec2 prevRotation; // 0x8c 0x90
+	float diveProgress; // 0x94
+	float prevDiveProgress; // 0x98
+	char pad_0x009c[0x8];
+	Vec3 realPos; // 0xa4
+	char pad_0x00b0[0x40];
+	bool onGround; // 0xF0
+	bool prevOnGround; // 0xF1
+	bool collidedHorizontally; // 0xF2
+	bool collidedVertically; // 0xF3
+	bool collided; // 0xF4
+	char pad_0x00f5[0x7];
+	float fallDistance; // 0xFC
+	char pad_0x00fd[0x57];
+	float stepHeight; // 0x158
+	char pad_0x015c[0x64];
+	unsigned int ticksExisted; // 0x1c0
+	int hurtTime; // 0x1c4
+	char pad_0x01c8[0xaa8]; // (large jump)
+	AABB aabb; // 0xc70
+	char pad_0x0c88[0x4];
+	float width; // 0xc8c (0.6)
+	float height; // 0xc90 (1.8)
+	Vec3 motion; // 0xc94
+	Vec3 pos; // 0xca0
+	Vec3 prevPos; // 0xcac
+	char pad_0xcb8[0x8a0]; // (even larger jump)
+	int pad;
+	// offset for gamemode increased by 4 bytes in 1.12.1
+	GameMode *gameMode; // 0x1558 holy hell
 
 	Actor(ActorDefinitionGroup *, ActorDefinitionIdentifier const &);
 
 	Actor(BlockSource &, std::string const &);
 
 	Actor(Level &);
-
-	~Actor();
 
 	void doFireHurt(int);
 
@@ -78,6 +104,8 @@ public:
 
 	void setClimbing(bool);
 
+	bool onLadder(bool vine) const;
+
 	void setHurtTime(int);
 
 	void setStanding(bool);
@@ -85,6 +113,10 @@ public:
 	void setStrength(int);
 
 	void startRiding(Actor &);
+
+	void serializationSetHealth(int);
+
+	bool isRiding() const;
 
 	void setEnchanted(bool);
 
@@ -138,6 +170,12 @@ public:
 
 	bool isInClouds() const;
 
+	bool isInWater() const;
+
+	bool isImmersedInWater() const;
+
+	ItemStack &getArmor(ArmorSlot) const;
+
 	std::vector<ItemInstance> getSlotItems();
 
 	ActorRuntimeID getRuntimeID() const;
@@ -147,11 +185,13 @@ public:
 	// Hitboxes
 	void setSize(float width, float height);
 
-	virtual void attack(Actor &);
+	void attack(Actor &);
 
 	int getHealth() const;
 
 	void swing();
+
+	Vec3 getPosExtrapolated(float) const;
 
 	Vec3 const &getPos() const;
 
@@ -159,11 +199,12 @@ public:
 
 	Vec3 getViewVector(float) const;
 
-	Level &getLevel();
+	Level & getLevel() const;
 
 	const std::string &getNameTag() const;
 
-	const std::string &getFormattedNameTag() const;
+	//const std::string &getFormattedNameTag() const;
+	std::vector<Actor> fetchNearbyActorsSorted(const Vec3 &pos, ActorType);
 
 	const std::string getUnformattedNameTag() const {
 		static const std::regex colorCodes{"\u00A7[0-9A-Fa-fK-Ok-oRr]"};
@@ -173,6 +214,8 @@ public:
 	const char *getName() const {
 		return getUnformattedNameTag().c_str();
 	};
+
+	bool hasTags() const;
 
 	float distanceTo(Actor const &) const;
 
@@ -199,6 +242,10 @@ public:
 	void setPos(Vec3 const &);
 
 	bool isInvisible() const;
+
+	bool isRemoved() const;
+
+	bool isAlive() const;
 
 	void setInvisible(bool);
 
@@ -239,4 +286,41 @@ public:
 	bool isBlocking() const;
 
 	bool isStanding() const;
+
+	bool getAlwaysShowNameTag() const;
+
+	void setNameTagVisible(bool);
+
+	bool isRegionValid() const;
+
+	bool isLayingDown() const;
+
+	int getSkinID() const;
+
+	//std::vector<Actor> fetchNearbyActorsSorted(const Vec3 &, ActorType);
+
+	ActorType getEntityTypeId() const;
+
+	ActorRuntimeID getRideRuntimeID() const;
+
+	Actor &getRide() const;
+
+	bool hasType(ActorType) const;
+
+	bool isOverWater() const;
+
+	void lerpMotion(const Vec3 &);
 };
+
+static_assert(offsetof(Actor, dimensionId) == 0x64);
+static_assert(offsetof(Actor, rotation) == 0x84);
+static_assert(offsetof(Actor, realPos) == 0xA4);
+static_assert(offsetof(Actor, pad_0x00b0) == 0xb0);
+static_assert(offsetof(Actor, hurtTime) == 0x1c4);
+static_assert(offsetof(Actor, aabb) == 0xc70);
+static_assert(offsetof(Actor, width) == 0xc8c);
+static_assert(offsetof(Actor, height) == 0xc90);
+static_assert(offsetof(Actor, motion) == 0xc94);
+static_assert(offsetof(Actor, pos) == 0xca0);
+static_assert(offsetof(Actor, prevPos) == 0xcac);
+//static_assert(offsetof(Actor, gameMode) == 0x155c);

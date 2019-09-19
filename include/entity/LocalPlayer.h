@@ -8,10 +8,13 @@
 
 struct InventoryMenu {
 	ContainerItemStack *getSlot(int slot) {
-		// TODO: Figure out why the original method crashes...
+		// TODO: Figure out why the real method doesn't work as expected...
 		return const_cast<ContainerItemStack *>(_getContainer()->getSlots()[slot]);
 	};
+
 	Container *_getContainer() const;
+
+	void setSlot(int slot, const ContainerItemStack &);
 };
 
 struct LocalPlayer : Player {
@@ -22,5 +25,24 @@ struct LocalPlayer : Player {
 	InventoryMenu &getInventoryMenu();
 
 	void setPlayerGameTypeWithoutServerNotification(GameType);
+
+	void setSelectedItemSlot(short slot) {
+		getSupplies().selectSlot(slot, getSupplies().getSelectedContainerId());
+		getSupplies().setSelectedItem(*getInventoryMenu().getSlot(slot));
+	}
+
+	void _applyTurnDelta(const Vec2 &);
+
+	void displayClientMessage(std::string const&);
+
+	void chat(std::string const&);
+
+	void swing();
+
+	void setSprinting(bool);
+
+	void startRiding(Actor &);
+
+	bool isSwimming() const;
 };
 

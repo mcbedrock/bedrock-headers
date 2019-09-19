@@ -9,45 +9,19 @@ struct ActorUniqueID {
 
 	ActorUniqueID() : ActorUniqueID(0) {};
 
-	static ActorUniqueID fromClientId(int64_t);
-
-	static ActorUniqueID fromUUID(mce::UUID const &);
-
-	size_t getHash() const;
-
-	operator bool() const;
-
-	operator int64_t() const;
-
-	bool operator<(ActorUniqueID const &) const;
-
-	ActorUniqueID &operator++();
+	operator int64_t() const {
+		return data;
+	};
 };
 
 struct ActorRuntimeID {
-	int64_t data;
+	uint64_t data;
 
-	ActorRuntimeID(int64_t data) : data(data) {};
+	explicit ActorRuntimeID(int64_t data) : data(data) {};
 
 	ActorRuntimeID() : ActorRuntimeID(0) {};
 
-	size_t getHash() const;
-
-	operator bool() const;
-
-	bool operator!=(ActorUniqueID const &) const;
-
-	ActorUniqueID &operator++();
+	operator int64_t() const {
+		return data;
+	}
 };
-
-namespace std {
-	template<>
-	struct hash<ActorUniqueID> {
-		size_t operator()(ActorUniqueID const &v) const { return v.getHash(); }
-	};
-
-	template<>
-	struct hash<ActorRuntimeID> {
-		size_t operator()(ActorRuntimeID const &v) const { return v.getHash(); }
-	};
-}

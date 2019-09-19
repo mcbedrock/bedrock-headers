@@ -7,6 +7,7 @@ struct Enchant {
 		feather_falling       = 2,
 		blast_protection      = 3,
 		projectile_protection = 4,
+		thorns				  = 5,
 		respiration           = 6,
 		depth_strider         = 7,
 		aqua_affinity         = 8,

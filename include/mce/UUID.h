@@ -16,7 +16,7 @@ namespace mce {
 
 		const std::string asString() const;
 
-		static UUID fromStringFix(std::string const &str);
+		static UUID fromString(std::string const &);
 
 		bool operator==(UUID const &another) const;
 

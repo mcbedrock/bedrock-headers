@@ -20,27 +20,25 @@ private:
 public:
 	// Subpackets will start at 20 (0x14)
 
-	Packet() = default;
+	//Packet() = default;
 
-	Packet(unsigned char playerSubIndex) : playerSubIndex(playerSubIndex) {}
+	//Packet(unsigned char playerSubIndex) : playerSubIndex(playerSubIndex) {}
 
-	Packet(Packet const &packet) : unk_4(packet.unk_4), unk_8(packet.unk_8) {}
-
-	void handle(NetworkIdentifier const &, NetEventCallback &, std::shared_ptr<Packet>&);
+	//Packet(Packet const &packet) : unk_4(packet.unk_4), unk_8(packet.unk_8) {}
 
 	// Change these in VirtualTemplate.h as well
-
-	virtual void read(ReadOnlyBinaryStream &) = 0;
 
 	virtual ~Packet() = 0;
 
 	virtual int getId() const = 0;
 
-	virtual void write(BinaryStream &) const = 0;
-
 	virtual std::string getName() const = 0;
 
-	virtual bool disallowBatching() const {
-		return false;
-	}
+	virtual void write(BinaryStream &) const = 0;
+
+	virtual void read(ReadOnlyBinaryStream &) = 0;
+
+	/*virtual*/ void handle(NetworkIdentifier const &, NetEventCallback &, std::shared_ptr<Packet>&) const;
+
+	//virtual bool disallowBatching() const = 0;
 };

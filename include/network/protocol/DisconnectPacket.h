@@ -4,10 +4,10 @@
  * Packet for gracefully disconnecting
  */
 struct DisconnectPacket : Packet {
-	bool hideDisconnectionScreen = false;
+	bool hideDisconnectionScreen;
 	std::string message;
 
-	DisconnectPacket(std::string message, bool value) : Packet(0), hideDisconnectionScreen(value), message(message) {}
+	DisconnectPacket(std::string message = "client disconnect", bool value = false) : hideDisconnectionScreen(value), message(message) {}
 
 #include "VirtualTemplate.h"
 };

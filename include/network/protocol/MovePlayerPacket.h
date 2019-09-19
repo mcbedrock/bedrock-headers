@@ -1,6 +1,7 @@
 #pragma once
 
 #include <math/Vec2.h>
+#include <util/ActorRuntimeID.h>
 #include "Packet.h"
 
 struct MovePlayerPacket : Packet {
@@ -9,15 +10,25 @@ struct MovePlayerPacket : Packet {
 	/**
 	 * Player Runtime ID
 	 */
-	int64_t entityID;
+	ActorRuntimeID runtimeID;
 	/**
 	 * Position
 	 */
-	float x, y, z;
+	union {
+		struct {
+			float x, y, z;
+		};
+		Vec3 pos;
+	};
 	/**
 	 * Rotations
 	 */
-	float pitch, yaw, headYaw;
+	 union {
+	 	struct {
+		 float pitch, yaw, headYaw;
+	 	};
+	 	Vec3 rot;
+	 };
 	/**
 	 * Mode
 	 */
@@ -34,7 +45,7 @@ public:
 	/**
 	 * Ridden Entity Runtime ID
 	 */
-	uint64_t ridingEntityID;
+	ActorRuntimeID ridingEntityID;
 
 	/**
 	 * TODO: Document
@@ -48,18 +59,13 @@ public:
 		Pitch // *shrug*
 	};
 
-	// BIG TODO Fix up headYaw, I have no clue what it is and haven't done any digging
-	MovePlayerPacket(int64_t entityID, bool onGround, const Vec3 &position, const Vec2 &rotations, Mode mode = Normal, uint64_t ridingEntity = 0,
+	MovePlayerPacket(ActorRuntimeID runtimeID, bool onGround, const Vec3 &position, const Vec3 &rotations, Mode mode = Normal, uint64_t ridingEntity = 0,
 			uint32_t teleportCause = 0, uint32_t teleportItem = 0) :
-			entityID(entityID), onGround(onGround), x(position.x), y(position.y), z(position.z), yaw(rotations.yaw), pitch(rotations.pitch), headYaw(rotations.yaw),
-			mode(mode), ridingEntityID(ridingEntity), teleportCause(teleportCause), teleportItem(teleportItem) {
-		//
-	}
+			runtimeID(runtimeID), onGround(onGround), pos(position), rot(rotations),
+			mode(mode), ridingEntityID(ridingEntity), teleportCause(teleportCause), teleportItem(teleportItem) {}
 
-	MovePlayerPacket(MovePlayerPacket &base) : entityID(base.entityID), onGround(base.onGround), x(base.x), y(base.y), z(base.z), yaw(base.yaw), pitch(base.pitch),
-		headYaw(base.headYaw), ridingEntityID(base.ridingEntityID), teleportCause(base.teleportCause), teleportItem(base.teleportItem) {
-		//
-	}
+	MovePlayerPacket(MovePlayerPacket &base) : runtimeID(base.runtimeID), onGround(base.onGround), x(base.x), y(base.y), z(base.z), yaw(base.yaw), pitch(base.pitch),
+		headYaw(base.headYaw), ridingEntityID(base.ridingEntityID), teleportCause(base.teleportCause), teleportItem(base.teleportItem) {}
 
 #include "VirtualTemplate.h"
 };

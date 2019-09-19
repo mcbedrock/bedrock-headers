@@ -15,18 +15,19 @@ struct TextPacket : Packet {
 	};
 
 	TextPacketType type;
-	std::string sender;
-	std::string message;
 
 private:
-	char filler[65];
+	char filler[0x7];
+
+	// TODO: Nevermind the rest of the write function is too complicated for me atm lol
 
 public:
-	static TextPacket createSystemMessage(std::string const &);
-
-	static TextPacket createChat(std::string const &, std::string const &, std::string const &, std::string const &);
-
-	TextPacket(unsigned char playerSubIndex) : Packet(playerSubIndex) {}
+	/*gsl::basic_string_span<char, -1> sender;
+	gsl::basic_string_span<char, -1> message;
+	bool needsTranslation;*/
 
 #include "VirtualTemplate.h"
 };
+
+//static_assert(offsetof(TextPacket, sender) == 0x1c);
+

@@ -6,7 +6,7 @@ struct ActorFallPacket : Packet {
 	/**
 	 * Actor Runtime ID
 	 */
-	uint64_t entityID;
+	ActorRuntimeID rid;
 
 	/**
 	 * Fall Distance

@@ -4,6 +4,9 @@
 #include "Timer.h"
 
 struct Minecraft {
+	char pad_0000[0x58];
+	Timer *gameTimer, *renderTimer;
+
 	/**
 	 * Checks if game is fully initialized
 	 * @return bool

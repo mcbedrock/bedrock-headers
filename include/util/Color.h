@@ -19,6 +19,8 @@ struct Color {
 
 	int toABGR() const;
 
+	int toARGB() const;
+
 	/**
 	 * Create Color object from HSB
 	 * @param hue
@@ -34,4 +36,6 @@ struct Color {
 	 * TODO: Verify
 	 */
 	std::string toHexString() const;
+
+	bool operator==(const Color &) const;
 };

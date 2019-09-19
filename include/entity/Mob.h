@@ -23,9 +23,17 @@ struct Mob : Actor {
 
 	bool isGliding() const;
 
+	bool isAlive() const;
+
+	bool frostWalk();
+
 	int getGlidingTicks() const;
+
+	int getTimeAlongSwing();
 
 	Sensing& getSensing();
 
 	bool isSleeping() const;
+
+	void swing();
 };

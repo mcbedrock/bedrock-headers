@@ -1,17 +1,28 @@
 #pragma once
 
 struct MobEffect {
-	static MobEffect *getbyName(std::string const &);
+	static MobEffect *getByName(std::string const &);
 
 	static MobEffect *getById(int);
 
-	int getId();
+	const std::string &getResourceName() const;
 
-	int getColor();
+	const std::string &getIconName() const;
 
-	bool isDisabled();
+	int getId() const;
 
-	static const MobEffect *DEFAULT_COLOR;
+	unsigned int getColor() const;
+
+	bool isDisabled() const;
+
+	bool isInstantaneous() const;
+
+	bool isHarmful() const;
+
+	bool isVisible() const;
+
+	static const MobEffect *mMobEffects[28];
+
 	static const MobEffect *MOVEMENT_SPEED;
 	static const MobEffect *MOVEMENT_SLOWDOWN;
 	static const MobEffect *DIG_SPEED;

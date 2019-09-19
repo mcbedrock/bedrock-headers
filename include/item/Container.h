@@ -1,12 +1,29 @@
 #pragma once
 
 #include "Item.h"
-#include <vector>
+
+enum ContainerID : int {};
+
+struct PlayerInventoryProxy {
+	ContainerID getSelectedContainerId();
+
+	void selectSlot(int, ContainerID);
+
+	void setSelectedItem(const ItemStack&);
+
+	void setContainerChanged(int);
+
+	void setItem(int slot, const ItemStack &, ContainerID);
+};
 
 struct Container {
 	bool addItem(ItemStack &);
 	bool addItemToFirstEmptySlot(ItemStack &);
 	std::vector<ContainerItemStack const *> getSlots() const;
+};
+
+struct BaseContainerMenu : Container {
+
 };
 
 struct SimpleContainer : Container {

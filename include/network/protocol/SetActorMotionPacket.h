@@ -1,16 +1,24 @@
 #pragma once
 
 #include "Packet.h"
+#include "util/ActorRuntimeID.h"
+#include "math/Vec3.h"
 
 struct SetActorMotionPacket : Packet {
 	/**
 	 * Runtime ID of Actor
 	 */
-	uint64_t entityID;
+	ActorRuntimeID rid;
+
 	/**
-	 * Motion
+	 * Motion (Full motion, not modifier. Calculate that.)
 	 */
-	float x, y, z;
+	union {
+		struct {
+			float x, y, z;
+		};
+		Vec3 motion;
+	};
 
 #include "VirtualTemplate.h"
 };

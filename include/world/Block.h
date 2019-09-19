@@ -1,8 +1,17 @@
 #pragma once
 
 #include "../math/AABB.h"
+#include "../util/ActorRuntimeID.h"
 
-class BlockSource;
+struct BlockSource;
+
+enum MaterialType {};
+
+struct Material {
+	bool isReplaceable() const;
+
+	bool isType(MaterialType) const;
+};
 
 struct Block {
 	ActorRuntimeID &getRuntimeId() const;
@@ -11,19 +20,39 @@ struct Block {
 
 	float getTranslucency() const;
 
-	bool operator !=(const Block *other) {
+	int getRenderLayer() const;
+
+	unsigned int getColor() const;
+
+	bool operator !=(const Block *other) const {
 		return getRuntimeId().data != other->getRuntimeId().data;
 	}
 
-	bool operator !=(const Block &other) {
+	bool operator !=(const Block &other) const {
 		return getRuntimeId().data != other.getRuntimeId().data;
 	}
 
-	bool operator ==(const Block *other) {
+	bool operator ==(const Block *other) const {
 		return getRuntimeId().data == other->getRuntimeId().data;
 	}
 
-	bool operator ==(const Block &other) {
+	bool operator ==(const Block &other) const {
 		return getRuntimeId().data == other.getRuntimeId().data;
 	}
+
+	const Material &getMaterial() const;
+
+	int getSerializationId() const;
 };
+
+struct BlockLegacy {
+	void forEachBlockPermutation(std::function<bool(const Block &)>) const;
+
+	std::string getFullName() const;
+};
+
+struct BlockTypeRegistry {
+	static void forEachBlock(std::function<bool (BlockLegacy const &)>);
+};
+
+enum struct BlockRenderLayer;

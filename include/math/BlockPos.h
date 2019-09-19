@@ -33,34 +33,6 @@ struct BlockPos {
 	static BlockPos ONE;
 	static BlockPos ZERO;
 
-	static BlockPos const &max(BlockPos const &pos1, BlockPos const &pos2);
-
-	static BlockPos const &min(BlockPos const &, BlockPos const &);
-
-	bool operator==(BlockPos const &) const;
-
-	bool operator!=(BlockPos const &) const;
-
-	BlockPos operator+(BlockPos const &) const;
-
-	BlockPos operator+(int) const;
-
-	BlockPos operator-(BlockPos const &) const;
-
-	BlockPos operator-(int) const;
-
-	BlockPos operator-() const;
-
-	BlockPos operator*(int) const;
-
-	BlockPos const &operator=(BlockPos const &);
-
-	BlockPos const &operator+=(BlockPos const &);
-
-	BlockPos const &operator-=(BlockPos const &);
-
-	BlockPos const &operator*=(int);
-
 	/**
 	 * Get Vec3 with center of BlockPos instead of the corner
 	 * @return Vec3
@@ -68,4 +40,6 @@ struct BlockPos {
 	Vec3 center() const;
 
 	BlockPos neighbor(unsigned char) const;
+
+	BlockPos relative(unsigned char, int) const;
 };

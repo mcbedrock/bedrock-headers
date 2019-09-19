@@ -1,12 +1,26 @@
 #pragma once
 
+#include <util/CompoundTag.h>
+#include <world/Block.h>
+#include <util/Color.h>
 #include "ItemEnchants.h"
 
+struct Item {};
+
 struct ItemInstance {
+	static const ItemInstance EMPTY_ITEM;
+
+	ItemInstance(Item const &, int, int);
+
 	short getId() const;
 
-	// This isn't correct from getSelectedItem()...
 	short getAuxValue() const;
+
+	void setAuxValue(short);
+
+	bool operator ==(const ItemInstance &) const;
+
+	bool operator !=(const ItemInstance &) const;
 
 	ItemEnchants &getEnchantmentsFromUserData() const;
 
@@ -15,26 +29,78 @@ struct ItemInstance {
 	bool isBlock() const;
 
 	bool isNull() const;
-};
 
-struct ItemStack {
-	ItemStack(ItemInstance const&);
+	bool isDamageableItem() const;
+
+	bool hasCustomHoverName() const;
+
+	short getDamageValue() const;
+
+	void setDamageValue(short);
+
+	unsigned char getMaxStackSize() const;
+
+	int getMaxDamage() const;
+
+	bool hasUserData() const;
 
 	ItemEnchants &getEnchantsFromUserData() const;
 
-	short getId() const;
+	void setCustomName(std::string const &);
 
-	int getDamageValue() const;
+	void fromTag(const CompoundTag &);
 
-	void setAuxValue(short);
+	void load(const CompoundTag &);
+};
 
-	short getAuxValue() const;
+struct ItemRegistry {
+	static ItemRegistry *mItemRegistry;
+
+	Item &getItem(std::string const &);
+
+	Item &getItem(short);
+};
+
+struct ItemStack : ItemInstance {
+	ItemStack(ItemStack const &);
+
+	ItemStack(ItemInstance const &);
+
+	ItemStack(const Item &);
+
+	ItemStack(const Item &, int, int);
 
 	bool isBlock() const;
+
+	// ID
+	void _setItem(int);
+
+	// Count
+	void set(int);
+
+	void setNull();
+
+	void setBlock(const Block *);
+
+	bool operator==(const ItemStack &) const;
+
+	std::string getName() const;
+
+	std::string getFullItemName() const;
+
+	Color getColor() const;
 };
 
 struct ContainerItemStack : ItemStack {
+	ContainerItemStack(ItemInstance const &);
+
+	ContainerItemStack(ItemStack const &);
+
 	short getId() const;
+
+	bool isEmpty() const;
+
+	int getCount() const;
 
 	void increaseCount(int);
 
@@ -57,5 +123,6 @@ struct ContainerItemStack : ItemStack {
 	ItemStack getItemStack() const;
 
 	ItemInstance getItemInstance() const;
-};
 
+	bool operator==(const ContainerItemStack &) const;
+};

@@ -1,14 +1,24 @@
 #pragma once
 
 #include <network/NetworkHandler.h>
+#include <client/options/Options.h>
+#include <world/BlockTessellator.h>
 #include "../network/PacketSender.h"
 #include "../world/level/Level.h"
 #include "gui/GuiData.h"
-#include "gui/Font.h"
+#include "render/Font.h"
 #include "input/ClientInputHandler.h"
 #include "events/ClientInstanceEventCoordinator.h"
+#include "render/ActorRenderDispatcher.h"
+#include "LevelRenderer.h"
 
 struct MinecraftGame;
+
+struct LevelRenderer;
+
+struct SceneStack {
+	int getSize() const;
+};
 
 struct ClientInstance {
 	/**
@@ -17,6 +27,8 @@ struct ClientInstance {
 	 */
 	bool isInGame() const;
 
+	BlockTessellator& getBlockTessellator();
+
 	/**
 	 * Gets PacketSender
 	 * @return LoopbackPacketSender
@@ -24,10 +36,21 @@ struct ClientInstance {
 	PacketSender *getPacketSender();
 
 	/**
+	 * Get SceneStack
+	 * @return SceneStack*
+	 */
+	 SceneStack *getClientSceneStack();
+
+	/**
 	 * Gets InputHandler for LocalPlayer
 	 * @return ClientInputHandler
 	 */
 	ClientInputHandler &getInput() const;
+
+	/*
+	 *
+	 */
+	Options *getOptionsPtr();
 
 	/**
 	 * Gets EventCoordinator for LocalPlayer
@@ -62,4 +85,14 @@ struct ClientInstance {
 	bool isExitingLevel() const;
 
 	bool isDestroyingGame() const;
+
+	bool isReadyToRender() const;
+
+	bool isPreGame() const;
+
+	LevelRenderer *getLevelRenderer() const;
+
+	MoveInputHandler *getMoveTurnInput();
+
+	ActorRenderDispatcher &getEntityRenderDispatcher();
 };

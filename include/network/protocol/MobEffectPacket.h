@@ -8,7 +8,7 @@ struct MobEffectPacket : Packet {
 	/**
 	 * Runtime ID
 	 */
-	uint64_t entityID; // 20
+	ActorRuntimeID rid; // 20
 	/**
 	 * Duration in ticks
 	 */
@@ -35,8 +35,6 @@ public:
 	 * Particles showing
 	 */
 	bool particles; // 44
-
-	MobEffectPacket(unsigned char playerSubIndex) : Packet(playerSubIndex) {};
 
 	enum Event : uint8_t {
 		Add = 1, Modify = 2, Remove = 3

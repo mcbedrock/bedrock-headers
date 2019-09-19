@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Packet.h"
+#include "util/ActorRuntimeID.h"
 
 /**
  * Packet for hand swings
@@ -11,7 +12,7 @@ struct AnimatePacket : Packet {
 	/**
 	 * Runtime ID
 	 */
-	int64_t entityID; // 20
+	ActorRuntimeID rid; // 20
 	/**
 	 * Action
 	 * @see AnimatePacket::Action
@@ -28,9 +29,7 @@ struct AnimatePacket : Packet {
 		Criticial = 4
 	};
 
-	AnimatePacket(int64_t entityID, Action action, float extra = 0) : entityID(entityID), action(action), extra(extra) {
-		//
-	}
+	AnimatePacket(ActorRuntimeID rid, Action action, float extra = 0) : rid(rid), action(action), extra(extra) {}
 
 #include "VirtualTemplate.h"
 };

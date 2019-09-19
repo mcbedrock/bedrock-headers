@@ -1,10 +1,10 @@
 #pragma once
 
 #include <string>
+#include "Color.h"
 
-// TODO: Fix
 struct ColorFormat {
-	short DARK_GREEN,
+	static const char DARK_GREEN,
 			OBFUSCATED,
 			DARK_PURPLE,
 			LIGHT_PURPLE,
@@ -26,11 +26,17 @@ struct ColorFormat {
 			DARK_BLUE,
 			DARK_GRAY;
 
-	static short FromString(std::string const &);
+	static short FromString(const std::string &);
 
-	static bool IsColorCode(std::string const &);
+	static bool IsColorCode(const std::string &);
 
 	static bool IsColorCode(char);
 
-	std::string NameFromFormatCode(std::string const &);
+	static Color *ColorFromChar(char);
+
+	static char ColorCodeFromColor(const Color &);
+
+	static Color *ColorFromColorCode(const std::string &);
+
+	static std::string NameFromFormatCode(std::string const &);
 };

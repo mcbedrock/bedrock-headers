@@ -1,6 +1,7 @@
 #pragma once
 
 #include <sstream>
+#include "Vec2.h"
 
 struct BlockPos;
 
@@ -14,6 +15,9 @@ struct Vec3 {
 	Vec3(float x) : x(x), y(x), z(x) {};
 
 	Vec3() : x(0.0), y(0.0), z(0.0) {};
+
+	// pitch, yaw, headyaw for Vec3 rotations
+	explicit Vec3(const Vec2 &rotations) : x(rotations.x), y(rotations.y), z(rotations.y) {};
 
 	static Vec3	NEG_UNIT_X,
 				NEG_UNIT_Y,
@@ -36,19 +40,50 @@ struct Vec3 {
 		return x != vec3.x || y != vec3.y || z != vec3.z;
 	}
 
+	Vec3 &operator=(const Vec3 &vec3) {
+		x = vec3.x;
+		y = vec3.y;
+		z = vec3.z;
+		return *this;
+	}
+
 	Vec3 add(const Vec3 &o) const {
-		return Vec3(x + o.x, y + o.y, z + o.z);
+		return {x + o.x, y + o.y, z + o.z};
 	}
 
 	Vec3 add(float ox, float oy, float oz) const {
-		return Vec3(x + ox, y + oy, z + oz);
+		return {x + ox, y + oy, z + oz};
 	}
 
 	Vec3 subtract(const Vec3 &o) const {
-		return Vec3(x - o.x, y - o.y, z - o.z);
+		return {x - o.x, y - o.y, z - o.z};
 	}
 
 	Vec3 subtract(float ox, float oy, float oz) const {
-		return Vec3(x - ox, y - oy, z - oz);
+		return {x - ox, y - oy, z - oz};
+	}
+
+	Vec3 multiply(const Vec3 &o) const {
+		return {x * o.x, y * o.y, z * o.z};
+	}
+
+	Vec3 multiply(float ox, float oy, float oz) const {
+		return {x * ox, y * oy, z * oz};
+	}
+
+	Vec3 multiply(float h, float v) const {
+		return {x * h, y * v, z * h};
+	}
+
+	friend std::ostream& operator<<(std::ostream &ss, const Vec3 &vec3) {
+		return ss << "Vec3{" << vec3.x << ", " << vec3.y << ", " << vec3.z <<  "}";
+	}
+
+	float delta() {
+		return std::sqrt(x * x + z * z);
+	}
+
+	float distance(const Vec3 &o) const {
+		return std::abs(x - o.x) + std::abs(y - o.y) + std::abs(z - o.z);
 	}
 };

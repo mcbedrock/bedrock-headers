@@ -1,26 +1,19 @@
 #pragma once
 
-#include "InputHandler.h"
-
-struct MoveInputHandler : InputHandler {
-	/*
-	 * 	bVar1 = true;
- 			if ((((*(char *)(iParm1 + 0x62) == '\0') && (*(char *)(iParm1 + 99) == '\0')) &&
-      			(*(char *)(iParm1 + 100) == '\0')) &&
-     			((*(char *)(iParm1 + 0x65) == '\0' && (*(float *)(iParm1 + 4) == 0.00000000)))) {
-    				bVar1 = *(float *)(iParm1 + 8) != 0.00000000;
-		return bVar1;
-	 */
-	bool isPlayerMoving() const; // This always returns true?
+struct MoveInputHandler {
+	char pad_0000[4];
+	float strafe, forward; // 0x4 0x8
+	char pad_000c[56];
+	bool sneak; // 0x44
+	char pad_0045;
+	bool jump; // 0x46
+	bool sneak2; // 0x47
+	char pad_0048[2];
+	bool jump2; // 0x4a
 
 	/**
 	 * Checks if player is moving forward (or strafing forward)
 	 * @return bool
 	 */
 	bool isMovingForward() const;
-
-	/**
-	 * Virtually set sneak key state
-	 */
-	void setSneakDown(bool);
 };
