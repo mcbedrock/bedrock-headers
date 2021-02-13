@@ -2,11 +2,11 @@
 
 struct Brightness {
 	static const Brightness
-		*MAX,
-		*MIN,
-		*INVALID;
+		MAX,
+		MIN,
+		INVALID;
 
-	unsigned char value;
+	float value;
 
-	Brightness(unsigned char value) : value(value) {}
+	Brightness(float value) : value(value) {}
 };

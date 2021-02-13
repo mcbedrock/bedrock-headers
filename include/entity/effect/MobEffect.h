@@ -11,7 +11,7 @@ struct MobEffect {
 
 	int getId() const;
 
-	unsigned int getColor() const;
+	const mce::Color &getColor() const;
 
 	bool isDisabled() const;
 

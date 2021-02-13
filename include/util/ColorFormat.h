@@ -32,11 +32,11 @@ struct ColorFormat {
 
 	static bool IsColorCode(char);
 
-	static Color *ColorFromChar(char);
+	static mce::Color *ColorFromChar(char);
 
-	static char ColorCodeFromColor(const Color &);
+	static char ColorCodeFromColor(const mce::Color &);
 
-	static Color *ColorFromColorCode(const std::string &);
+	static mce::Color *ColorFromColorCode(const std::string &);
 
 	static std::string NameFromFormatCode(std::string const &);
 };

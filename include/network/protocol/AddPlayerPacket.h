@@ -22,11 +22,11 @@ struct AddPlayerPacket : Packet {
 #include "VirtualTemplate.h"
 };
 
-static_assert(offsetof(AddPlayerPacket, username) == 0x20);
+/*static_assert(offsetof(AddPlayerPacket, username) == 0x20);
 static_assert(offsetof(AddPlayerPacket, uuid) == 0x24);
 static_assert(offsetof(AddPlayerPacket, uid) == 0x34);
 static_assert(offsetof(AddPlayerPacket, eid) == 0x3c);
 static_assert(offsetof(AddPlayerPacket, platformChatId) == 0x44);
 static_assert(offsetof(AddPlayerPacket, pos) == 0x48);
 static_assert(offsetof(AddPlayerPacket, stack) == 0x6C);
-static_assert(offsetof(AddPlayerPacket, deviceId) == 0x204);
+static_assert(offsetof(AddPlayerPacket, deviceId) == 0x204);*/

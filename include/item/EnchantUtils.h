@@ -6,9 +6,10 @@
 struct EnchantUtils {
 	static void randomlyEnchant(ItemStack &);
 
-	static void applyEnchant(ItemInstance &, Enchant::Type, int, bool);
+	static void applyEnchant(ItemStackBase &item, Enchant::Type type, int level, bool b_unk);
 
-	static void applyEnchant(ItemStack &, Enchant::Type, int, bool);
+	// EnchantmentInstance is not yet restructured
+	//static void applyEnchant(ItemStackBase &item, const EnchantmentInstance &enchant, int level, bool b_unk);
 
 	static bool canEnchant(ItemStack const &, Enchant::Type, int, bool);
 

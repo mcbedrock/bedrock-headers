@@ -4,7 +4,7 @@
 
 enum ContainerID : int {};
 
-struct PlayerInventoryProxy {
+struct PlayerInventory {
 	ContainerID getSelectedContainerId();
 
 	void selectSlot(int, ContainerID);
@@ -14,6 +14,8 @@ struct PlayerInventoryProxy {
 	void setContainerChanged(int);
 
 	void setItem(int slot, const ItemStack &, ContainerID);
+
+	void swapSlots(int, int);
 };
 
 struct Container {

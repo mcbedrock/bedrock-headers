@@ -2,6 +2,7 @@
 
 #include <util/DataItem.h>
 #include "Packet.h"
+#include <vector>
 
 struct SetActorDataPacket : Packet {
 	ActorRuntimeID rid;

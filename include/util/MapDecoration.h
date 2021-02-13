@@ -5,7 +5,7 @@
 struct MapDecoration {
 	char getX() const;
 	char getY() const;
-	Color &getColor() const;
+	mce::Color &getColor() const;
 	bool isRenderedOnFrame() const;
 	std::string &getLabel() const;
 };

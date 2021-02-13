@@ -48,7 +48,7 @@ struct BinaryStream : ReadOnlyBinaryStream {
 	void writeUnsignedShort(unsigned short);
 	void writeUnsignedVarInt(unsigned int);
 	void writeNormalizedFloat(float);
-	void writeUnsignedVarInt64(unsigned long long);
+	void writeUnsignedVarInt64(unsigned long);
 	void writeSignedBigEndianInt(int);
 	void write(void const*, unsigned int);
 	void writeBool(bool);

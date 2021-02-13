@@ -15,4 +15,4 @@ struct AddItemActorPacket : Packet {
 #include "VirtualTemplate.h"
 };
 
-static_assert(offsetof(AddItemActorPacket, motion) == 0x90);
+//static_assert(offsetof(AddItemActorPacket, motion) == 0x90);

@@ -47,7 +47,7 @@ struct Level {
 
 	Actor *getMob(ActorUniqueID) const;
 
-	Color getPlayerColor(Player const &) const;
+	mce::Color getPlayerColor(Player const &) const;
 
 	std::unordered_map<mce::UUID, PlayerListEntry> &getPlayerList();
 
@@ -77,4 +77,6 @@ struct Level {
 	GameType getDefaultGameType() const;
 
 	BlockPos getDefaultSpawn() const;
+
+	unsigned int getActivePlayerCount() const;
 };

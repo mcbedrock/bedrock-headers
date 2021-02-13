@@ -104,7 +104,7 @@ struct Actor {
 
 	void setClimbing(bool);
 
-	bool onLadder(bool vine) const;
+	//bool onLadder(bool vine) const;
 
 	void setHurtTime(int);
 
@@ -191,15 +191,18 @@ struct Actor {
 
 	void swing();
 
-	Vec3 getPosExtrapolated(float) const;
+	const Vec3 &getPosExtrapolated(float) const;
 
-	Vec3 const &getPos() const;
+	const Vec3 &getPos() const;
 
-	Vec3 const &getPosOld() const;
+	// We gettin real comfy up in here with them symbols mmmhhm
+	const Vec3 &getInterpolatedPosition(float) const;
 
-	Vec3 getViewVector(float) const;
+	const Vec3 &getPosOld() const;
 
-	Level & getLevel() const;
+	const Vec3 &getViewVector(float) const;
+
+	Level &getLevel() const;
 
 	const std::string &getNameTag() const;
 

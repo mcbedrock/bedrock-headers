@@ -27,6 +27,7 @@ struct LocalPlayer : Player {
 	void setPlayerGameTypeWithoutServerNotification(GameType);
 
 	void setSelectedItemSlot(short slot) {
+		// TODO: Fuck
 		getSupplies().selectSlot(slot, getSupplies().getSelectedContainerId());
 		getSupplies().setSelectedItem(*getInventoryMenu().getSlot(slot));
 	}

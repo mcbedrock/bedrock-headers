@@ -19,11 +19,11 @@ struct SkinInfoData {
 	void setForceAlpha(std::vector<unsigned char, std::allocator<unsigned char> >&, int, int, int, int, int);
 };
 
-static_assert(offsetof(SkinInfoData, first) == 0x38);
-static_assert(offsetof(SkinInfoData, second) == 0x3C);
+//static_assert(offsetof(SkinInfoData, first) == 0x38);
+//static_assert(offsetof(SkinInfoData, second) == 0x3C);
 
 struct Player : Mob {
-	PlayerInventoryProxy &getSupplies() const;
+	PlayerInventory &getSupplies() const;
 
 	bool canUseAbility(std::string const &);
 
@@ -63,7 +63,7 @@ struct Player : Mob {
 
 	void displayClientMessage(std::string const&);
 
-	std::string getPlatformOnlineId() const;
+	const std::string &getPlatformOnlineId() const;
 
 	Certificate *getCertificate() const;
 

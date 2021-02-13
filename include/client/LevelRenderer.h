@@ -11,6 +11,8 @@ struct LevelRendererPlayer {
 	//char pad_0000[0x5c];
 	//LevelRendererCamera *levelRendererCamera;
 
-	void computeCameraPos(float mode);
+	//void computeCameraPos(float mode);
+
+	void tickLevelRendererCamera();
 };
 
