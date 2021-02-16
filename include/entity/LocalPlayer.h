@@ -45,5 +45,13 @@ struct LocalPlayer : Player {
 	void startRiding(Actor &);
 
 	bool isSwimming() const;
+
+	bool isLocalPlayer() const;
+
+	void move(Vec3 const &);
+
+	ClientInstance &getClientInstance() const;
+
+	MoveInputHandler &getMoveInputHandler();
 };
 

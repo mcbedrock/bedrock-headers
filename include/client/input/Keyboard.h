@@ -1,5 +1,5 @@
 #pragma once
 
 struct Keyboard {
-	static const int* _states; // TODO link symbol
+	static int* _states; // TODO: link symbol
 };

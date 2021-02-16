@@ -4,7 +4,7 @@
 
 namespace {
 	void *MinecraftHandle() {
-		static void *handle = dlopen("libminecraftpe.so", 0);
+		static void *handle = dlopen("libminecraftpe.so", RTLD_LAZY);
 		return handle;
 	}
 }

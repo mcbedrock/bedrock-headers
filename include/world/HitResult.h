@@ -1,5 +1,7 @@
 #pragma once
 
+#include "math/BlockPos.h"
+
 struct HitResult {
 	enum struct Type { Tile, Entity, Miss };
 	Vec3 x, y;

@@ -1,11 +1,12 @@
 #pragma once
 
-#include <item/Container.h>
+#include "item/Container.h"
 #include "Mob.h"
 #include "Agent.h"
 #include "item/Item.h"
-#include "../util/Certificate.h"
+#include "util/Certificate.h"
 #include "mce/Image.h"
+#include "network/protocol/Packet.h"
 
 struct SkinInfoData {
 	char pad_0000[0x38];
@@ -72,4 +73,8 @@ struct Player : Mob {
 	int getTicksUsingItem();
 
 	SkinInfoData *getSkin() const;
+
+	bool isLocalPlayer() const;
+
+	void attack(Actor &);
 };

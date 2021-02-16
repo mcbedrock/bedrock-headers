@@ -29,4 +29,7 @@ struct Minecraft {
 	 * Get game timer
 	 */
 	 Timer *getTimer();
+
+	 // Unknown return, probably void
+	 void init();
 };

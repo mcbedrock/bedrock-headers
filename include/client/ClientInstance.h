@@ -1,10 +1,10 @@
 #pragma once
 
-#include <network/NetworkHandler.h>
-#include <client/options/Options.h>
-#include <world/BlockTessellator.h>
-#include "../network/PacketSender.h"
-#include "../world/level/Level.h"
+#include "network/NetworkHandler.h"
+#include "client/options/Options.h"
+#include "world/BlockTessellator.h"
+#include "network/PacketSender.h"
+#include "world/level/Level.h"
 #include "gui/GuiData.h"
 #include "render/Font.h"
 #include "input/ClientInputHandler.h"
@@ -15,6 +15,8 @@
 struct MinecraftGame;
 
 struct LevelRenderer;
+
+struct LocalPlayer;
 
 struct SceneStack {
 	int getSize() const;
@@ -95,4 +97,8 @@ struct ClientInstance {
 	MoveInputHandler *getMoveTurnInput();
 
 	ActorRenderDispatcher &getEntityRenderDispatcher();
+
+	void onClientInputInitComplete();
+
+	void onClientCreatedLevel(std::unique_ptr<Level>, std::unique_ptr<LocalPlayer>);
 };

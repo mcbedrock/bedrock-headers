@@ -38,7 +38,7 @@ public:
 
 	virtual void read(ReadOnlyBinaryStream &) = 0;
 
-	/*virtual*/ void handle(NetworkIdentifier const &, NetEventCallback &, std::shared_ptr<Packet>&) const;
+	virtual void handle(NetworkIdentifier const&, NetEventCallback &, std::shared_ptr<Packet>&);
 
 	//virtual bool disallowBatching() const = 0;
 };

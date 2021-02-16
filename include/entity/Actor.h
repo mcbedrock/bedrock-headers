@@ -26,6 +26,51 @@ struct Mob;
 enum struct ArmorSlot {};
 
 struct Actor {
+	// ReClass.NET is used for helping find these and generating what you see
+	char pad_0000[280]; //0x0000
+	Vec2 rotation; //0x0118
+	Vec2 prevRotation; //0x0120
+	float diveProgress; //0x0128
+	float prevDiveProgress; //0x012C
+	char pad_0130[8]; //0x0130
+	float x; //0x0138
+	float y; //0x013C
+	float z; //0x0140
+	char pad_0144[8]; //0x0144
+	// warning this is not actually ticks existed (it appears to have been removed), but it is a ticker that only goes from 0-255
+	// only used for compatibility with other tick tests that use modulo on this
+	uint8_t ticksExisted; //0x014C
+	char pad_014D[103]; //0x014D
+	float fallDistance; //0x01B4
+	bool b_unk; //0x01B8
+	bool collidedVertically; //0x01B9
+	bool collidedHorizontally; //0x01BA
+	bool onGround; //0x01BB
+	bool prevOnGround; //0x01BC
+	char pad_01BD[91]; //0x01BD
+	float stepHeight; //0x0218
+	char pad_021C[116]; //0x021C
+	uint32_t hurtTime; //0x0290
+	char pad_0294[452]; //0x0294
+	AABB aabb; //0x0458
+	char pad_0470[4]; //0x0470
+	float width; //0x0474
+	float height; //0x0478
+	Vec3 pos; //0x047C
+	Vec3 prevPos; //0x0488
+	Vec3 motion; //0x0494
+	Vec3 N00000651; //0x04A0
+	char pad_04AC[1688]; //0x04AC
+	float N000001CF; //0x0B44
+	float N00000640; //0x0B48
+	float N0000063D; //0x0B4C
+	float N000001D0; //0x0B50
+	float N00000644; //0x0B54
+	float N000001D1; //0x0B58
+	char pad_0B5C[2590]; //0x0B5C
+
+	// Old map, from 1.12.x iirc kept shortly for reference when finding values for current ver (1.16.200)
+	/*
 	char pad_0x0000[0x64];
 	int dimensionId; // 0x64
 	char pad_0x0068[0x14];
@@ -61,6 +106,7 @@ struct Actor {
 	int pad;
 	// offset for gamemode increased by 4 bytes in 1.12.1
 	GameMode *gameMode; // 0x1558 holy hell
+	*/
 
 	Actor(ActorDefinitionGroup *, ActorDefinitionIdentifier const &);
 
@@ -214,10 +260,6 @@ struct Actor {
 		return std::regex_replace(getNameTag(), colorCodes, "");
 	}
 
-	const char *getName() const {
-		return getUnformattedNameTag().c_str();
-	};
-
 	bool hasTags() const;
 
 	float distanceTo(Actor const &) const;
@@ -313,17 +355,6 @@ struct Actor {
 	bool isOverWater() const;
 
 	void lerpMotion(const Vec3 &);
-};
 
-static_assert(offsetof(Actor, dimensionId) == 0x64);
-static_assert(offsetof(Actor, rotation) == 0x84);
-static_assert(offsetof(Actor, realPos) == 0xA4);
-static_assert(offsetof(Actor, pad_0x00b0) == 0xb0);
-static_assert(offsetof(Actor, hurtTime) == 0x1c4);
-static_assert(offsetof(Actor, aabb) == 0xc70);
-static_assert(offsetof(Actor, width) == 0xc8c);
-static_assert(offsetof(Actor, height) == 0xc90);
-static_assert(offsetof(Actor, motion) == 0xc94);
-static_assert(offsetof(Actor, pos) == 0xca0);
-static_assert(offsetof(Actor, prevPos) == 0xcac);
-//static_assert(offsetof(Actor, gameMode) == 0x155c);
+	bool isMoving() const;
+};
