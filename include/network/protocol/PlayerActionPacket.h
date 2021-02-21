@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../util/ActorRuntimeID.h"
+#include "util/ActorRuntimeID.h"
 #include "Packet.h"
 
 struct PlayerActionPacket : Packet {

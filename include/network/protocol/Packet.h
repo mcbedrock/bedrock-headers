@@ -10,16 +10,14 @@ struct NetEventCallback;
 /*
  * Important: When creating a subclass include VirtualTemplate.h inside the class
  */
-struct Packet {
-	int unk_4 = 2, unk_8 = 1; // 4 8
-	unsigned char playerSubIndex = 0; // 12
+class Packet {
+	int unk_4= 2, unk_8 = 1;
+	unsigned char playerSubIndex = 0;
+	char filler[7];
 
-private:
-	char filler[7]; // TODO: Find out what this is
+	// base offset 0x10
 
 public:
-	// Subpackets will start at 20 (0x14)
-
 	//Packet() = default;
 
 	//Packet(unsigned char playerSubIndex) : playerSubIndex(playerSubIndex) {}
@@ -40,5 +38,5 @@ public:
 
 	virtual void handle(NetworkIdentifier const&, NetEventCallback &, std::shared_ptr<Packet>&);
 
-	//virtual bool disallowBatching() const = 0;
+	virtual bool disallowBatching() const = 0;
 };

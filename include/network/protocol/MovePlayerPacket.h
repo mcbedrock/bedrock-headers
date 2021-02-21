@@ -1,11 +1,11 @@
 #pragma once
 
-#include <math/Vec2.h>
-#include <util/ActorRuntimeID.h>
+#include "math/Vec2.h"
+#include "util/ActorRuntimeID.h"
 #include "Packet.h"
 
 struct MovePlayerPacket : Packet {
-	enum Mode : uint8_t;
+	//enum Mode : uint8_t;
 
 	/**
 	 * Player Runtime ID
@@ -69,3 +69,6 @@ public:
 
 #include "VirtualTemplate.h"
 };
+
+char (*test)[offsetof(MovePlayerPacket, runtimeID)] = 1;
+static_assert(offsetof(MovePlayerPacket, runtimeID) == 0x24);

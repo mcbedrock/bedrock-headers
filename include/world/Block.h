@@ -1,7 +1,8 @@
 #pragma once
 
-#include "../math/AABB.h"
-#include "../util/ActorRuntimeID.h"
+#include "util/Brightness.h"
+#include "math/AABB.h"
+#include "util/ActorRuntimeID.h"
 
 struct BlockSource;
 
@@ -13,8 +14,10 @@ struct Material {
 	bool isType(MaterialType) const;
 };
 
+enum BlockProperty : unsigned char;
+
 struct Block {
-	ActorRuntimeID &getRuntimeId() const;
+	ActorRuntimeID getRuntimeId() const;
 
 	AABB &getAABB(BlockSource &, BlockPos const &, AABB &, bool) const;
 
@@ -43,12 +46,18 @@ struct Block {
 	const Material &getMaterial() const;
 
 	int getSerializationId() const;
+
+	bool hasProperty(BlockProperty) const;
 };
 
 struct BlockLegacy {
-	void forEachBlockPermutation(std::function<bool(const Block &)>) const;
+	//virtual void forEachBlockPermutation(std::function<bool(const Block &)>) const;
 
-	std::string getFullName() const;
+	virtual std::string getFullName() const;
+
+	virtual unsigned int getColor(BlockSource&, BlockPos const&, Block const&) const;
+
+	virtual Brightness getLightEmission(Block const&) const;
 };
 
 struct BlockTypeRegistry {

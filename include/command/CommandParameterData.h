@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include "CommandRegistry.h"
-#include "../util/typeid.h"
+#include "util/typeid.h"
 
 enum struct CommandParameterDataType;
 

@@ -37,7 +37,7 @@ struct BinaryStream : ReadOnlyBinaryStream {
 	void writeStream(BinaryStream&);
 	void writeString(gsl::basic_string_span<char const, -1>);
 	void writeVarInt(int);
-	void writeVarInt64(long long);
+	void writeVarInt64(long);
 	void writeSignedInt(int);
 	void writeFixedFloat(float, double);
 	void writeSignedInt64(long long);

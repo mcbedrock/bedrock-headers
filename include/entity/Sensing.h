@@ -2,7 +2,7 @@
 
 #include "Actor.h"
 #include "Mob.h"
-#include "../math/Vec3.h"
+#include "math/Vec3.h"
 
 struct Sensing {
 	bool canSee(Actor const&);

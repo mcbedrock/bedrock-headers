@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../util/typeid.h"
+#include "util/typeid.h"
 
 struct CommandRegistry;
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../client/EventCoordinator.h"
+#include "client/EventCoordinator.h"
 
 struct PlayerEventCoordinator : EventCoordinator {
 	void sendPlayerAttackedActor(Player &, Actor &);

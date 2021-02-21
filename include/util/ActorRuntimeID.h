@@ -17,11 +17,11 @@ struct ActorUniqueID {
 struct ActorRuntimeID {
 	uint64_t data;
 
-	explicit ActorRuntimeID(int64_t data) : data(data) {};
+	explicit ActorRuntimeID(uint64_t data) : data(data) {};
 
 	ActorRuntimeID() : ActorRuntimeID(0) {};
 
-	operator int64_t() const {
+	operator uint64_t() const {
 		return data;
 	}
 };

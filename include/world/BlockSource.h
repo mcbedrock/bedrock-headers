@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../entity/BlockActor.h"
-#include "../math/BlockPos.h"
-#include "../math/Vec3.h"
+#include "entity/BlockActor.h"
+#include "math/BlockPos.h"
+#include "math/Vec3.h"
 #include "Block.h"
 
 struct ActorBlockSyncMessage;

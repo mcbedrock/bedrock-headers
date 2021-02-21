@@ -1,8 +1,8 @@
 #pragma once
 
 #include <string>
-#include "../Color.h"
-#include "../Font.h"
+#include "util/Color.h"
+#include "util/Font.h"
 
 struct UIControl;
 

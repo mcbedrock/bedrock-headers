@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../util/Color.h"
+#include "util/Color.h"
 #include "ScreenContext.h"
 #include <string>
 

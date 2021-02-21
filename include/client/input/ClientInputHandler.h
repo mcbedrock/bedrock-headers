@@ -23,4 +23,6 @@ struct ClientInputHandler : MoveInputHandler {
 	 * @return bool
 	 */
 	bool isInWater() const;
+
+	void render(ScreenContext &);
 };

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../network/NetworkHandler.h"
+#include "network/NetworkHandler.h"
 #include "Timer.h"
 
 struct Minecraft {

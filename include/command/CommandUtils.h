@@ -1,8 +1,8 @@
 #pragma once
 
+#include "item/Item.h"
+#include "util/Json.h"
 #include <string>
-#include <item/Item.h>
-#include <util/Json.h>
 
 struct CommandUtils {
 	static ItemStack createItemStack(const std::string &name, int, int);
