@@ -38,5 +38,5 @@ public:
 
 	virtual void handle(NetworkIdentifier const&, NetEventCallback &, std::shared_ptr<Packet>&);
 
-	virtual bool disallowBatching() const = 0;
+	//virtual bool disallowBatching() const = 0;
 };
