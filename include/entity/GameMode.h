@@ -4,7 +4,7 @@
 #include "item/Item.h"
 
 struct GameMode {
-	void buildBlock(BlockPos const&, unsigned char face);
+	bool buildBlock(BlockPos const&, unsigned char face);
 	void baseUseItem(ItemStack&);
 	void stopBuildBlock();
 	void releaseUsingItem();

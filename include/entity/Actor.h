@@ -21,11 +21,11 @@ struct Mob;
 enum struct ArmorSlot;
 
 struct Actor {
-	// I added virtual functions but the way libminecraftpe.so links broke stuff
-	//uintptr_t** vtable;
 	// ReClass.NET is used for helping find these and generating what you see
 	// Some of the higher values do NOT apply to all Actors, inheritance is a bitch
-	char pad_0000[228]; //0x0000
+	// I defined virtual functions but the way it links broke stuff so this is just an accessor
+	uintptr_t** vtable; //0x0000
+	char pad_0000[220]; //0x0008
 	int32_t dimensionId; //0x00E4
 	char pad_00E8[48]; //0x00E8
 	Vec2 rotation; //0x0118
@@ -52,25 +52,15 @@ struct Actor {
 	bool isOnMagma; //0x02AC
 	bool isOnFire; //0x02AD
 	char pad_02AE[426]; //0x02AE
-	union {
-		AABB aabb;
-		struct {
-			Vec3 minBB; //0x0458
-			Vec3 maxBB; //0x0464
-		};
-	};
+	AABB aabb; //0x0458
 	char pad_0470[4]; //0x0470
 	float width; //0x0474
 	float height; //0x0478
 	Vec3 pos; //0x047C
 	Vec3 prevPos; //0x0488
 	Vec3 motion; //0x0494
-	//char pad_04A0[3188]; //0x04A0
-	//class GameMode *gameMode; //0x1114
-	// Yikers, see bottom for details...
-	class GameMode *getGameMode() {
-		return reinterpret_cast<GameMode *>((*reinterpret_cast<uintptr_t *>(reinterpret_cast<uintptr_t>(this) + 0x1114)) >> 32);
-	}
+	char pad_04A0[3192]; //0x04A0
+	class GameMode *gameMode; //0x1118
 
 	Actor(ActorDefinitionGroup *, ActorDefinitionIdentifier const &);
 	Actor(BlockSource &, std::string const &);
@@ -201,5 +191,4 @@ struct Actor {
 
 static_assert(offsetof(Actor, dimensionId) == 0xE4);
 static_assert(offsetof(Actor, motion) == 0x494);
-//static_assert(offsetof(Actor, gameMode) == 0x1114);
-//char (*_test)[offsetof(Actor, gameMode)] = 1;
+static_assert(offsetof(Actor, gameMode) == 0x1118);

@@ -13,5 +13,3 @@ struct ActorEventPacket : Packet {
 
 #include "VirtualTemplate.h"
 };
-
-//static_assert(offsetof(ActorEventPacket, event) == 0x1C);

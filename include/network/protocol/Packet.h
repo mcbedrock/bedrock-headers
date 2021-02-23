@@ -10,14 +10,13 @@ struct NetEventCallback;
 /*
  * Important: When creating a subclass include VirtualTemplate.h inside the class
  */
-class Packet {
-	int unk_4= 2, unk_8 = 1;
+struct Packet {
+	int unk_4 = 2, unk_8 = 1;
 	unsigned char playerSubIndex = 0;
-	char filler[7];
+	char pad[0x17];
+	//char pad[0x7];
+	//void *handlerThunk; // dispatcher instance that handles this type of packet
 
-	// base offset 0x10
-
-public:
 	//Packet() = default;
 
 	//Packet(unsigned char playerSubIndex) : playerSubIndex(playerSubIndex) {}
@@ -40,3 +39,5 @@ public:
 
 	//virtual bool disallowBatching() const = 0;
 };
+
+//char (*_test)[offsetof(Packet, handlerThunk)] = 1;
