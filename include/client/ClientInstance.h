@@ -24,7 +24,7 @@ struct SceneStack {
 
 struct ClientInstance {
 	/**
-	 * Checks if a world is currently loaded
+	 * Checks that player is playing and not busy in any UI
 	 * @return bool
 	 */
 	bool isInGame() const;
@@ -82,6 +82,10 @@ struct ClientInstance {
 
 	bool isLeavingGame() const;
 
+	/**
+	 * Is in a level
+	 * @return
+	 */
 	bool isPlaying() const;
 
 	bool isExitingLevel() const;

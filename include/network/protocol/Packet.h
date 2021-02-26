@@ -12,10 +12,9 @@ struct NetEventCallback;
  */
 struct Packet {
 	int unk_4 = 2, unk_8 = 1;
-	unsigned char playerSubIndex = 0;
-	char pad[0x17];
-	//char pad[0x7];
-	//void *handlerThunk; // dispatcher instance that handles this type of packet
+	char pad[0x8];
+	uintptr_t **handlerThunk; // dispatcher instance that handles this type of packet (array, first item should be for this packet type)
+	char pad2[0x8];
 
 	//Packet() = default;
 
@@ -40,4 +39,4 @@ struct Packet {
 	//virtual bool disallowBatching() const = 0;
 };
 
-//char (*_test)[offsetof(Packet, handlerThunk)] = 1;
+static_assert(sizeof(Packet) == 0x28);

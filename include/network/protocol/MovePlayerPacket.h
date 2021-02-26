@@ -5,7 +5,12 @@
 #include "Packet.h"
 
 struct MovePlayerPacket : Packet {
-	enum Mode : uint8_t;
+	enum Mode : uint8_t {
+		Normal,
+		Reset,
+		Teleport,
+		Pitch // *shrug*
+	};
 
 	/**
 	 * Player Runtime ID
@@ -38,10 +43,8 @@ struct MovePlayerPacket : Packet {
 	 */
 	bool onGround;
 
-private:
 	char filler[7]; // again...
 
-public:
 	/**
 	 * Ridden Entity Runtime ID
 	 */
@@ -52,14 +55,8 @@ public:
 	 */
 	uint32_t teleportCause, teleportItem;
 
-	enum Mode : uint8_t {
-		Normal,
-		Reset,
-		Teleport,
-		Pitch // *shrug*
-	};
 
-	MovePlayerPacket(ActorRuntimeID runtimeID, bool onGround, const Vec3 &position, const Vec3 &rotations, Mode mode = Normal, uint64_t ridingEntity = 0,
+	MovePlayerPacket(const ActorRuntimeID runtimeID, bool onGround, const Vec3 &position, const Vec3 &rotations, Mode mode = Normal, uint64_t ridingEntity = 0,
 			uint32_t teleportCause = 0, uint32_t teleportItem = 0) :
 			runtimeID(runtimeID), onGround(onGround), pos(position), rot(rotations),
 			mode(mode), ridingEntityID(ridingEntity), teleportCause(teleportCause), teleportItem(teleportItem) {}
@@ -69,3 +66,5 @@ public:
 
 #include "VirtualTemplate.h"
 };
+
+static_assert(offsetof(MovePlayerPacket, runtimeID) == 0x28);
