@@ -35,7 +35,11 @@ struct BinaryStream : ReadOnlyBinaryStream {
 	void writeFloat(float);
 	void writeDouble(double);
 	void writeStream(BinaryStream&);
-	void writeString(gsl::basic_string_span<char const, -1>);
+	// Deprecated in latest GSL headers but still linked like this, so...
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated"
+	void writeString(gsl::basic_string_span<char const, -1ul>);
+#pragma GCC diagnostic pop
 	void writeVarInt(int);
 	void writeVarInt64(long);
 	void writeSignedInt(int);

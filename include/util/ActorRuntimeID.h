@@ -5,7 +5,7 @@
 struct ActorUniqueID {
 	int64_t data;
 
-	ActorUniqueID(int64_t data) : data(data) {};
+	explicit ActorUniqueID(int64_t data) : data(data) {};
 
 	ActorUniqueID() : ActorUniqueID(0) {};
 
