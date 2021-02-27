@@ -12,6 +12,8 @@ struct MovePlayerPacket : Packet {
 		Pitch // *shrug*
 	};
 
+	int pad;
+
 	/**
 	 * Player Runtime ID
 	 */
@@ -61,7 +63,7 @@ struct MovePlayerPacket : Packet {
 			runtimeID(runtimeID), onGround(onGround), pos(position), rot(rotations),
 			mode(mode), ridingEntityID(ridingEntity), teleportCause(teleportCause), teleportItem(teleportItem) {}
 
-	MovePlayerPacket(MovePlayerPacket &base) : runtimeID(base.runtimeID), onGround(base.onGround), x(base.x), y(base.y), z(base.z), yaw(base.yaw), pitch(base.pitch),
+	MovePlayerPacket(const MovePlayerPacket &base) : runtimeID(base.runtimeID), onGround(base.onGround), x(base.x), y(base.y), z(base.z), yaw(base.yaw), pitch(base.pitch),
 		headYaw(base.headYaw), ridingEntityID(base.ridingEntityID), teleportCause(base.teleportCause), teleportItem(base.teleportItem) {}
 
 #include "VirtualTemplate.h"

@@ -1,5 +1,7 @@
 #pragma once
 
+// TODO: See if these x64 offsets are right
+
 enum struct DataItemType : unsigned char {
 	Byte,
 	Short,
@@ -13,12 +15,18 @@ enum struct DataItemType : unsigned char {
 };
 
 struct DataItem {
-	char pad_0000[4];
+	uintptr_t **vtable;
 	DataItemType type;
 	char pad_0005[1];
 	char id; // 0x6
 	char pad_0006[5];
-	char data; // 0xc, cast this address of this to whatever the type is
+	union {
+		uint8_t byteVal;
+		uint16_t shortVal;
+		uint32_t intVal;
+		float floatVal;
+		uint64_t longVal;
+		BlockPos posVal;
+		Vec3 vectorVal;
+	};
 };
-
-static_assert(offsetof(DataItem, data) == 0xc);

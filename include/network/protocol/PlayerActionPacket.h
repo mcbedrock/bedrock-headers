@@ -11,19 +11,20 @@ struct PlayerActionPacket : Packet {
 	 */
 	union {
 		struct {
-			int32_t x = 0, y = 0, z = 0;
+			int32_t x = 0;
+			uint32_t y = 0;
+			int32_t z = 0;
 		};
 		BlockPos blockPos;
 	};
-	/**
-	 * Block face for some actions
-	 */
-	uint32_t face = 0;
+
+	uint32_t face;
+
 	/**
 	 * Action
 	 * @see PlayerActionPacket::Action
 	 */
-	Action action;
+	uint32_t action;
 	/**
 	 * Player Runtime ID
 	 */
@@ -64,3 +65,8 @@ struct PlayerActionPacket : Packet {
 
 #include "VirtualTemplate.h"
 };
+
+static_assert(offsetof(PlayerActionPacket, x) == 0x24);
+static_assert(offsetof(PlayerActionPacket, face) == 0x30);
+static_assert(offsetof(PlayerActionPacket, action) == 0x34);
+static_assert(offsetof(PlayerActionPacket, rid) == 0x38);

@@ -10,11 +10,12 @@ struct NetEventCallback;
 /*
  * Important: When creating a subclass include VirtualTemplate.h inside the class
  */
+#pragma pack(push, 4)
 struct Packet {
 	int unk_4 = 2, unk_8 = 1;
 	char pad[0x8];
 	uintptr_t **handlerThunk; // dispatcher instance that handles this type of packet (array, first item should be for this packet type)
-	char pad2[0x8];
+	char pad2[0x4];
 
 	//Packet() = default;
 
@@ -38,5 +39,6 @@ struct Packet {
 
 	//virtual bool disallowBatching() const = 0;
 };
+#pragma pack(pop)
 
-static_assert(sizeof(Packet) == 0x28);
+static_assert(sizeof(Packet) == 0x24);

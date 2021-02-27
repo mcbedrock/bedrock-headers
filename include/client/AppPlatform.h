@@ -12,6 +12,8 @@ struct AppPlatform {
 	AppPlatform::HardwareInformation &getHardwareInformation() const;
 
 	AppPlatform::HardwareInformation &getHardwareInformationToModify();
+
+	const char *getPlatformRuntimeInformation() const;
 };
 
 struct AppPlatform_android : AppPlatform {

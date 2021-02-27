@@ -6,11 +6,13 @@
 struct ChunkPos {};
 
 struct BlockPos {
-	int x, y, z;
+	int32_t x;
+	uint32_t y;
+	int32_t z;
 
 	//BlockPos(float, float, float);
 
-	BlockPos(int x, int y, int z) : x(x), y(y), z(z) {};
+	BlockPos(int32_t x, uint32_t y, int32_t z) : x(x), y(y), z(z) {};
 
 	/**
 	 * Create BlockPos from Vec3

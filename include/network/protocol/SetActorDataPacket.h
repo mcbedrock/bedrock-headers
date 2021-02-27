@@ -6,8 +6,11 @@
 
 struct SetActorDataPacket : Packet {
 	ActorRuntimeID rid;
-
-	std::vector<std::unique_ptr<DataItem>> entries;
+	char pad[0x8];
+	std::vector<DataItem*> entries;
 
 #include "VirtualTemplate.h"
 };
+
+static_assert(offsetof(SetActorDataPacket, rid) == 0x28);
+static_assert(offsetof(SetActorDataPacket, entries) == 0x38);
