@@ -5,9 +5,20 @@
 #include <util/Color.h>
 #include "ItemEnchants.h"
 
-struct Item {};
+struct Item {
+	// TODO
+};
 
 struct ItemStackBase {
+	uintptr_t **vtable;
+	Item **item;
+	void *tag;
+	Block *block;
+	uint8_t damage;
+	char pad_0x0021[0x1];
+	uint8_t count;
+	char pad_0x0023[0x65];
+
 	bool isNull() const;
 
 	bool isDamageableItem() const;

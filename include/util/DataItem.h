@@ -1,5 +1,8 @@
 #pragma once
 
+#include <cstdint>
+#include "math/BlockPos.h"
+
 // TODO: See if these x64 offsets are right
 
 enum struct DataItemType : unsigned char {

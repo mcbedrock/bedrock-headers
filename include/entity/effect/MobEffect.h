@@ -1,28 +1,49 @@
 #pragma once
 
+#include "MobEffectInstance.h"
+#include <string>
+
+// TODO: NYI but size should not need to be known for pointers
+struct Amplifier;
+struct Attribute;
+struct AttributeModifier;
+struct AttributeBuff;
+
+struct Actor;
+
 struct MobEffect {
-	static MobEffect *getByName(std::string const &);
-
-	static MobEffect *getById(int);
-
-	const std::string &getResourceName() const;
-
-	const std::string &getIconName() const;
-
+	MobEffect(int, const std::string &, const std::string &, bool, int, int, const std::string &, bool);
+	void removeEffects(Actor *);
+	void applyEffects(Actor *, int, int) const;
 	int getId() const;
-
-	const mce::Color &getColor() const;
-
-	bool isDisabled() const;
-
-	bool isInstantaneous() const;
-
+	static void initEffects(void *resourcePackManager);
+	void addAttributeModifier(Attribute const &, std::shared_ptr<AttributeModifier>);
+	void addAttributeBuff(Attribute const &, std::shared_ptr<AttributeBuff>);
+	void setValueAmplifier(std::shared_ptr<Amplifier>);
+	void setDurationAmplifier(std::shared_ptr<Amplifier>);
+	static MobEffect *getByName(const std::string &);
+	static MobEffect *getById(int);
+	const std::string &getComponentName() const;
+	const std::string &getResourceName() const;
+	const std::string &getIconName() const;
+	// some useless internals
+	void applyInstantaneousEffect(Actor*, Actor*, Actor*, int, float) const;
 	bool isHarmful() const;
-
+	bool isInstantaneous() const;
+	const mce::Color &getColor() const;
+	bool isDisabled() const;
 	bool isVisible() const;
+	const std::string &formatDuration(MobEffectInstance const *);
+	// return types for these?
+	void clearAttributeBuffs();
+	void clearAttributeModifiers();
+	void getAttributeModifierValue(int, AttributeModifier const &) const;
+	void viewAttributeModifiers() const;
 
-	static const MobEffect *mMobEffects[28];
-
+	// bc62d48
+	static const MobEffect *WEAKNESS;
+	static const mce::Color DEFAULT_COLOR; // ???
+	static const MobEffect *EMPTY_EFFECT;
 	static const MobEffect *MOVEMENT_SPEED;
 	static const MobEffect *MOVEMENT_SLOWDOWN;
 	static const MobEffect *DIG_SPEED;
@@ -40,7 +61,6 @@ struct MobEffect {
 	static const MobEffect *BLINDNESS;
 	static const MobEffect *NIGHT_VISION;
 	static const MobEffect *HUNGER;
-	static const MobEffect *WEAKNESS;
 	static const MobEffect *POISON;
 	static const MobEffect *WITHER;
 	static const MobEffect *HEALTH_BOOST;
@@ -52,4 +72,6 @@ struct MobEffect {
 	static const MobEffect *SLOW_FALLING;
 	static const MobEffect *BAD_OMEN;
 	static const MobEffect *HERO_OF_THE_VILLAGE;
+	// bc62e50
+	static const MobEffect **mMobEffects;
 };

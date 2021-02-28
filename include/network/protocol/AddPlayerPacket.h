@@ -5,6 +5,8 @@
 #include "util/ActorRuntimeID.h"
 #include "gsl/string_span"
 
+// TODO: Update
+
 struct AddPlayerPacket : Packet {
 	char pad[12];
 	const char *username; // 0x20 (0x20 - 0xC)
@@ -22,6 +24,7 @@ struct AddPlayerPacket : Packet {
 #include "VirtualTemplate.h"
 };
 
+//char (*test)[sizeof(AddPlayerPacket)] = 1;
 /*static_assert(offsetof(AddPlayerPacket, username) == 0x20);
 static_assert(offsetof(AddPlayerPacket, uuid) == 0x24);
 static_assert(offsetof(AddPlayerPacket, uid) == 0x34);

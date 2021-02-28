@@ -7,7 +7,7 @@
 struct SetActorDataPacket : Packet {
 	ActorRuntimeID rid;
 	char pad[0x8];
-	std::vector<DataItem*> entries;
+	std::vector<DataItem *> entries;
 
 #include "VirtualTemplate.h"
 };

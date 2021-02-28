@@ -6,7 +6,14 @@
 struct BlockPos;
 
 struct Vec3 {
-	float x, y, z;
+	union {
+		struct {
+			float x, y, z;
+		};
+		struct {
+			float pitch, headYaw, yaw;
+		};
+	};
 
 	Vec3(BlockPos const &);
 
@@ -16,8 +23,11 @@ struct Vec3 {
 
 	Vec3() : x(0.0), y(0.0), z(0.0) {};
 
-	// pitch, yaw, headyaw for Vec3 rotations
+	// pitch, headyaw, yaw for Vec3 rotations
+	// conversion from vec2 we just combine yaw because most server software doesn't even impl it
 	explicit Vec3(const Vec2 &rotations) : x(rotations.x), y(rotations.y), z(rotations.y) {};
+
+	explicit Vec3(uint8_t xRot, uint8_t yRot, uint8_t zRot) : pitch(xRot * (360 / 256)), headYaw(yRot * (360 / 256)), yaw(zRot * (360 / 256)) {}
 
 	static Vec3	NEG_UNIT_X,
 				NEG_UNIT_Y,

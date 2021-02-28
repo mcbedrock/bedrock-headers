@@ -10,10 +10,15 @@ struct Actor;
 #include "world/HitResult.h"
 #include "util/SmallSet.h"
 #include <functional>
+#include <vector>
 
 struct Player;
 
 class ClientPlayerEventCoordinator;
+
+/**
+ * Proudly done by hand...
+ */
 
 struct PlayerListEntry {
 	ActorUniqueID uid;
@@ -33,7 +38,13 @@ struct PlayerListEntry {
 };
 
 struct Level {
-	//Actor *getRuntimeEntity(ActorRuntimeID, bool) const;
+	uintptr_t **vtable;
+	char pad[0x60];
+	std::vector<Player *> players;
+	char pad2[0x310];
+	std::vector<Actor *> entities;
+	char pad3[0x18C8];
+	SmallSet<Actor *> globalEntities;
 
 	Actor *fetchEntity(ActorUniqueID, bool) const;
 
@@ -80,3 +91,7 @@ struct Level {
 
 	unsigned int getActivePlayerCount() const;
 };
+
+static_assert(offsetof(Level, players) == 0x68);
+static_assert(offsetof(Level, entities) == 0x390);
+static_assert(offsetof(Level, globalEntities) == 0x1C70);
