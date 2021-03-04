@@ -17,6 +17,7 @@ struct Realms;
 
 struct Player;
 
+// Does this inherit the Minecraft class? Or just similar field layout
 struct MinecraftGame {
 	MinecraftGame(int, char **);
 

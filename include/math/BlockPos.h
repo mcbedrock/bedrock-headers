@@ -44,4 +44,8 @@ struct BlockPos {
 	BlockPos neighbor(unsigned char) const;
 
 	BlockPos relative(unsigned char, int) const;
+
+	inline friend std::ostream& operator<<(std::ostream &ss, const BlockPos &blockPos) {
+		return ss << "BlockPos{" << blockPos.x << ", " << blockPos.y << ", " << blockPos.z <<  "}";
+	}
 };

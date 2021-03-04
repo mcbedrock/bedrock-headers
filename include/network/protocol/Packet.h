@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../NetworkIdentifier.h"
 #include "../BinaryStream.h"
 #include <string>
 #include <memory>
 
+struct NetworkIdentifier;
 struct NetEventCallback;
 
 /*
@@ -12,7 +12,8 @@ struct NetEventCallback;
  */
 #pragma pack(push, 4)
 struct Packet {
-	int unk_4 = 2, unk_8 = 1;
+	// vtable should already be added by compiler because of the (broken) virtual decls below
+	int unk_4 = 2, unk_8 = 1; // check if these are still correct
 	char pad[0x8];
 	uintptr_t **handlerThunk; // dispatcher instance that handles this type of packet (array, first item should be for this packet type)
 	char pad2[0x4];
@@ -24,7 +25,6 @@ struct Packet {
 	//Packet(Packet const &packet) : unk_4(packet.unk_4), unk_8(packet.unk_8) {}
 
 	// Change these in VirtualTemplate.h as well
-
 	virtual ~Packet() = 0;
 
 	virtual int getId() const = 0;
@@ -35,7 +35,8 @@ struct Packet {
 
 	virtual void read(ReadOnlyBinaryStream &) = 0;
 
-	virtual void handle(NetworkIdentifier const&, NetEventCallback &, std::shared_ptr<Packet>&);
+	// You can substitute std::shared_ptr<Packet>& with Packet** in case you don't want shared_ptrs logic
+	virtual void handle(NetworkIdentifier const&, NetEventCallback &, std::shared_ptr<Packet> &);
 
 	//virtual bool disallowBatching() const = 0;
 };

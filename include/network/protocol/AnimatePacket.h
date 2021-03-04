@@ -7,29 +7,39 @@
  * Packet for hand swings
  */
 struct AnimatePacket : Packet {
-	enum Action : uint32_t;
+	enum struct Action : uint32_t {
+		None = 0,
+		SwingArm = 1,
+		StopSleep = 3,
+		Criticial = 4,
+		EnchantCritical = 5, // aka magic
+
+		// ????
+		RowRight = 128,
+		RowLeft = 129
+	};
 
 	/**
 	 * Runtime ID
 	 */
-	ActorRuntimeID rid; // 20
+	ActorRuntimeID rid;
 	/**
 	 * Action
 	 * @see AnimatePacket::Action
 	 */
-	Action action; // 28
+	Action action;
 	/**
-	 * TODO Document
+	 * Rowing time
 	 */
-	float extra; // 32
+	float rowingTime;
 
-	enum Action : uint32_t {
-		SwingArm = 1,
-		StopSleep = 3,
-		Criticial = 4
-	};
-
-	AnimatePacket(ActorRuntimeID rid, Action action, float extra = 0) : rid(rid), action(action), extra(extra) {}
+	AnimatePacket(ActorRuntimeID rid, Action action, float rowingTime = 0) : rid(rid), action(action) {
+		if (action == Action::RowLeft || action == Action::RowRight)
+			rowingTime = rowingTime;
+	}
 
 #include "VirtualTemplate.h"
 };
+
+static_assert(offsetof(AnimatePacket, rid) == 0x28);
+static_assert(offsetof(AnimatePacket, rowingTime) == 0x34);

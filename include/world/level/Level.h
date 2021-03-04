@@ -13,6 +13,7 @@ struct Actor;
 #include <vector>
 
 struct Player;
+struct LocalPlayer;
 
 class ClientPlayerEventCoordinator;
 
@@ -90,6 +91,8 @@ struct Level {
 	BlockPos getDefaultSpawn() const;
 
 	unsigned int getActivePlayerCount() const;
+
+	LocalPlayer *getPrimaryLocalPlayer() const;
 };
 
 static_assert(offsetof(Level, players) == 0x68);

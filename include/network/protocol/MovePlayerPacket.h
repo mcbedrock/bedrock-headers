@@ -1,19 +1,17 @@
 #pragma once
 
 #include "math/Vec2.h"
+#include "math/Vec3.h"
 #include "util/ActorRuntimeID.h"
 #include "Packet.h"
 
 struct MovePlayerPacket : Packet {
-	enum Mode : uint8_t {
+	enum struct Mode : uint8_t {
 		Normal,
 		Reset,
 		Teleport,
 		Pitch // *shrug*
 	};
-
-	int pad;
-
 	/**
 	 * Player Runtime ID
 	 */
@@ -39,34 +37,48 @@ struct MovePlayerPacket : Packet {
 	/**
 	 * Mode
 	 */
-	uint8_t mode;
+	Mode mode;
 	/**
 	 * On Ground
 	 */
 	bool onGround;
 
-	char filler[7]; // again...
-
 	/**
 	 * Ridden Entity Runtime ID
 	 */
-	ActorRuntimeID ridingEntityID;
+	ActorRuntimeID rideId;
 
 	/**
-	 * TODO: Document
+	 * Self explanatory, only written to BinaryStream if mode is teleport
 	 */
-	uint32_t teleportCause, teleportItem;
+	int32_t teleportCause, teleportItem;
 
+	/**
+	 * Current tick, probably used for lag check/syncing
+	 */
+	uint64_t tick;
 
-	MovePlayerPacket(const ActorRuntimeID runtimeID, bool onGround, const Vec3 &position, const Vec3 &rotations, Mode mode = Normal, uint64_t ridingEntity = 0,
-			uint32_t teleportCause = 0, uint32_t teleportItem = 0) :
+	MovePlayerPacket(const ActorRuntimeID runtimeID, bool onGround, const Vec3 &position, const Vec3 &rotations, Mode mode = Mode::Normal, ActorRuntimeID rideId = ActorRuntimeID{0},
+			int32_t teleportCause = 0, int32_t teleportItem = 0, uint64_t tick = 0) :
 			runtimeID(runtimeID), onGround(onGround), pos(position), rot(rotations),
-			mode(mode), ridingEntityID(ridingEntity), teleportCause(teleportCause), teleportItem(teleportItem) {}
+			mode(mode), rideId(rideId), teleportCause(teleportCause), teleportItem(teleportItem), tick(tick) {}
 
-	MovePlayerPacket(const MovePlayerPacket &base) : runtimeID(base.runtimeID), onGround(base.onGround), x(base.x), y(base.y), z(base.z), yaw(base.yaw), pitch(base.pitch),
-		headYaw(base.headYaw), ridingEntityID(base.ridingEntityID), teleportCause(base.teleportCause), teleportItem(base.teleportItem) {}
+	explicit MovePlayerPacket(const MovePlayerPacket &base) : runtimeID(base.runtimeID), onGround(base.onGround), x(base.x), y(base.y), z(base.z), yaw(base.yaw), pitch(base.pitch),
+		headYaw(base.headYaw), rideId(base.rideId), tick(base.tick) {
+		if (base.mode == Mode::Teleport) {
+			teleportCause = base.teleportCause;
+			teleportItem = base.teleportItem;
+		} else
+			teleportCause = teleportItem = 0; // Necessary?
+	}
 
 #include "VirtualTemplate.h"
 };
 
 static_assert(offsetof(MovePlayerPacket, runtimeID) == 0x28);
+static_assert(offsetof(MovePlayerPacket, mode) == 0x48);
+static_assert(offsetof(MovePlayerPacket, onGround) == 0x49);
+static_assert(offsetof(MovePlayerPacket, rideId) == 0x50);
+static_assert(offsetof(MovePlayerPacket, teleportCause) == 0x58);
+static_assert(offsetof(MovePlayerPacket, teleportItem) == 0x5C);
+static_assert(offsetof(MovePlayerPacket, tick) == 0x60);

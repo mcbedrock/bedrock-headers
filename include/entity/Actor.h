@@ -133,8 +133,8 @@ struct Actor {
 	Level &getLevel() const;
 	const std::string &getNameTag() const;
 	std::vector<Actor> fetchNearbyActorsSorted(const Vec3 &pos, ActorType);
-	const std::string getUnformattedNameTag() const {
-		static const std::regex colorCodes{"\u00A7[0-9A-Fa-fK-Ok-oRr]"};
+	std::string getUnformattedNameTag() const {
+		static const std::regex colorCodes{"\u00A7[0-9A-Ga-gK-Ok-oRr]"};
 		return std::regex_replace(getNameTag(), colorCodes, "");
 	}
 	bool hasTags() const;

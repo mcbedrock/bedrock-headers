@@ -84,7 +84,7 @@ struct ClientInstance {
 
 	/**
 	 * Is in a level
-	 * @return
+	 * @return bool
 	 */
 	bool isPlaying() const;
 

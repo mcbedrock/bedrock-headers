@@ -1,8 +1,8 @@
 #pragma once
 
-#include <util/CompoundTag.h>
-#include <world/Block.h>
-#include <util/Color.h>
+#include "util/CompoundTag.h"
+#include "world/Block.h"
+#include "util/Color.h"
 #include "ItemEnchants.h"
 
 struct Item {

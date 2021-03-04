@@ -31,7 +31,7 @@ struct Player : Mob {
 	void startSwimming();
 	void stopSwimming();
 	NetworkIdentifier const &getClientId() const;
-	Facing::LookDirection::LookDirection getDirection() const;
+	LookDirection getDirection() const;
 	void setEnchantmentSeed(int);
 	int getEnchantmentSeed() const;
 	void stopGliding();

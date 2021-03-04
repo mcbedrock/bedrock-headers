@@ -1,7 +1,6 @@
 #pragma once
 
-#include <math/SubChunkPos.h>
-
+#include "math/SubChunkPos.h"
 
 struct LevelRendererCamera {
 	void renderChunkImmediateChanged(const SubChunkPos &);

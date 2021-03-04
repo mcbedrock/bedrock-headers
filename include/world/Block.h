@@ -6,7 +6,7 @@
 
 struct BlockSource;
 
-enum MaterialType {};
+enum struct MaterialType;
 
 struct Material {
 	bool isReplaceable() const;
@@ -14,7 +14,7 @@ struct Material {
 	bool isType(MaterialType) const;
 };
 
-enum BlockProperty : unsigned char;
+enum struct BlockProperty : unsigned char;
 
 struct Block {
 	ActorRuntimeID getRuntimeId() const;

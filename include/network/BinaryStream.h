@@ -1,8 +1,8 @@
 #pragma once
 
-#include <item/Item.h>
-#include <math/BlockPos.h>
-#include <gsl/gsl>
+#include "item/Item.h"
+#include "math/BlockPos.h"
+#include "gsl-lite.hpp"
 
 struct ReadOnlyBinaryStream {
 	long long getVarInt64();
@@ -22,10 +22,10 @@ struct ReadOnlyBinaryStream {
 	unsigned char getByte();
 	float getFloat();
 	double getDouble();
-	std::string const& getString();
 	int getVarInt();
+	gsl::basic_string_span<const char> getString();
 	float getByteRotation() {
-		return static_cast<float>(getByte() * (360 / 256));
+		return static_cast<float>(getByte() * (360.f / 256.f));
 	}
 };
 
@@ -35,11 +35,7 @@ struct BinaryStream : ReadOnlyBinaryStream {
 	void writeFloat(float);
 	void writeDouble(double);
 	void writeStream(BinaryStream&);
-	// Deprecated in latest GSL headers but still linked like this, so...
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated"
-	void writeString(gsl::basic_string_span<char const, -1ul>);
-#pragma GCC diagnostic pop
+	void writeString(gsl::basic_string_span<const char>);
 	void writeVarInt(int);
 	void writeVarInt64(long);
 	void writeSignedInt(int);
@@ -59,7 +55,7 @@ struct BinaryStream : ReadOnlyBinaryStream {
 	void writeByte(unsigned char);
 	// TODO These aren't in the game obviously, they're just useful adaptations from PMMP
 	void writeByteRotation(unsigned char rotation) {
-		writeByte(static_cast<int>(rotation / (360 / 256)));
+		writeByte(static_cast<unsigned char>(rotation / (360.f / 256.f)));
 	}
 	void writeBlockPos(const BlockPos &pos) {
 		writeVarInt(pos.x);

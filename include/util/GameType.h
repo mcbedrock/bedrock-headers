@@ -1,6 +1,6 @@
 #pragma once
 
-enum GameType {
+enum struct GameType {
 	SURVIVAL,
 	CREATIVE,
 	ADVENTURE,

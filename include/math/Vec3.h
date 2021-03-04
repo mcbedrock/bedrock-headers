@@ -5,29 +5,32 @@
 
 struct BlockPos;
 
+// TODO: Cleanup self defined utility functions (constexpr stuff?)
 struct Vec3 {
 	union {
 		struct {
 			float x, y, z;
 		};
 		struct {
-			float pitch, headYaw, yaw;
+			float pitch, yaw, headYaw;
 		};
 	};
 
 	Vec3(BlockPos const &);
 
+	// Pos is unknown
+	//Vec3(Post const &);
+
 	Vec3(float x, float y, float z) : x(x), y(y), z(z) {};
 
 	Vec3(float x) : x(x), y(x), z(x) {};
 
-	Vec3() : x(0.0), y(0.0), z(0.0) {};
+	Vec3() : x(0.f), y(0.f), z(0.f) {};
 
-	// pitch, headyaw, yaw for Vec3 rotations
-	// conversion from vec2 we just combine yaw because most server software doesn't even impl it
+	// Conversion from Vec2 we just combine yaw (not like most server softwares impl it anyway)
 	explicit Vec3(const Vec2 &rotations) : x(rotations.x), y(rotations.y), z(rotations.y) {};
-
-	explicit Vec3(uint8_t xRot, uint8_t yRot, uint8_t zRot) : pitch(xRot * (360 / 256)), headYaw(yRot * (360 / 256)), yaw(zRot * (360 / 256)) {}
+	// Conversion for the lossy bytes some packets use for rotations
+	explicit Vec3(uint8_t xRot, uint8_t yRot, uint8_t zRot) : pitch(xRot * (360.f / 256.f)), yaw(yRot * (360.f / 256.f)), headYaw(zRot * (360.f / 256.f)) {};
 
 	static Vec3	NEG_UNIT_X,
 				NEG_UNIT_Y,
@@ -42,58 +45,58 @@ struct Vec3 {
 				UNIT_Y,
 				UNIT_Z;
 
-	bool operator==(Vec3 &vec3) {
+	inline bool operator==(Vec3 &vec3) {
 		return x == vec3.x && y == vec3.y && z == vec3.z;
 	}
 
-	bool operator!=(Vec3 &vec3) {
+	inline bool operator!=(Vec3 &vec3) {
 		return x != vec3.x || y != vec3.y || z != vec3.z;
 	}
 
-	Vec3 &operator=(const Vec3 &vec3) {
+	inline Vec3 &operator=(const Vec3 &vec3) {
 		x = vec3.x;
 		y = vec3.y;
 		z = vec3.z;
 		return *this;
 	}
 
-	Vec3 add(const Vec3 &o) const {
+	inline Vec3 add(const Vec3 &o) const {
 		return {x + o.x, y + o.y, z + o.z};
 	}
 
-	Vec3 add(float ox, float oy, float oz) const {
+	inline Vec3 add(float ox, float oy, float oz) const {
 		return {x + ox, y + oy, z + oz};
 	}
 
-	Vec3 subtract(const Vec3 &o) const {
+	inline Vec3 subtract(const Vec3 &o) const {
 		return {x - o.x, y - o.y, z - o.z};
 	}
 
-	Vec3 subtract(float ox, float oy, float oz) const {
+	inline Vec3 subtract(float ox, float oy, float oz) const {
 		return {x - ox, y - oy, z - oz};
 	}
 
-	Vec3 multiply(const Vec3 &o) const {
+	inline Vec3 multiply(const Vec3 &o) const {
 		return {x * o.x, y * o.y, z * o.z};
 	}
 
-	Vec3 multiply(float ox, float oy, float oz) const {
+	inline Vec3 multiply(float ox, float oy, float oz) const {
 		return {x * ox, y * oy, z * oz};
 	}
 
-	Vec3 multiply(float h, float v) const {
+	inline Vec3 multiply(float h, float v) const {
 		return {x * h, y * v, z * h};
 	}
 
-	friend std::ostream& operator<<(std::ostream &ss, const Vec3 &vec3) {
+	inline friend std::ostream& operator<<(std::ostream &ss, const Vec3 &vec3) {
 		return ss << "Vec3{" << vec3.x << ", " << vec3.y << ", " << vec3.z <<  "}";
 	}
 
-	float delta() {
+	inline float delta() {
 		return std::sqrt(x * x + z * z);
 	}
 
-	float distance(const Vec3 &o) const {
+	inline float distance(const Vec3 &o) const {
 		return std::abs(x - o.x) + std::abs(y - o.y) + std::abs(z - o.z);
 	}
 };

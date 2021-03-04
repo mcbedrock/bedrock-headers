@@ -1,18 +1,24 @@
 #pragma once
 
 #include "Packet.h"
+#include "gsl-lite.hpp"
 
 struct AddActorPacket : Packet {
-	char pad_0014[4]; // TODO: Attributes
-	ActorUniqueID uid; // 0x20
-	ActorRuntimeID eid; // 0x28
-	char pad_0030[0x10]; // TODO: Synched actor data
-	//gsl::basic_string_span<const char, 0x20> entityType; // 0x40
-	char entityType[28];
-	Vec3 pos; // 0x5c
-	Vec3 motion; // 0x68
-	Vec3 rot; // 0x74
-	// TODO: Entity meta data
+	char pad_0024[0x1C];
+	Vec3 pos, motion, rot;
+	char pad_0038[0x4]; // TODO: Attributes
+	ActorUniqueID uid;
+	ActorRuntimeID rid;
+	char pad_0078[0x20]; // TODO: Synced actor data
+	gsl::cstring_span entityType;
+	// TODO: Entity meta data/links/attributes
 
 #include "VirtualTemplate.h"
 };
+
+static_assert(offsetof(AddActorPacket, pos) == 0x40);
+static_assert(offsetof(AddActorPacket, motion) == 0x4C);
+static_assert(offsetof(AddActorPacket, rot) == 0x58);
+static_assert(offsetof(AddActorPacket, uid) == 0x68);
+static_assert(offsetof(AddActorPacket, rid) == 0x70);
+static_assert(offsetof(AddActorPacket, entityType) == 0x98);

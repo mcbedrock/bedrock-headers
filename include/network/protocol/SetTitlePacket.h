@@ -7,7 +7,7 @@
  * Packet for setting main UI title bar (originally for bosses, etc.)
  */
 struct SetTitlePacket : Packet {
-	enum class TitleType {
+	enum struct TitleType {
 		CLEAR_TITLE = 0,
 		RESET_TITLE,
 		SET_TITLE,

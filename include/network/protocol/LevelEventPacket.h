@@ -9,3 +9,5 @@ struct LevelEventPacket : Packet {
 
 #include "VirtualTemplate.h"
 };
+
+static_assert(offsetof(LevelEventPacket, event) == 0x24);

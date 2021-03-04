@@ -1,25 +1,26 @@
 #pragma once
 
 #include "Packet.h"
+#include "math/Vec3.h"
+#include "util/ActorRuntimeID.h"
 
 struct InteractPacket : Packet {
-	enum Action : uint8_t;
-
+	enum struct Action : uint8_t {
+		LegacyAttack = 2,
+		LeaveVehicle = 3,
+		MouseOver = 4,
+		ActionOpenInventory = 6
+	};
 	/**
 	 * Action
 	 * @see InteractPacket::Action
 	 */
 	Action action;
-
-private:
-	char filler[3]; // action is 1 byte not 4
-
-public:
+	char pad[0x3];
 	/**
 	 * Target Runtime ID
 	 */
 	ActorRuntimeID entityID;
-
 	/**
 	 * Hit vector for MouseOver
 	 */
@@ -28,13 +29,6 @@ public:
 		struct {
 			float x, y, z;
 		};
-	};
-
-	enum Action : uint8_t {
-		LegacyAttack = 2,
-		LeaveVehicle = 3,
-		MouseOver = 4,
-		ActionOpenInventory = 6
 	};
 
 	InteractPacket(Action action, ActorRuntimeID runtimeId, float x, float y, float z) : action(action),

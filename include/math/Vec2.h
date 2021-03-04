@@ -26,9 +26,10 @@ struct Vec2 {
 				UNIT_X,
 				UNIT_Y;
 
-	/*operator Facing::LookDirection::LookDirection() {
-		return static_cast<Facing::LookDirection::LookDirection>(Direction::getDirection(sin(yaw) * 0.0174532, cos(yaw) * 0.0174532));
-	}*/
+	// What
+	operator LookDirection() {
+		return static_cast<LookDirection>(Direction::getDirection(sin(yaw) * 0.0174532, cos(yaw) * 0.0174532));
+	}
 
 	/*Vec2 &operator =(const Vec2 &o) {
 		x = o.x;
@@ -61,5 +62,11 @@ struct Vec2 {
 
 	friend std::ostream& operator<<(std::ostream &ss, const Vec2 &vec2) {
 		return ss << "Vec2{" << vec2.pitch << ", " << vec2.yaw <<  "}";
+	}
+
+	inline Vec2 &operator=(const Vec2 &other) {
+		this->x = other.x;
+		this->y = other.y;
+		return *this;
 	}
 };

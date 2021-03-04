@@ -1,13 +1,13 @@
 #pragma once
 
 #include "util/DataItem.h"
-#include "Packet.h"
 #include "util/ActorRuntimeID.h"
+#include "item/Item.h"
+#include "Packet.h"
 #include <vector>
 
-#pragma pack(push, 4)
 struct AddItemActorPacket : Packet {
-	char pad_0024[0x24]; // TODO: Synched actor data(?)
+	char pad_0024[0x20]; // TODO: Synched actor data(?)
 	ActorUniqueID uid; // 0x48
 	ActorRuntimeID eid; // 0x50
 	ItemStack stack; // 0x58
@@ -21,9 +21,7 @@ struct AddItemActorPacket : Packet {
 
 #include "VirtualTemplate.h"
 };
-#pragma pack(pop)
 
-//char (*_test)[sizeof(ItemStackBase)] = 1;
 static_assert(offsetof(AddItemActorPacket, uid) == 0x48);
 static_assert(offsetof(AddItemActorPacket, eid) == 0x50);
 static_assert(offsetof(AddItemActorPacket, stack) == 0x58);

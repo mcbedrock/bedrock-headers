@@ -5,34 +5,42 @@
 #include <utility>
 #include <vector>
 
-enum class TextPacketType : unsigned char {
-	RAW, CHAT, TRANSLATION, POPUP, JUKEBOX_POPUP, TIP, SYSTEM, WHISPER, ANNOUNCEMENT, JSON
+// Actual name
+enum struct TextPacketType : char {
+	RAW = 0,
+	CHAT = 1,
+	TRANSLATION = 2,
+	POPUP = 3,
+	JUKEBOX_POPUP = 4,
+	TIP = 5,
+	SYSTEM = 6,
+	WHISPER = 7,
+	ANNOUNCEMENT = 8,
+	JSON = 9,
+	WHISPER_JSON = 10
 };
 
 /**
  * Packet for most main UI text elements
  *
- * TODO Test and fix
+ * According to the offset jumps it must be storing them as normal std::strings ? probably uwp strings on win10/other editions
  */
 struct TextPacket : Packet {
 	TextPacketType type;
+	char pad[0x17];
 
-private:
-	char filler[0x7];
+	/*std::string str1;
+	std::string str2;*/
 
 	// TODO: Nevermind the rest of the write function is too complicated for me atm lol
 
 public:
-	/*std::string message; // 0x1c
-	std::vector<std::string> unk_1; // 0x20
-	bool needsTranslation; // 0x2c
-	std::string unk_2, unk_3; // 0x30 0x34
-
-	TextPacket(TextPacketType type, std::string message) : type(type), message(std::move(message)) {}*/
-
 	TextPacket(TextPacketType type, const std::string &, const std::string &, const std::vector<std::string> &, bool, const std::string &, const std::string &);
 
 #include "VirtualTemplate.h"
 };
 
-//static_assert(offsetof(TextPacket, unk_2) == 0x30);
+static_assert(sizeof(std::string) == 0x18);
+static_assert(offsetof(TextPacket, type) == 0x24);
+/*static_assert(offsetof(TextPacket, str1) == 0x40);
+static_assert(offsetof(TextPacket, str2) == 0x58);*/

@@ -2,7 +2,7 @@
 
 #include "Item.h"
 
-enum ContainerID : int {};
+enum struct ContainerID : int;
 
 struct PlayerInventory {
 	ContainerID getSelectedContainerId();
@@ -24,9 +24,7 @@ struct Container {
 	std::vector<ContainerItemStack const *> getSlots() const;
 };
 
-struct BaseContainerMenu : Container {
-
-};
+struct BaseContainerMenu : Container {};
 
 struct SimpleContainer : Container {
 	ItemStack const &getItem(int) const;

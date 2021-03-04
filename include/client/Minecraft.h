@@ -4,8 +4,10 @@
 #include "Timer.h"
 
 struct Minecraft {
-	char pad_0000[0x58];
+	char pad_0000[0xA0];
+	Level *level;
 	Timer *gameTimer, *renderTimer;
+	NetworkHandler *networkHandler;
 
 	/**
 	 * Checks if game is fully initialized
@@ -30,6 +32,12 @@ struct Minecraft {
 	 */
 	 Timer *getTimer();
 
-	 // Unknown return, probably void
+	 /**
+	  * Called near the mid-end of the title screen
+	  */
 	 void init();
 };
+
+static_assert(offsetof(Minecraft, level) == 0xA0);
+static_assert(offsetof(Minecraft, gameTimer) == 0xA8);
+static_assert(offsetof(Minecraft, networkHandler) == 0xB8);

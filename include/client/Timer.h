@@ -4,7 +4,7 @@
 
 struct Timer {
 	float tps;
-	char pad_0004[4];
+	char pad_0004[0x4];
 	float partialTicks;
 
 	Timer(float, std::function<int()>);
